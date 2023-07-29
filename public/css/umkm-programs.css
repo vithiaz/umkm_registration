@@ -1,0 +1,151 @@
+.app-content {
+  background-color: #EDF0F3;
+}
+
+.umkm-programs .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.umkm-programs .container .page-title {
+  padding: 10px;
+  background-color: #F9D00F;
+  border-radius: 4px;
+}
+.umkm-programs .container .page-title h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.umkm-programs .container .page-title h1 span {
+  color: #F92727;
+}
+.umkm-programs .container .page-title.secondary {
+  background-color: unset;
+  margin-top: 5px;
+}
+.umkm-programs .container .page-card {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 4px;
+}
+.umkm-programs .container .page-card.col-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper .input-title {
+  flex-basis: 150px;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper .input-items {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper .input-items input, .umkm-programs .container .page-card.col-wrap .row-wrapper .input-items textarea {
+  width: 100%;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper .input-items select, .umkm-programs .container .page-card.col-wrap .row-wrapper .input-items .file {
+  max-width: 420px;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper .input-items small {
+  margin-left: 10px;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper .input-items small.error {
+  color: #F92727;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper .input-items .label {
+  font-weight: 600;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper textarea {
+  min-height: 110px;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper.top {
+  align-items: flex-start;
+}
+.umkm-programs .container .page-card.col-wrap .row-wrapper.top * {
+  transition: 0s;
+}
+.umkm-programs .container .page-card .card-title {
+  font-weight: 600;
+}
+.umkm-programs .container .page-card .card-seperator-text {
+  font-weight: 600;
+  color: #616161;
+  letter-spacing: 2px;
+}
+.umkm-programs .container .page-card .content {
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: justify;
+}
+.umkm-programs .container .page-card .registration-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 5px;
+}
+.umkm-programs .container .page-card .registration-wrapper .title-box {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  gap: 20px;
+}
+.umkm-programs .container .page-card .registration-wrapper .title-box::after {
+  content: "";
+  position: relative;
+  background-color: #D4D4D4;
+  height: 1px;
+  flex-grow: 1;
+  transform: translateY(-50%);
+}
+.umkm-programs .container .page-card .registration-wrapper .title-box .card-title {
+  color: #616161;
+}
+.umkm-programs .container .page-card .registration-wrapper .info {
+  font-size: 0.9rem;
+}
+.umkm-programs .container .page-card .empty-container {
+  height: 120px;
+  display: grid;
+  place-items: center;
+}
+.umkm-programs .container .page-card .empty-container span {
+  color: #616161;
+  font-size: 0.9rem;
+}
+.umkm-programs .container .page-card .button-wrapper {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.umkm-programs .container .page-card .button-wrapper .submit-button {
+  background-color: #F92727;
+  font-weight: 600;
+  color: white;
+  border-radius: 0;
+  font-size: 0.9rem;
+}
+.umkm-programs .container .page-card .button-wrapper .submit-button:hover {
+  cursor: pointer;
+  background-color: #F9D00F;
+  color: black;
+}/*# sourceMappingURL=umkm-programs.css.map */

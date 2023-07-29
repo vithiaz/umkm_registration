@@ -1,0 +1,30 @@
+.content-body .container .page-content-card .card-title-wrapper .card-title {
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+.content-body .container .page-content-card .row-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start !important;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: unset !important;
+  flex-wrap: wrap;
+}
+.content-body .container .page-content-card .row-wrapper .row-body {
+  flex-grow: 1;
+}
+.content-body .container .page-content-card .row-wrapper .row-title {
+  flex-basis: 120px;
+  font-weight: 600;
+}
+.content-body .container .page-content-card .card-content-seperator {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.content-body .container .page-content-card .card-content-body {
+  text-align: justify;
+  text-indent: 20px;
+}/*# sourceMappingURL=umkm-program-details.css.map */

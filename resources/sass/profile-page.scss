@@ -1,0 +1,197 @@
+@import '_var.scss';
+
+.app-content {
+    background-color: $LightWhite;
+}
+
+.profile-page {
+
+    .container {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .page-title {
+            padding: 10px;
+            background-color: $LightenOrange;
+            border-radius: 4px;
+
+            h1 {
+                @include section-header-title();
+
+                span {
+                    color: $PrimaryRed;
+                }
+            }
+        }
+
+        .page-content-card {
+            width: 100%;
+            height: fit-content;
+            padding: 15px 10px;
+            border-radius: 4px;
+            background-color: white;
+            margin-bottom: 10px;
+            position: relative;
+            
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .card-content {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .content-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+
+                    .row-wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        column-gap: 10px;
+                        flex-wrap: wrap;
+                        align-items: center;
+    
+                        .input-title {
+                            flex-basis: 150px;
+                            font-weight: 600;
+                        }
+    
+                        .input-items {
+                            flex-grow: 1;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 3px;
+
+                            .input-detail {
+                                text-align: justify;
+                            }
+                            
+                            input, textarea {
+                                width: 100%;
+                            }
+    
+                            select, .file {
+                                // flex-grow: 1;
+                                max-width: 420px;
+                                // flex-basis: 250px;
+                                // width: 50%;
+                            }
+        
+    
+                            small {
+                                margin-left: 10px;
+                                
+                                &.error {
+                                    color: $PrimaryRed;
+                                }
+                            }
+                        }
+    
+    
+                        textarea {
+                            min-height: 110px;
+                        }
+    
+    
+                        &.top {
+                            align-items: flex-start;
+    
+                            * {
+                                transition: 0s;
+                            }
+                        }
+                    }
+
+                }
+
+                .document-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 20px;
+                    row-gap: 10px;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+
+                    .picture-wrapper {
+                        display: grid;
+                        place-items: center;
+
+                        .image-container {
+                            width: 150px;
+                            height: 150px;
+                            border-radius: 50%;
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .no-image {
+                            @include no-image-i();
+                        }
+                    }
+
+                    .document-details-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        align-items: flex-start;
+                        justify-content: center;
+                        flex-grow: 1;
+                        flex-basis: 320px;
+                        max-width: 320px;
+
+                        .row-wrapper {
+                            display: flex;
+                            flex-direction: row;
+                            width: 100%;
+                            
+                            column-gap: 20px;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+
+                            .row-title {
+                                color: black;
+                            }
+                            .row-items {
+                                display: flex;
+                                flex-direction: row;
+                                gap: 10px;
+                                align-items: center;
+
+                                .row-detail {
+                                    color: $TextDarker;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .button-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 20px;
+                    row-gap: 10px;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    .save-button {
+                        @include button-default($PrimaryRed, $color: white, $bg_hover: $LightenOrange, $color_hover: black);
+                    }
+                }
+
+            }
+        }
+
+    }
+}

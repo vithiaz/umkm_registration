@@ -1,0 +1,38 @@
+@startuml App_UseCase
+
+actor Admin as admin
+actor User as user
+
+rectangle Aplikasi {
+    usecase "Login" as login
+
+    package MenuAdmin as admin_menu {
+        left to right direction
+        usecase "Cek berkas masuk" as check_in_file
+        usecase "Verifikasi Pengajuan Pendaftar UMKM" as umkm_register_ver
+        usecase "Verifikasi Pengajuan Pendaftar Koperasi" as koperasi_register_ver
+        usecase "Verifikasi Pengajuan Pendaftar Bantuan UMKM" as umkm_sup_register_ver
+    }
+
+    package MenuUser as user_menu {
+        ' top to bottom direction
+        usecase "Pengajuan Pendaftar UMKM" as umkm_register
+        usecase "Pengajuan Pendaftar Koperasi" as koperasi_register
+        usecase "Pengajuan Pendaftar Bantuan UMKM" as umkm_sup_register
+    }
+}
+
+
+admin -> login
+admin -> admin_menu
+admin_menu .> login :include
+
+umkm_register .> umkm_register_ver #line:green;text:green :extends
+koperasi_register .> koperasi_register_ver #line:blue;text:blue :extends
+umkm_sup_register .> umkm_sup_register_ver #line:red;text:red :extends
+
+user -> login
+user -> user_menu
+user_menu .> login :include
+
+@enduml

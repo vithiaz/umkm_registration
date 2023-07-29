@@ -1,0 +1,85 @@
+@startuml
+
+' Declare
+actor User
+participant Register
+boundary TampilanRegistrasiAkun as registration_page
+control ProsesDataIdentitas as user_data_process
+entity DataUser as user_data
+database TabelUser as db_user
+
+actor Admin
+participant VerifikasiAkun as user_acc_verify
+boundary TampilanVerifikasiRegistrasiAkun as verify_regis_page
+control ProsesVerifikasiData as verify_data_process
+
+
+
+' Flow
+activate User
+User -> Register : registrasi akun
+activate Register
+
+Register -> registration_page : masuk halaman registrasi
+activate registration_page
+
+registration_page -> user_data_process : input data identitas 
+activate user_data_process
+user_data_process -> user_data_process : validasi data identitas
+activate user_data_process #Yellow
+user_data_process -> registration_page : notifikasi validasi data gagal
+
+user_data_process -> user_data : data divalidasi
+deactivate user_data_process
+activate user_data
+user_data -> db_user : simpan data
+deactivate user_data
+activate db_user
+db_user -> user_data_process : data identitas tersimpan
+deactivate db_user
+user_data_process -> registration_page : notifikasi data tersimpan
+deactivate user_data_process
+
+registration_page -> Register : registrasi berhasil, menunggu verifikasi admin
+deactivate registration_page
+
+Register -> User
+deactivate Register
+deactivate User
+
+activate Admin
+Admin -> user_acc_verify : verifikasi registrasi akun
+
+activate user_acc_verify
+user_acc_verify -> verify_regis_page : masuk halaman verifikasi
+activate verify_regis_page
+verify_regis_page -> db_user : cari data
+activate db_user
+
+
+db_user -> user_data : muat data user
+deactivate db_user
+activate user_data #Green
+user_data -[#Green]> verify_regis_page : data user
+
+verify_regis_page -> verify_data_process : proses verifikasi
+activate verify_data_process
+verify_data_process -> user_data : update aktivasi data user
+
+user_data -> db_user : simpan perubahan
+deactivate user_data
+activate db_user
+db_user -> verify_data_process : data tersimpan
+deactivate db_user
+
+verify_data_process -> verify_regis_page : notifikasi verifikasi berhasil
+deactivate verify_data_process
+verify_regis_page -> user_acc_verify : verifikasi berhasil
+deactivate verify_regis_page
+
+user_acc_verify -> Admin
+deactivate user_acc_verify
+deactivate Admin
+
+
+@enduml

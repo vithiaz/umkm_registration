@@ -1,0 +1,234 @@
+.app-content {
+  background-color: #EDF0F3;
+}
+
+.umkm-registration .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.umkm-registration .container .page-title {
+  padding: 10px;
+  background-color: #F9D00F;
+  border-radius: 4px;
+}
+.umkm-registration .container .page-title h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.umkm-registration .container .page-title h1 span {
+  color: #F92727;
+}
+.umkm-registration .container .page-title.secondary {
+  background-color: unset;
+  margin-top: 5px;
+}
+.umkm-registration .container .user-info-card {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.umkm-registration .container .user-info-card .image-wrapper .image-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.umkm-registration .container .user-info-card .image-wrapper .image-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.umkm-registration .container .user-info-card .name-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.umkm-registration .container .user-info-card .name-wrapper .name {
+  font-weight: 600;
+}
+.umkm-registration .container .user-info-card .document-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  flex-basis: 320px;
+}
+.umkm-registration .container .user-info-card .document-wrapper .row-wrapper {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  max-width: 320px;
+  flex-wrap: wrap;
+}
+.umkm-registration .container .page-card {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 4px;
+}
+.umkm-registration .container .page-card.col-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper .input-title {
+  flex-basis: 150px;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper .input-items {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper .input-items input, .umkm-registration .container .page-card.col-wrap .row-wrapper .input-items textarea {
+  width: 100%;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper .input-items select, .umkm-registration .container .page-card.col-wrap .row-wrapper .input-items .file {
+  max-width: 420px;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper .input-items small {
+  margin-left: 10px;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper .input-items small.error {
+  color: #F92727;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper .input-items .label {
+  font-weight: 600;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper textarea {
+  min-height: 110px;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.top {
+  align-items: flex-start;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.top * {
+  transition: 0s;
+}
+.umkm-registration .container .page-card.row-wrap {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+  flex-basis: 350px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-title {
+  flex-basis: 150px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items input, .umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items textarea {
+  width: 100%;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items select, .umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items .file {
+  max-width: 420px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items small {
+  margin-left: 10px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items small.error {
+  color: #F92727;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items .label {
+  font-weight: 600;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper textarea {
+  min-height: 110px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper.top {
+  align-items: flex-start;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper.top * {
+  transition: 0s;
+}
+.umkm-registration .container .page-card.row-wrap .download-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.umkm-registration .container .page-card.row-wrap .download-container .download-button {
+  font-size: 0.9rem;
+}
+.umkm-registration .container .page-card .empty-container {
+  height: 120px;
+  display: grid;
+  place-items: center;
+}
+.umkm-registration .container .page-card .empty-container span {
+  color: #616161;
+  font-size: 0.9rem;
+}
+.umkm-registration .container .page-card .button-wrapper {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.umkm-registration .container .page-card .button-wrapper .submit-button {
+  background-color: #F92727;
+  font-weight: 600;
+  color: white;
+  border-radius: 0;
+  font-size: 0.9rem;
+}
+.umkm-registration .container .page-card .button-wrapper .submit-button:hover {
+  cursor: pointer;
+  background-color: #F9D00F;
+  color: black;
+}/*# sourceMappingURL=umkm-registration.css.map */

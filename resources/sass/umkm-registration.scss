@@ -1,0 +1,176 @@
+@import '_var.scss';
+
+.app-content {
+    background-color: $LightWhite;
+}
+
+
+.umkm-registration {
+
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .page-title {
+            padding: 10px;
+            background-color: $LightenOrange;
+            border-radius: 4px;
+
+            h1 {
+                @include section-header-title();
+
+                span {
+                    color: $PrimaryRed;
+                }
+            }
+
+            &.secondary {
+                background-color: unset;
+                margin-top: 5px;
+            }
+        }
+
+        .user-info-card {
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: 30px;
+            row-gap: 10px;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 10px;
+
+            .image-wrapper {
+
+                .image-container {
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .name-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+
+                .name {
+                    font-weight: 600;
+                }
+            }
+
+            .document-wrapper {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                column-gap: 40px;
+                row-gap: 10px;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-grow: 1;
+                flex-basis: 320px;
+
+                .row-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 20px;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-grow: 1;
+                    max-width: 320px;
+                    flex-wrap: wrap;
+
+                }
+
+            }
+
+        }
+
+        .page-card {
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: 4px;
+
+            &.col-wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                
+                .row-wrapper {
+                    @include form-row-wrapper();
+                }
+            }
+
+            &.row-wrap {
+                display: flex;
+                flex-direction: row;
+                column-gap: 10px;
+                row-gap: 10px;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+
+                .col-wrap {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    flex-grow: 1;
+                    flex-basis: 350px;
+                    
+                    .row-wrapper {
+                        @include form-row-wrapper();
+                    }
+                }
+
+                .download-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+
+                    .download-button {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+
+            .empty-container {
+                height: 120px;
+                display: grid;
+                place-items: center;
+
+                span {
+                    color: $TextDarker;
+                    font-size: 0.9rem;
+                }
+            }
+
+            .button-wrapper {
+                display: flex;
+                flex-direction: row;
+                column-gap: 20px;
+                row-gap: 10px;
+                align-items: center;
+                justify-content: flex-end;
+
+                .submit-button {
+                    @include button-default($PrimaryRed, white, $LightenOrange, black);
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+}

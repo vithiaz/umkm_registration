@@ -1,0 +1,503 @@
+@import '_var.scss';
+
+.homepage {
+    
+    .top-navigator {
+        position: absolute;
+        top: 0;
+        min-height: 50px;
+        width: 100%;
+        background-color: rgb(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            column-gap: 20px;
+            row-gap: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            .button-container {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                align-items: center;
+
+                .nav-button {
+                    @include box-button($PrimaryRed, white);
+                }
+                
+                .nav-button-inverse {
+                    @include box-button(rgba(255,255,255,0), white);
+                }
+
+                .logged-user {
+                    color: white;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                }
+
+                .menu-button {
+                    border-radius: 0;
+                    color: white;
+                    transition: 0.3s;
+                    border: 2px solid $PrimaryRed;
+                    
+                    &.active, &:hover {
+                        transform: rotate(180deg);
+                        background-color: $PrimaryRed;
+                    }
+                }
+            }
+
+            .menu-dropdown {
+                position: absolute;
+                top: 50px;
+                right: 0;
+                background-color: white;
+                width: 100%;
+                max-width: 320px;
+                transform: translateY(-100vh);
+                opacity: 0%;
+                pointer-events: none;
+                transition: all ease-in-out 0.3s;
+                
+                &.active {
+                    transform: translateY(0);
+                    opacity: 100%;
+                    pointer-events: all;
+
+                }
+
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+                    
+                    li {
+                        
+                        a {
+                            padding: 10px 20px;
+                            display: block;
+                            width: 100%;
+                            color: black;
+                            text-decoration: none;
+                            
+                            &:hover {
+                                cursor: pointer;
+                                font-weight: 600;
+                                color: $PrimaryRed;
+                                background-color: darken(white, $amount: 8%);
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+    section.hero {
+        width: 100%;
+        padding-top: 120px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .container {
+
+            .row-wrapper {
+                display: flex;
+                flex-direction: row;
+                column-gap: 20px;
+                row-gap: 10px;
+                flex-wrap: wrap-reverse;
+                min-height: 350px;
+                padding: 20px 0 40px 0;
+                align-items: center;
+                justify-content: flex-start;
+
+                .main-content-wrapper {
+                    flex-grow: 1;
+                    flex-basis: 600px;
+                    height: 100%;
+                    flex-shrink: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    .page-title {
+                        font-size: 2.5rem;
+                        letter-spacing: 5px;
+                        font-weight: 600;
+                        margin: 0;
+                        margin-bottom: 10px;
+                        color: white;
+                        
+                        .lighter {
+                            font-size: 2.5rem;
+                            letter-spacing: 5px;
+                            font-weight: 600;
+                            color: $LightenOrange;
+                        }
+                    }
+
+                    .page-sub-title {
+                        color: white;
+                    }
+
+                    .city-logo-wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 10px;
+                        align-items: center;
+                        justify-content: flex-start;
+                        padding: 5px 0;
+
+                        img {
+                            height: 40px;
+                            width: fit-content;
+                        }
+                        .logo-title {
+                            font-weight: 600;
+                            letter-spacing: 2px;
+                            color: white;
+                        }
+                    }
+                }
+
+                .sub-content-wrapper {
+                    // flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+
+                    .main-logo-wrapper {
+                        width: fit-content;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-end;
+
+                        img {
+                            height: 120px;
+                            width: fit-content;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu-wrapper {
+            width: 100%;
+            padding: 10px 0;
+
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                column-gap: 20px;
+                row-gap: 10px;
+                align-items: center;
+                justify-content: flex-start;
+                list-style-type: none;
+
+                li {
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        font-weight: 600;
+                        font-size: 0.9rem;
+                        letter-spacing: 1px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section.profile {
+        padding: 20px 0;
+        background-color: #edf0f3;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+            .section-title-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .section-title {
+                    @include section-title();
+                    margin: 0;
+                }
+
+                .section-subtitle {
+                    @include section-subtitle();
+                }
+            }
+            
+            .section-content-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 10px 0;
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    padding-left: 20px;
+
+                    .title {
+                        position: relative;
+                        // margin-left: 20px;
+                        font-weight: 600;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            transform: translate(-20px, 50%);
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 6px;
+                            background-color: $PrimaryRed;
+                        }
+                    }
+
+                    p {
+                        margin-bottom: 2px;
+                        text-align: justify;
+                    }
+                }
+            }
+
+        }
+    }
+ 
+    section.registration-info {
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+
+            .section-title-wrapper {
+                padding: 20px 0;
+
+                .section-title {
+                    @include section-title();
+                }
+            }
+        }
+
+        .section-content-wrapper {
+            width: 100%;
+            gap: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .content-box {
+                flex-grow: 1;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                flex-basis: 300px;
+
+                &.content {
+                    padding: 20px 0;
+
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                        align-items: flex-start;
+                        justify-content: center;
+
+                        .row-item {
+                            display: flex;
+                            flex-direction: row;
+                            column-gap: 20px;
+                            align-items: center;
+
+                            .number {
+                                display: grid;
+                                place-items: center;
+                                background-color: $LightWhite;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                color: $PrimaryRed;
+                                font-weight: 600;
+                                flex-shrink: 0;
+                                transition: 0.3s;
+
+                                &:hover {
+                                    cursor: pointer;
+                                    background-color: $PrimaryRed;
+                                    color: white;
+                                }
+                            }
+
+                            .content-wrapper {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 2px;
+
+                                .title {
+                                    font-weight: 600;
+
+                                    .thin {
+                                        font-weight: 400;
+                                    }
+                                }
+
+                                .subtitle {
+                                    margin: 0;
+                                }
+
+                            }
+                        }
+
+                    }
+                }
+                
+                &.darker {
+                    background-color: #d4d4d4;
+                    
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        justify-content: center;
+
+                        .content-title {
+                            @include section-title();
+                            font-weight: 400;
+                            letter-spacing: 2px;
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+    section.login-register {
+        
+        .section-content-wrapper {
+            width: 100%;
+            gap: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+
+            .content-box {
+                flex-grow: 1;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                flex-basis: 300px;
+
+                &.lighter {
+                    background-color: $LightenOrange;
+
+                    .container {
+                        display: flex;
+                        flex-direction: row;
+                        column-gap: 20px;
+                        row-gap: 10px;
+                        align-items: center;
+                        justify-content: center;
+                        flex-wrap: wrap;
+
+                        .dark-button {
+                            @include box-button($PrimaryDark, white);
+                            border-radius: 0;
+
+                            &:hover {
+                                background-color: white;
+                            }
+                        }
+                    }
+                }
+
+                &.darker {
+                    background-color: $PrimaryDark;
+
+                    .container {
+                        display: flex;
+                        flex-direction: row;
+                        column-gap: 20px;
+                        row-gap: 10px;
+                        align-items: center;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        max-width: 520px;
+
+                        .description-wrapper {
+                            flex-basis: 350px;
+                            flex-grow: 1;
+                            text-align: justify;
+
+                            * {
+                                color: white;
+                            }
+                        }
+
+                        .light-button {
+                            @include box-button($LightenOrange, white);
+
+                            &:hover {
+                                background-color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

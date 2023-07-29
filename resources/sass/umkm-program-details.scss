@@ -1,0 +1,48 @@
+@import '_var_admin.scss';
+
+.content-body {
+
+    .container {
+
+        .page-content-card {
+
+            .card-title-wrapper {
+
+                .card-title {
+                    letter-spacing: 1px;
+                    font-size: 1.1rem;
+                }
+            }
+
+            .row-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start !important;
+                column-gap: 20px;
+                row-gap: unset !important;
+                flex-wrap: wrap;
+
+                .row-body {
+                    flex-grow: 1;
+                }
+
+                .row-title {
+                    flex-basis: 120px;
+                    font-weight: 600;
+                }
+            }
+
+            .card-content-seperator {
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+
+            .card-content-body {
+                text-align: justify;
+                text-indent: 20px;
+            }
+        }
+    }
+}

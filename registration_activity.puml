@@ -1,0 +1,47 @@
+@startuml
+
+|User|
+start
+if (sudah punya akun?) is (ya) then
+    :Login;
+else (tidak)
+    :Registrasi;
+
+    |Admin|
+    if (Verifikasi Akun?) is (diterima) then
+        |Admin|
+        :Daftarkan User;
+    else (ditolak)
+        |Admin|
+        :Hapus Pengajuan;
+        stop
+    endif
+    |User|
+    :Login;
+endif
+
+:Registrasi Koperasi / UMKM;
+|Admin|
+if (Verifikasi Koperasi/Umkm) is (diterima) then
+    :Aktifkan Koperasi/Umkm;
+else (ditolak)
+    :Notifikasi ke User;
+    kill
+endif
+
+|User|
+:Daftar Program Bantuan;
+|Admin|
+if (Verifikasi pendaftar program bantuan) is (diterima) then
+    :Daftarkan UMKM/Koperasi;
+else (ditolak)
+    :Notifikasi ke User;
+    kill
+endif
+
+|User|
+:Logout;
+stop
+
+
+@enduml

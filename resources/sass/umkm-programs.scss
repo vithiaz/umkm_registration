@@ -1,0 +1,131 @@
+@import '_var.scss';
+
+.app-content {
+    background-color: $LightWhite;
+}
+
+
+.umkm-programs {
+    
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .page-title {
+            padding: 10px;
+            background-color: $LightenOrange;
+            border-radius: 4px;
+
+            h1 {
+                @include section-header-title();
+
+                span {
+                    color: $PrimaryRed;
+                }
+            }
+
+            &.secondary {
+                background-color: unset;
+                margin-top: 5px;
+            }
+        }
+
+        .page-card {
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: 4px;
+
+            &.col-wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                
+                .row-wrapper {
+                    @include form-row-wrapper();
+                }
+            }
+
+            .card-title {
+                font-weight: 600;
+            }
+
+            .card-seperator-text {
+                font-weight: 600;
+                color: $TextDarker;
+                letter-spacing: 2px;
+            }
+
+            .content {
+                font-size: 0.9rem;
+                margin: 0;
+                text-align: justify;
+            }
+
+            .registration-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 5px;
+                
+                .title-box {
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+                    align-items: center;
+                    gap: 20px;
+                    
+                    &::after {
+                        content: '';
+                        position: relative;
+                        background-color: $BorderVeryLight;
+                        height: 1px;
+                        flex-grow: 1;
+                        transform: translateY(-50%);
+                    }
+
+                    .card-title {
+                        color: $TextDarker;
+                    }
+                }
+
+                .info {
+                    font-size: 0.9rem;
+                }
+
+            }
+
+
+            .empty-container {
+                height: 120px;
+                display: grid;
+                place-items: center;
+
+                span {
+                    color: $TextDarker;
+                    font-size: 0.9rem;
+                }
+            }
+
+            .button-wrapper {
+                display: flex;
+                flex-direction: row;
+                column-gap: 20px;
+                row-gap: 10px;
+                align-items: center;
+                justify-content: flex-end;
+
+                .submit-button {
+                    @include button-default($PrimaryRed, white, $LightenOrange, black);
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        
+
+
+    }
+}

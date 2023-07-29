@@ -1,0 +1,76 @@
+@startuml
+
+entity users {
+    * id BIGINT PRIMARY KEY
+    --
+    * is_admin BOOLEAN
+    * active_status STRING
+    ' active
+    ' pending
+    * nip BIGINT UNIQUE
+    * full_name STRING
+    * gender STRING
+    * birth_date DATE
+    * address STRING
+    * ktp STRING
+    * kk STRING
+    * photo STRING
+    password STRING
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
+entity umkm {
+    * id BIGINT PRIMARY KEY
+    --
+    * name STRING
+    * type STRING
+    ' koperasi
+    ' umkm
+    * recomendation_docs STRING
+    * status STRING
+    ' verified
+    ' pending
+    permission_docs STRING
+    --
+    * owner_user UNSIGNED_BIGINT FOUREIGN(users.id)
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
+entity support_programs {
+    * id BIGINT PRIMARY KEY
+    --
+    * program_type STRING
+    * name STRING
+    * description TEXT
+    * active BOOLEAN
+    quota INT
+    open_date DATE
+    end_date DATE
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
+entity support_program_members {
+    * id BIGINT PRIMARY KEY
+    --
+    * status STRING
+    ' pending
+    ' verified
+    --
+    * program_id UNSIGNED_BIGINT FOUREIGN(support_programs.id)
+    * umkm_id UNSIGNED_BIGINT FOUREIGN(umkm.id)
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
+users ||--o{ umkm
+support_programs ||--o{ support_program_members
+umkm ||--o{ support_program_members
+
+@enduml

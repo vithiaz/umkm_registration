@@ -1,0 +1,142 @@
+@import '_var.scss';
+
+.registration {
+    padding: 20px 0;
+    min-height: calc(100vh - 120px);
+    background-color: $LightWhite;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .page-title {
+            @include page-title();
+        }
+
+        .registration-content-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            background-color: white;
+            border-radius: 8px;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .content-title {
+                    @include section-header-title();
+                }
+
+                .content-row-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 20px;
+                    row-gap: 25px;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: center;
+
+                    .main {
+                        flex-basis: 600px;
+                        flex-grow: 4;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+                    .secondary {
+                        flex-basis: 420px;
+                        flex-grow: 1;
+                        width: 100%;
+                        
+                        p {
+                            text-align: center;
+                            margin: 0;
+                            color: $TextDarker;
+                        }
+                    }
+
+                }
+
+                .content-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                // Inside Content-wrapper
+                .row-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 10px;
+                    flex-wrap: wrap;
+                    align-items: center;
+
+                    .input-title {
+                        flex-basis: 150px;
+                    }
+
+                    .input-items {
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
+                        
+                        input, textarea {
+                            width: 100%;
+                        }
+
+                        select, .file {
+                            // flex-grow: 1;
+                            max-width: 420px;
+                            // flex-basis: 250px;
+                            // width: 50%;
+                        }
+    
+
+                        small {
+                            margin-left: 10px;
+                            
+                            &.error {
+                                color: $PrimaryRed;
+                            }
+                        }
+                    }
+
+
+                    textarea {
+                        min-height: 110px;
+                    }
+
+
+                    &.top {
+                        align-items: flex-start;
+
+                        * {
+                            transition: 0s;
+                        }
+                    }
+                }
+
+            }
+
+            .button-wrapper {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: flex-end;
+
+                .submit-button {
+                    @include button-default($PrimaryRed, white, $PrimaryDark, $color_hover: $PrimaryRed)
+                }
+            }
+
+        }
+    }
+}
