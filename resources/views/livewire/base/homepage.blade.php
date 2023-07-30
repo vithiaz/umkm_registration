@@ -33,8 +33,8 @@
         <div class="container">
             <div class="row-wrapper">
                 <div class="main-content-wrapper">
-                    <h1 class="page-title">KEMENKOP <span class="lighter">UKM</span></h1>
-                    <span class="page-sub-title">Kementerian Koperasi dan Usaha Kecil dan Menengah Republik Indonesia.</span>
+                    <h1 class="page-title">DISKOP<span class="lighter">UKM</span></h1>
+                    <span class="page-sub-title">Dinas Koperasi, Usaha Kecil dan Menengah</span>
                     <div class="city-logo-wrapper">
                         <img src="{{ asset('image/logotomohon.png') }}" alt="logo tomohon">
                         <span class="logo-title">KOTA TOMOHON</span>
@@ -49,7 +49,14 @@
             <nav class="menu-wrapper">
                 <ul>
                     <li><a href="#">BERANDA</a></li>
-                    <li><a href="#">PENDAFTARAN KOPERASI DAN UMKM</a></li>
+                    @auth
+                        @if (Auth::check() && Auth::user()->is_admin == false)
+                            <li><a href="{{ route('umkm-programs') }}">DAFTAR PROGRAM BANTUAN</a></li>
+                        @endif                    
+                    @else
+                        <li><a href="{{ route('register') }}">PENDAFTARAN AKUN</a></li>
+                    @endauth
+
                 </ul>
             </nav>
         </div>
