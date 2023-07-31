@@ -71,7 +71,7 @@
             <div class="section-content-wrapper">
                 <div class="content">
                     <span class="title">Visi</span>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium aut eius voluptatem explicabo nostrum fuga.</p>
+                    <p>Adipisicing et consequat dolor officia ad sint Lorem duis consectetur.</p>
                 </div>
                 <div class="content">
                     <span class="title">Misi</span>
