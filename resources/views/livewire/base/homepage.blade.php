@@ -66,7 +66,7 @@
         <div class="container">
             <div class="section-title-wrapper">
                 <h2 class="section-title"><span class="lighter">P</span>ROFIL</h2>    
-                <span class="section-subtitle">KEMENKOPUKM KOTA TOMOHON</span>
+                <span class="section-subtitle">DISKOPUKM KOTA TOMOHON</span>
             </div>
             <div class="section-content-wrapper">
                 <div class="content">

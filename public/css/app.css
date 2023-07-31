@@ -691,6 +691,16 @@ body {
 .app .row-container .menu-container .navigation .nav-content ul .nav-item.expand {
   background-color: #dee3e9;
 }
+.app .row-container .menu-container .navigation .nav-content ul .nav-item.disabled:hover {
+  cursor: default;
+  background-color: transparent !important;
+}
+.app .row-container .menu-container .navigation .nav-content ul .nav-item.disabled .main-item {
+  color: #616161 !important;
+}
+.app .row-container .menu-container .navigation .nav-content ul .nav-item.disabled .main-item:hover {
+  cursor: default !important;
+}
 .app .row-container .menu-container .navigation .nav-content ul .nav-item .nav-item-secondary {
   font-size: 0.9em;
   transition: all ease-in-out 0.3s;

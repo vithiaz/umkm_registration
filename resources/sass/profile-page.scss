@@ -39,6 +39,39 @@
             flex-direction: column;
             gap: 10px;
 
+            &.information {
+                // background-color: $LightenOrange;
+
+                .row-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 20px;
+                    row-gap: 10px;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                }
+            }
+
+            .card-title-wrapper {
+                display: flex;
+                flex-direction: row;
+                column-gap: 10px;
+                row-gap: 5px;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: flex-start;
+
+                i {
+                    font-size: 2.5rem;
+                    color: $PrimaryRed;
+                    padding: 0 20px
+                }
+
+                .title {
+                    @include section-header-title();
+                }
+            }
+
             .card-content {
                 display: flex;
                 flex-direction: column;

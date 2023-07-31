@@ -36,6 +36,37 @@
   flex-direction: column;
   gap: 10px;
 }
+.profile-page .container .page-content-card.information .row-wrapper {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.profile-page .container .page-content-card .card-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.profile-page .container .page-content-card .card-title-wrapper i {
+  font-size: 2.5rem;
+  color: #F92727;
+  padding: 0 20px;
+}
+.profile-page .container .page-content-card .card-title-wrapper .title {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
 .profile-page .container .page-content-card .card-content {
   display: flex;
   flex-direction: column;

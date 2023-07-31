@@ -20,17 +20,26 @@
                         <span class="nav-item-main">Data Identitas</span>
                     </a>
                 </li>
-                <li
-                    @if ( \Request::route()->getName() == 'umkm-registration')
-                        class="nav-item active"
-                    @else
-                        class="nav-item"
-                    @endif
-                    >
-                    <a href="{{ route('umkm-registration') }}" class="main-item">
-                        <span class="nav-item-main">Pendaftaran</span>
-                    </a>
-                </li>
+                @if (Auth::user()->active_status != 'active')
+                    <li class="nav-item disabled">
+                        <span class="main-item">
+                            Pendaftaran
+                        </span>
+                    </li>
+                @else
+                    <li
+                        @if ( \Request::route()->getName() == 'umkm-registration')
+                            class="nav-item active"
+                        @else
+                            class="nav-item"
+                        >
+                            <a href="{{ route('umkm-registration') }}" class="main-item">
+                                <span class="nav-item-main">Pendaftaran</span>
+                            </a>
+                        @endif
+                    </li>                    
+                @endif
+                
                 <li
                     @if ( \Request::route()->getName() == 'umkm-programs')
                         class="nav-item active"

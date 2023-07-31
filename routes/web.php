@@ -28,8 +28,12 @@ Route::get('/logout', function () {
 // User Middleware
 Route::middleware('auth')->group(function () {
     Route::get('/profile-settings', ProfileSettings::class)->name('profile');
-    Route::get('/registration', UmkmRegistration::class)->name('umkm-registration');
-    Route::get('/programs', UmkmPrograms::class)->name('umkm-programs');
+    
+    Route::middleware(['is_verified'])->group(function () {
+        Route::get('/registration', UmkmRegistration::class)->name('umkm-registration');
+    });
+    Route::get('/programs', UmkmPrograms::class)->name('umkm-programs');        
+    
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {

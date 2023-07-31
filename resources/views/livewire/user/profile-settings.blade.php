@@ -11,6 +11,22 @@
         <div class="page-title">
             <h1>Data Identitas</h1>
         </div>
+        <div class="page-content-card information">
+            <div class="row-wrapper">
+                <div class="icon-container">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div class="card-content">
+                    <div class="title-container">
+                        <span class="title">Informasi</span>
+                    </div>
+                    <div class="content-body">
+                        <p>Pengajuan aktivasi akun anda sedang di proses...</p>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
         <div class="page-content-card">
             <div class="card-content">
                 <div class="content-wrapper">

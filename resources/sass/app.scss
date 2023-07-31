@@ -711,7 +711,7 @@ body {
                             justify-content: space-between;
                             padding: 5px 10px;
                             border-radius: 4px;
-
+                            
                             a {
                                 width: 100%;
                                 display: flex;
@@ -758,6 +758,22 @@ body {
 
                             &.expand {
                                 background-color: darken($color: $LightWhite, $amount: 5%);
+                            }
+
+                            &.disabled {
+                                
+                                &:hover {
+                                    cursor: default;
+                                    background-color: transparent !important;
+                                }
+                                
+                                .main-item {
+                                    color: $TextDarker !important;
+                                    
+                                    &:hover {
+                                        cursor: default !important;
+                                    }
+                                }
                             }
                             
                             .nav-item-secondary {
