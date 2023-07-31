@@ -17,7 +17,15 @@ body {
     // flex-direction: column;
 }
 
+
+
 .app {
+
+    .target-custom {
+        background-color: red;
+        font-size: 2rem;
+        font-weight: 600;
+    }
 
     .app-message {
         width: 100%;

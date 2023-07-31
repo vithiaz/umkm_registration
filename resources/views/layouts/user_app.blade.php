@@ -10,7 +10,7 @@
     @include('layouts.inc.navbar')
     
     <div class="app">
-        <h1>UserAppLay</h1>
+        <h1 class="target-custom">UserAppLay</h1>
         <div class="row-container">
             {{-- Side-menu --}}
             @include('layouts.inc.user-sidemenu')
