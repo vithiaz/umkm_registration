@@ -19,7 +19,6 @@ class ProfileSettings extends Component
 
     public function render()
     {
-        return view('livewire.user.profile-settings')->layout('layouts.user_app');
-        // return view('livewire.user.profile-settings')->layout('layouts.row-app');
+        return view('livewire.user.profile-settings')->layout('layouts.row-app');
     }
 }

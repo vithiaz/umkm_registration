@@ -5,7 +5,7 @@
                 <img src="{{ asset('image\koperasi_dan_UMKM_RI_logo.png') }}" alt="koperasi dan UMKM RI logo">
             </div>
             <div class="logo-text-container">
-                <span class="logo-text-main">KEMENKOPUKM</span>
+                <span class="logo-text-main">DISKOPUKM</span>
                 <span class="logo-text-sub">KOTA TOMOHON</span>
             </div>
         </div>

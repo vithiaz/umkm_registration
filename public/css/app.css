@@ -13,11 +13,6 @@ body {
   min-height: 250px;
 }
 
-.app .target-custom {
-  background-color: red;
-  font-size: 2rem;
-  font-weight: 600;
-}
 .app .app-message {
   width: 100%;
   padding: 20px 0;
