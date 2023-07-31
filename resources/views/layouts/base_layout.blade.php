@@ -25,6 +25,10 @@
     <link href="{{ asset('/fontawesome/css/fontawesome.css') }}" rel="stylesheet">
     <link href="{{ asset('/fontawesome/css/brands.css') }}" rel="stylesheet">
     <link href="{{ asset('/fontawesome/css/solid.css') }}" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     
 
     @stack('stylesheet')
