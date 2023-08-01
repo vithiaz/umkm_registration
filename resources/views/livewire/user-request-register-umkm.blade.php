@@ -18,33 +18,35 @@
     <p class="content">
         {{ $program->description }}
     </p>
-    <div class="registration-wrapper">
-        <div class="title-box">
-            <span class="card-title">Pendaftaran</span>
-        </div>
-        <span class="info">Koperasi dan UMKM yang dapat didaftarkan adalah yang sudah terdaftar dan diverifikasi</span>
-        <div class="row-wrapper">
-            <span class="input-title">Koperasi / UMKM</span>
-            <div class="input-items">
-                <select wire:model='selectedUmkmId' class="form-select" aria-label="Default select example">
-                    <option selected value="" hidden>Pilih Koperasi / UMKM</option>
-                    @if ($program->program_type == 'UMKM')
-                        @foreach ($activeUmkm as $umkm)
-                            <option value="{{ $umkm->id }}">{{ $umkm->name }}</option>
-                        @endforeach                                    
-                    @else
-                        @foreach ($activeKoperasi as $umkm)
-                            <option value="{{ $umkm->id }}">{{ $umkm->name }}</option>
-                        @endforeach                                    
-                    @endif
-                </select>
-                @error('selectedUmkmId')
-                    <small class="error">{{ $message }}</small>
-                @enderror
+    @if ($this->allowed)
+        <div class="registration-wrapper">
+            <div class="title-box">
+                <span class="card-title">Pendaftaran</span>
+            </div>
+            <span class="info">Koperasi dan UMKM yang dapat didaftarkan adalah yang sudah terdaftar dan diverifikasi</span>
+            <div class="row-wrapper">
+                <span class="input-title">Koperasi / UMKM</span>
+                <div class="input-items">
+                    <select wire:model='selectedUmkmId' class="form-select" aria-label="Default select example">
+                        <option selected value="" hidden>Pilih Koperasi / UMKM</option>
+                        @if ($program->program_type == 'UMKM')
+                            @foreach ($activeUmkm as $umkm)
+                                <option value="{{ $umkm->id }}">{{ $umkm->name }}</option>
+                            @endforeach                                    
+                        @else
+                            @foreach ($activeKoperasi as $umkm)
+                                <option value="{{ $umkm->id }}">{{ $umkm->name }}</option>
+                            @endforeach                                    
+                        @endif
+                    </select>
+                    @error('selectedUmkmId')
+                        <small class="error">{{ $message }}</small>
+                    @enderror
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="btn submit-button">Ajukan Pendaftaran</button>
             </div>
         </div>
-        <div class="button-wrapper">
-            <button class="btn submit-button">Ajukan Pendaftaran</button>
-        </div>
-    </div>
+    @endif
 </form>

@@ -18,6 +18,7 @@
                 :program='$program'
                 :activeUmkm='$ActiveUmkm'
                 :activeKoperasi='$ActiveKoperasi'
+                :allowed='$AccountActivated'
             />
         @empty
             <div class="page-card col-wrap">

@@ -26,6 +26,7 @@ final class UsersTable extends PowerGridComponent
             parent::getListeners(), [
                 'verifyUser',
                 'deleteUser',
+                'setVerifyState',
                 'refreshTable',
                 'setStatusFilter',
             ]);
@@ -38,6 +39,12 @@ final class UsersTable extends PowerGridComponent
             $User->active_status = 'active';
             
             if ($User->save()) {
+                $activationLog = new ActivationLog;
+                $activationLog->status = 'acc';
+                $activationLog->message = 'Berkas diterima';
+                $activationLog->user_id = $User->id;
+                $activationLog->save();
+
                 $msg = ['success' => 'User diverifikasi'];
             } else {
                 $msg = ['danger' => 'Terjadi Kesalahan'];
@@ -46,6 +53,11 @@ final class UsersTable extends PowerGridComponent
             $this->fillData();
         }
     }
+    public function setVerifyState($data) {
+        $userID = $data[0];
+        $this->emitTo('admin.account-verification', 'setVerifyData', $userID);
+    }
+
     public function deleteUser($data) {
         $userID = $data[0];
         $User = User::find($userID);
@@ -59,8 +71,8 @@ final class UsersTable extends PowerGridComponent
             $this->dispatchBrowserEvent('display-message', $msg);
             $this->fillData();
         }
-
     }
+
 
     public function refreshTable() {
         $this->fillData();
@@ -101,7 +113,7 @@ final class UsersTable extends PowerGridComponent
             ->addColumn('nip')
             ->addColumn('full_name')
             ->addColumn('gender')
-            ->addColumn('birth_date')
+            ->addColumn('birth')
             ->addColumn('address')
             ->addColumn('ktp')
             ->addColumn('kk')
@@ -125,7 +137,7 @@ final class UsersTable extends PowerGridComponent
             Column::make('Jenis Kelamin', 'gender')
                 ->searchable(),
 
-            Column::make('Tanggal Lahir', 'birth_date')
+            Column::make('Tanggal Lahir', 'birth')
                 ->searchable(),
 
             Column::make('Alamat', 'address')
@@ -156,9 +168,12 @@ final class UsersTable extends PowerGridComponent
                    Button::make('verify', 'Verifikasi')
                        ->class('btn table-button-confirm')
                        ->emit('verifyUser', ['id']),
-                    Button::make('decine', 'Tolak')
+                    Button::make('details', 'Detail')
                        ->class('btn table-button-decline')
-                       ->emit('deleteUser', ['id']),
+                       ->emit('setVerifyState', ['id']),
+                    // Button::make('decine', 'Tolak')
+                    //    ->class('btn table-button-decline')
+                    //    ->emit('deleteUser', ['id']),
             ];
         } else {
             $actions = [];

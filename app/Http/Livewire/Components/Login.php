@@ -38,17 +38,11 @@ class Login extends Component
 
         if ($User) {
             if ($User->birth == $this->birth) {
-                if ($User->active_status == 'active') {
-                    if (Auth::loginUsingId($User->id, $remember_me)) {
-                        return redirect(request()->header('Referer'));
-                    } else {
-                        session()->flash('error', 'Login Gagal!');
-                    }
+                if (Auth::loginUsingId($User->id, $remember_me)) {
+                    return redirect(request()->header('Referer'));
+                } else {
+                    session()->flash('error', 'Login Gagal!');
                 }
-                else {
-                    session()->flash('error', 'Akun belum di aktivasi');
-                }
-
             } else {
                 $this->birth = '';
                 session()->flash('error', 'Tanggal Lahir tidak cocok');

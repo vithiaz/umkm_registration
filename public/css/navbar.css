@@ -122,6 +122,12 @@
   background-color: #F92727;
   color: black;
 }
+#navbar .container .auth-wrapper .auth .btn.auth-primary.ico, #navbar .container .auth-wrapper .user .btn.auth-primary.ico {
+  padding-left: 12px;
+}
+#navbar .container .auth-wrapper .auth .btn.auth-primary.ico span, #navbar .container .auth-wrapper .user .btn.auth-primary.ico span {
+  margin-left: 8px;
+}
 #navbar .container .auth-wrapper .auth .btn.auth-secondary, #navbar .container .auth-wrapper .user .btn.auth-secondary {
   background-color: white;
   font-weight: 600;
@@ -132,6 +138,12 @@
   cursor: pointer;
   background-color: white;
   color: #F92727;
+}
+#navbar .container .auth-wrapper .auth .btn.auth-secondary.ico, #navbar .container .auth-wrapper .user .btn.auth-secondary.ico {
+  padding-left: 12px;
+}
+#navbar .container .auth-wrapper .auth .btn.auth-secondary.ico span, #navbar .container .auth-wrapper .user .btn.auth-secondary.ico span {
+  margin-left: 8px;
 }
 #navbar .container .auth-wrapper .auth .btn.auth-secondary:hover, #navbar .container .auth-wrapper .user .btn.auth-secondary:hover {
   border: 1px solid #F92727;
@@ -147,6 +159,12 @@
   cursor: pointer;
   background-color: #F92727;
   color: white;
+}
+#navbar .container .auth-wrapper .user .btn-dropdown.ico {
+  padding-left: 12px;
+}
+#navbar .container .auth-wrapper .user .btn-dropdown.ico span {
+  margin-left: 8px;
 }
 #navbar .container .auth-wrapper .user .btn-dropdown.active {
   transform: rotate(180deg);
@@ -219,6 +237,12 @@
   background-color: #F92727;
   color: black;
 }
+.navbar-auth-dropdown .container .auth .btn.auth-primary.ico {
+  padding-left: 12px;
+}
+.navbar-auth-dropdown .container .auth .btn.auth-primary.ico span {
+  margin-left: 8px;
+}
 .navbar-auth-dropdown .container .auth .btn.auth-secondary {
   background-color: #2A2A2A;
   font-weight: 600;
@@ -229,6 +253,12 @@
   cursor: pointer;
   background-color: #2A2A2A;
   color: #F92727;
+}
+.navbar-auth-dropdown .container .auth .btn.auth-secondary.ico {
+  padding-left: 12px;
+}
+.navbar-auth-dropdown .container .auth .btn.auth-secondary.ico span {
+  margin-left: 8px;
 }
 .navbar-auth-dropdown .container .auth .btn.auth-secondary:hover {
   border: 1px solid #F92727;
@@ -379,6 +409,12 @@
   cursor: pointer;
   background-color: #F9D00F;
   color: black;
+}
+.navbar-search-dropdown .container .input-group button.ico {
+  padding-left: 12px;
+}
+.navbar-search-dropdown .container .input-group button.ico span {
+  margin-left: 8px;
 }
 
 @media screen and (max-width: 991px) {

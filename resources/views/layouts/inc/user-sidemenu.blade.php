@@ -30,6 +30,10 @@
                     <li
                         @if ( \Request::route()->getName() == 'umkm-registration')
                             class="nav-item active"
+                        >
+                            <a href="{{ route('umkm-registration') }}" class="main-item">
+                                <span class="nav-item-main">Pendaftaran</span>
+                            </a>
                         @else
                             class="nav-item"
                         >

@@ -15,12 +15,14 @@ class UmkmPrograms extends Component
     public $ActiveKoperasiUmkm;
     public $ActiveUmkm;
     public $ActiveKoperasi;
+    public $AccountActivated;
 
     public function mount() {
         $this->SupportProgram = SupportProgram::with('umkm')->where('active', '=' , true)->get();
         $this->ActiveKoperasiUmkm = User::with('active_umkm')->find(Auth::user()->id)->active_umkm;
         $this->ActiveUmkm = $this->ActiveKoperasiUmkm->where('type', '=', 'UMKM');
         $this->ActiveKoperasi = $this->ActiveKoperasiUmkm->where('type', '=', 'Koperasi');
+        $this->AccountActivated = Auth::user()->active_status == 'active' ? true : false;
     }
     
     public function render()

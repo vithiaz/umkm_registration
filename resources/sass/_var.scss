@@ -53,6 +53,15 @@ $BoxShadow: 0px 3px 6px rgba(0,0,0,0.2);
         background-color: $bg_hover;
         color: $color_hover;
     }
+    
+    &.ico {
+        padding-left: 12px;
+
+        span {
+            margin-left: 8px;
+        }
+    }
+
 }
 
 @mixin section-header-title() {

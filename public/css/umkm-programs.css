@@ -148,4 +148,10 @@
   cursor: pointer;
   background-color: #F9D00F;
   color: black;
+}
+.umkm-programs .container .page-card .button-wrapper .submit-button.ico {
+  padding-left: 12px;
+}
+.umkm-programs .container .page-card .button-wrapper .submit-button.ico span {
+  margin-left: 8px;
 }/*# sourceMappingURL=umkm-programs.css.map */

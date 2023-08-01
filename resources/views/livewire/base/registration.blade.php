@@ -46,7 +46,7 @@
                         <div class="row-wrapper">
                             <span class="input-title">Jenis Kelamin</span>
                             <div class="input-items">
-                                <select wire:model='gender' class="form-select" aria-label="Default select example">
+                                <select wire:model='gender' class="form-select" aria-label="Pilih jenis kelamin">
                                     <option selected value="" hidden>Pilih jenis kelamin</option>
                                     <option value="laki-laki">Laki - laki</option>
                                     <option value="perempuan">Perempuan</option>

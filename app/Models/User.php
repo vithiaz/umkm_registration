@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Umkm;
+use App\Models\ActivationLog;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Notifications\Notifiable;
@@ -45,6 +46,11 @@ class User extends Authenticatable
     public function active_umkm()
     {
         return $this->hasMany(Umkm::class, 'owner_user', 'id')->where('status', '=', 'verified');
+    }
+
+    public function activation_log()
+    {
+        return $this->hasMany(ActivationLog::class, 'user_id', 'id');
     }
 
 }

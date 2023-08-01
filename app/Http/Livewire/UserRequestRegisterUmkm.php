@@ -12,6 +12,7 @@ class UserRequestRegisterUmkm extends Component
     public $program;
     public $activeUmkm;
     public $activeKoperasi;
+    public $allowed;
 
     // Binding Variable
     public $selectedUmkmId;
@@ -29,9 +30,10 @@ class UserRequestRegisterUmkm extends Component
         'selectedUmkmId.required' => 'Tidak ada Koperasi / UMKM dipilih'
     ];
 
-    public function mount($program, $activeUmkm, $activeKoperasi){
+    public function mount($program, $activeUmkm, $activeKoperasi, $allowed){
         $this->program = $program;
         $this->getUmkmLists($activeUmkm, $activeKoperasi);
+        $this->allowed = $allowed;
     }
 
     public function render()

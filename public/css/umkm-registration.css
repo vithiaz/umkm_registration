@@ -231,4 +231,10 @@
   cursor: pointer;
   background-color: #F9D00F;
   color: black;
+}
+.umkm-registration .container .page-card .button-wrapper .submit-button.ico {
+  padding-left: 12px;
+}
+.umkm-registration .container .page-card .button-wrapper .submit-button.ico span {
+  margin-left: 8px;
 }/*# sourceMappingURL=umkm-registration.css.map */

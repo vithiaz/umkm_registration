@@ -617,6 +617,19 @@
 
 }
 
+// Main Form Input
+.main-form-input {
+    padding: 5px 10px;
+    background-color: $LightWhite;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    transition: 0.2s;
+
+    &:active, &:focus, &:hover {
+        background-color: darken($LightWhite, 2%);
+    }
+}
 
 // Confirmation Modal 
 .confirmation-modal {

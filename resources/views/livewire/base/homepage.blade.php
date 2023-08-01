@@ -71,13 +71,15 @@
             <div class="section-content-wrapper">
                 <div class="content">
                     <span class="title">Visi</span>
-                    <p>Adipisicing et consequat dolor officia ad sint Lorem duis consectetur.</p>
+                    <p>Tomohon Maju, Berdaya Saing Dan Sejahtera</p>
                 </div>
                 <div class="content">
                     <span class="title">Misi</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eius dignissimos totam quae similique eveniet velit obcaecati vel laboriosam veniam.</p>
-                    <p>Et culpa consequat nulla Lorem sit quis veniam labore consequat quis esse labore consequat sunt. Mollit irure laborum enim commodo dolor sit sint. Nostrud amet aute enim elit nisi. Mollit consequat reprehenderit nisi amet officia in. Consequat cupidatat labore sunt excepteur duis eiusmod et laborum sit cupidatat quis incididunt ad. Sit ex sint culpa reprehenderit Lorem irure incididunt adipisicing occaecat tempor occaecat elit quis. Sint aliqua ad nisi amet ea anim. Et sunt duis elit qui nulla consequat fugiat qui.</p>
-                    <p>Excepteur amet veniam elit adipisicing consequat incididunt adipisicing adipisicing sit esse. Ea aute occaecat eiusmod ea excepteur veniam pariatur anim cillum duis et deserunt et minim. Magna eiusmod dolor consectetur sunt irure deserunt sit esse mollit Lorem est culpa. Id occaecat adipisicing reprehenderit fugiat pariatur cupidatat et aliquip mollit esse. Ullamco tempor dolor sint incididunt ex qui nostrud ut exercitation anim incididunt. Ad dolor deserunt eiusmod occaecat sit. Veniam consequat occaecat eiusmod nisi veniam Lorem eiusmod nulla qui qui eiusmod elit sint. Sit non eiusmod cupidatat id proident magna aute. Nisi ut veniam aliquip labore irure proident et id nisi cupidatat ea enim minim veniam. Do laborum sit eiusmod Lorem velit elit tempor reprehenderit pariatur Lorem. Laborum pariatur excepteur quis sit occaecat laboris deserunt adipisicing fugiat.</p>
+                    <p>Menjaga dan Melestarikan Tomohon sebagai Kota Religius</p>
+                    <p>Peningkatan Kesejahteraan Masyarakat di Berbagai Sektor</p>
+                    <p>Menjadikan Tomohon Sebagai Kota Wisata Dunia</p>
+                    <p>Memajukan Sistem Pertanian Dalam Rangka Mewujudkan Kedaulatan Pangan</p>
+                    <p>Mewujudkan Pelayanan Pemerintahan Yang Bersih, Efektid dan Berintegritas</p>
                 </div>
             </div>
         </div>

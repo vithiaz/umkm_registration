@@ -27,14 +27,16 @@
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 15px 10px;
   border-radius: 4px;
   background-color: white;
   margin-bottom: 10px;
   position: relative;
+  overflow: hidden;
+  padding: 15px 10px;
+  transition: all ease-in-out 0.3s;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 .profile-page .container .page-content-card.information .row-wrapper {
   display: flex;
@@ -44,6 +46,36 @@
   row-gap: 10px;
   align-items: flex-start;
   justify-content: flex-start;
+}
+.profile-page .container .page-content-card.information .row-wrapper .icon-container {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.profile-page .container .page-content-card.information .row-wrapper .icon-container i {
+  font-size: 2.5rem;
+  color: #F92727;
+}
+.profile-page .container .page-content-card.information .row-wrapper .card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.profile-page .container .page-content-card.information .row-wrapper .card-content .title-container {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.profile-page .container .page-content-card.information .row-wrapper .card-content .title-container .title {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
 }
 .profile-page .container .page-content-card .card-title-wrapper {
   display: flex;
@@ -69,10 +101,16 @@
 }
 .profile-page .container .page-content-card .card-content {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .profile-page .container .page-content-card .card-content .content-wrapper {
+  flex-basis: 400px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -82,8 +120,10 @@
   flex-direction: row;
   -moz-column-gap: 10px;
        column-gap: 10px;
+  row-gap: 3px !important;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-start;
 }
 .profile-page .container .page-content-card .card-content .content-wrapper .row-wrapper .input-title {
   flex-basis: 150px;
@@ -119,7 +159,7 @@
 .profile-page .container .page-content-card .card-content .content-wrapper .row-wrapper.top * {
   transition: 0s;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper {
+.profile-page .container .page-content-card .card-content .picture-wrapper {
   display: flex;
   flex-direction: row;
   -moz-column-gap: 20px;
@@ -128,89 +168,218 @@
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  padding: 0 20px;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper .picture-wrapper {
-  display: grid;
-  place-items: center;
-}
-.profile-page .container .page-content-card .card-content .document-wrapper .picture-wrapper .image-container {
+.profile-page .container .page-content-card .card-content .picture-wrapper .image-container {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   overflow: hidden;
+  position: relative;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper .picture-wrapper .image-container img {
+.profile-page .container .page-content-card .card-content .picture-wrapper .image-container img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper .picture-wrapper .no-image {
+.profile-page .container .page-content-card .card-content .picture-wrapper .image-container .input-trigger-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.profile-page .container .page-content-card .card-content .picture-wrapper .image-container .input-trigger-overlay.round {
+  border-radius: 50%;
+}
+.profile-page .container .page-content-card .card-content .picture-wrapper .image-container .input-trigger-overlay i, .profile-page .container .page-content-card .card-content .picture-wrapper .image-container .input-trigger-overlay span {
+  color: white;
+}
+.profile-page .container .page-content-card .card-content .picture-wrapper .image-container .input-trigger-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.profile-page .container .page-content-card .card-content .picture-wrapper .image-container .input-trigger-overlay:hover i, .profile-page .container .page-content-card .card-content .picture-wrapper .image-container .input-trigger-overlay:hover span {
+  color: #F9D00F;
+}
+.profile-page .container .page-content-card .card-content .picture-wrapper .no-image {
   width: 100%;
   height: 100%;
   background-color: #D4D4D4;
   display: grid;
   place-items: center;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper .picture-wrapper .no-image:hover {
+.profile-page .container .page-content-card .card-content .picture-wrapper .no-image:hover {
   cursor: pointer;
   background-color: #2A2A2A;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper .picture-wrapper .no-image:hover i {
+.profile-page .container .page-content-card .card-content .picture-wrapper .no-image:hover i {
   color: white;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper .picture-wrapper .no-image i {
+.profile-page .container .page-content-card .card-content .picture-wrapper .no-image i {
   font-size: 1.2rem;
   color: black;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper .document-details-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: center;
-  flex-grow: 1;
-  flex-basis: 320px;
-  max-width: 320px;
-}
-.profile-page .container .page-content-card .card-content .document-wrapper .document-details-wrapper .row-wrapper {
+.profile-page .container .page-content-card .card-content .document-wrapper {
+  flex-basis: 100%;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  row-gap: 10px;
   flex-wrap: wrap;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper {
+  flex-grow: 1;
+  flex-basis: 400px;
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 3px !important;
   justify-content: space-between;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper .document-details-wrapper .row-wrapper .row-title {
-  color: black;
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-title {
+  flex-basis: 150px;
+  font-weight: 600;
+  flex-grow: 0.5;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper .document-details-wrapper .row-wrapper .row-items {
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-title small.error {
+  color: red;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .input-trigger-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
   display: flex;
   flex-direction: row;
-  gap: 10px;
   align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
-.profile-page .container .page-content-card .card-content .document-wrapper .document-details-wrapper .row-wrapper .row-items .row-detail {
-  color: #616161;
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .input-trigger-overlay i, .profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .input-trigger-overlay span {
+  color: white;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .input-trigger-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .input-trigger-overlay:hover i, .profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .input-trigger-overlay:hover span {
+  color: #F9D00F;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .image-container {
+  max-width: 400px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .image-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .input-detail {
+  text-align: justify;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items input, .profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items textarea {
+  width: 100%;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items select, .profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .file {
+  max-width: 420px;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items small {
+  margin-left: 10px;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items small.error {
+  color: #F92727;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper textarea {
+  min-height: 110px;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper.top {
+  align-items: flex-start;
+}
+.profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper.top * {
+  transition: 0s;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
   row-gap: 10px;
   align-items: center;
   justify-content: flex-end;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .save-button {
-  background-color: #F92727;
+  background-color: #F9D00F;
   font-weight: 600;
-  color: white;
+  color: black;
   border-radius: 0;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .save-button:hover {
   cursor: pointer;
+  background-color: #F0AE2C;
+  color: white;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .save-button.ico {
+  padding-left: 12px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .save-button.ico span {
+  margin-left: 8px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .edit-button {
+  background-color: transparent;
+  font-weight: 600;
+  color: black;
+  border-radius: 0;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .edit-button:hover {
+  cursor: pointer;
   background-color: #F9D00F;
   color: black;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .edit-button.ico {
+  padding-left: 12px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .edit-button.ico span {
+  margin-left: 8px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .abort-button {
+  background-color: #2A2A2A;
+  font-weight: 600;
+  color: white;
+  border-radius: 0;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .abort-button:hover {
+  cursor: pointer;
+  background-color: #F9D00F;
+  color: black;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .abort-button.ico {
+  padding-left: 12px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .abort-button.ico span {
+  margin-left: 8px;
 }/*# sourceMappingURL=profile-page.css.map */

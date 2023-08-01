@@ -549,6 +549,18 @@
   background-color: #DD3333;
 }
 
+.main-form-input {
+  padding: 5px 10px;
+  background-color: #EDF0F3;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+.main-form-input:active, .main-form-input:focus, .main-form-input:hover {
+  background-color: #e7ebef;
+}
+
 .confirmation-modal .modal-dialog .modal-content {
   border-radius: 4px;
 }

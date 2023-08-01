@@ -130,4 +130,10 @@
   cursor: pointer;
   background-color: #2A2A2A;
   color: #F92727;
+}
+.registration .container .registration-content-body .button-wrapper .submit-button.ico {
+  padding-left: 12px;
+}
+.registration .container .registration-content-body .button-wrapper .submit-button.ico span {
+  margin-left: 8px;
 }/*# sourceMappingURL=registration.css.map */

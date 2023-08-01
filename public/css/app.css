@@ -496,6 +496,12 @@ body {
   background-color: #F92727;
   color: black;
 }
+.app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-primary.ico {
+  padding-left: 12px;
+}
+.app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-primary.ico span {
+  margin-left: 8px;
+}
 .app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary {
   background-color: white;
   font-weight: 600;
@@ -507,6 +513,12 @@ body {
   cursor: pointer;
   background-color: #F9D00F;
   color: black;
+}
+.app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary.ico {
+  padding-left: 12px;
+}
+.app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary.ico span {
+  margin-left: 8px;
 }
 .app .row-container {
   display: flex;
@@ -1358,6 +1370,12 @@ body {
   background-color: white;
   color: black;
 }
+#auth_modal .modal-dialog .modal-content .login-button.ico, #umkm_bank_account_modal .modal-dialog .modal-content .login-button.ico {
+  padding-left: 12px;
+}
+#auth_modal .modal-dialog .modal-content .login-button.ico span, #umkm_bank_account_modal .modal-dialog .modal-content .login-button.ico span {
+  margin-left: 8px;
+}
 #auth_modal .modal-dialog .modal-content .login-button:hover, #umkm_bank_account_modal .modal-dialog .modal-content .login-button:hover {
   cursor: pointer;
   background-color: #2A2A2A;
@@ -1506,6 +1524,12 @@ body {
   background-color: #F0AE2C;
   color: white;
 }
+.btn-default-orange.ico {
+  padding-left: 12px;
+}
+.btn-default-orange.ico span {
+  margin-left: 8px;
+}
 
 .btn-default-red {
   background-color: #F92727;
@@ -1518,6 +1542,12 @@ body {
   background-color: #fb6363;
   color: white;
 }
+.btn-default-red.ico {
+  padding-left: 12px;
+}
+.btn-default-red.ico span {
+  margin-left: 8px;
+}
 
 .btn-default-dark {
   background-color: #2A2A2A;
@@ -1529,6 +1559,12 @@ body {
   cursor: pointer;
   background-color: #494949;
   color: white;
+}
+.btn-default-dark.ico {
+  padding-left: 12px;
+}
+.btn-default-dark.ico span {
+  margin-left: 8px;
 }
 
 @media screen and (max-width: 820px) {

@@ -10,12 +10,27 @@ entity users {
     * nip BIGINT UNIQUE
     * full_name STRING
     * gender STRING
-    * birth_date DATE
+    * birth DATE
     * address STRING
     * ktp STRING
     * kk STRING
     * photo STRING
     password STRING
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
+entity activation_log {
+    * id BIGINT PRIMARY KEY
+    --
+    * status STRING
+    ' acc
+    ' rejected
+    ' revoked
+    * message TEXT
+    --
+    * user_id UNSIGNED_BIGINT FOUREIGN(users.id)
     --
     * created_at DATETIME
     * updated_at DATETIME
@@ -70,6 +85,8 @@ entity support_program_members {
 }
 
 users ||--o{ umkm
+users ||--o{ activation_log
+
 support_programs ||--o{ support_program_members
 umkm ||--o{ support_program_members
 
