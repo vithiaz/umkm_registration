@@ -16,7 +16,7 @@
 }
 .page-verify-card.active {
   padding: 15px 10px;
-  max-height: 100vh;
+  max-height: 500vh;
 }
 .page-verify-card.information .row-wrapper {
   display: flex;
@@ -288,10 +288,27 @@
   letter-spacing: 1px;
   transition: 0.2s;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .page-verify-card .button-wrapper .btn:hover {
   background-color: #b79805;
   color: black;
+}
+.page-verify-card .button-wrapper .btn.ico span {
+  margin-left: 4px;
+}
+.page-verify-card .button-wrapper .btn.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+}
+.page-verify-card .button-wrapper .btn.hovered:hover span {
+  max-width: 200vw;
 }
 .page-verify-card .button-wrapper .btn.reject {
   background-color: #F92727;
@@ -302,10 +319,27 @@
   letter-spacing: 1px;
   transition: 0.2s;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .page-verify-card .button-wrapper .btn.reject:hover {
   background-color: #ce0606;
   color: black;
+}
+.page-verify-card .button-wrapper .btn.reject.ico span {
+  margin-left: 4px;
+}
+.page-verify-card .button-wrapper .btn.reject.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+}
+.page-verify-card .button-wrapper .btn.reject.hovered:hover span {
+  max-width: 200vw;
 }
 .page-verify-card .button-wrapper .btn.abort {
   background-color: #2A2A2A;
@@ -316,10 +350,30 @@
   letter-spacing: 1px;
   transition: 0.2s;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .page-verify-card .button-wrapper .btn.abort:hover {
   background-color: #040404;
   color: black;
+}
+.page-verify-card .button-wrapper .btn.abort.ico span {
+  margin-left: 4px;
+}
+.page-verify-card .button-wrapper .btn.abort.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+}
+.page-verify-card .button-wrapper .btn.abort.hovered:hover span {
+  max-width: 200vw;
+}
+.page-verify-card .button-wrapper .btn.abort:hover {
+  color: #F9D00F;
 }
 .page-verify-card .message-container {
   padding: 0;
@@ -341,4 +395,25 @@
 .page-verify-card .message-container small.error {
   margin-right: 10px;
   color: #F92727;
+}
+.page-verify-card .log-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 0vh;
+  transition: all ease-in-out 0.3s;
+  overflow: hidden;
+}
+.page-verify-card .log-wrapper.active {
+  max-height: 200vh;
+  padding: 0 20px;
+}
+.page-verify-card .log-wrapper .title {
+  font-weight: 600;
+}
+.page-verify-card .log-wrapper table {
+  font-size: 0.9rem;
 }/*# sourceMappingURL=account-verification-page.css.map */

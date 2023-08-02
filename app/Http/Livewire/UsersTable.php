@@ -176,7 +176,11 @@ final class UsersTable extends PowerGridComponent
                     //    ->emit('deleteUser', ['id']),
             ];
         } else {
-            $actions = [];
+            $actions = [
+                Button::make('details', 'Detail')
+                       ->class('btn table-button-decline')
+                       ->emit('setVerifyState', ['id']),
+            ];
         }
         
         return $actions;

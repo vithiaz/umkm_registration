@@ -35,11 +35,41 @@ $BoxShadow: 0px 3px 6px rgba(0,0,0,0.2);
     letter-spacing: 1px;
     transition: 0.2s;
     font-size: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
 
     &:hover {
         background-color: darken($bgCol, 15%);
         color: darken($txCol, 100%);
     }
+    
+    &.ico {
+
+        span {
+            margin-left: 4px;
+        }
+    }
+
+    &.hovered {
+        
+        span {
+            display: block;
+            max-width: 0vw;
+            overflow: hidden;
+            transition: max-width ease-in-out 0.5s;
+            white-space: nowrap;
+        }
+
+        &:hover {
+            
+            span {
+                max-width: 200vw;
+            }
+        }
+    }
+
 }
 
 @mixin button-default($bg: black, $color: white, $bg_hover: white, $color_hover: black) {

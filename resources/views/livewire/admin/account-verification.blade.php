@@ -94,15 +94,52 @@
             </div>
 
             <div class="button-wrapper">
+                <button id="log-wrapper-toggler" class="btn abort ico hovered">
+                    <i class="fa-solid fa-list"></i>
+                    <span>riwayat aktivasi</span>
+                </button>
+
                 @if ($this->reject_state != true)
-                    <button wire:click='verify_request' class="btn">Verifikasi</button>
-                    <button wire:click='set_reject_state({{ 1 }})' class="btn reject">Tolak</button>                    
+                    @if ($this->verifyAccount && $this->verifyAccount->active_status != 'active')
+                        <button wire:click='verify_request' class="btn">Verifikasi</button>
+                        <button wire:click='set_reject_state({{ 1 }})' class="btn reject">Tolak</button>                    
+                    @endif
                 @else
                     <button style="display: none"></button>
                     <button wire:click='set_reject_state({{ 0 }})' class="btn abort">Batalkan</button>
                     <button wire:click='reject_request' class="btn reject">Tolak</button>
                 @endif
             </div>
+
+            @if ($this->verifyAccount)
+                <div class="log-wrapper">
+                    <span class="title">Riwayat Permintaan Aktivasi</span>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Jam</th>
+                                <th>Status</th>
+                                <th>Pesan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($this->verifyAccount->activation_log->sortByDesc('created_at') as $log)
+                                <tr>
+                                    <td>{{ $this->format_datetime($log->created_at, 'd/m/Y') }}</td>
+                                    <td>{{ $this->format_datetime($log->created_at, 'H:i') }}</td>
+                                    <td>{{ $log->status }}</td>
+                                    <td>{{ $log->message }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="4">Belum ada riwayat aktivasi</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            @endif
             
         </div>
 
@@ -129,11 +166,14 @@
 
     // On click table details buttons
     $( window ).on('scroll-up', function () {
-        
-        // var href = $('#verify-page-title').attr('href');
-        window.location.href = '#verify-page-title';
-
+        window.location.href = '#verify-page-title'
     })
+
+    
+    $('#log-wrapper-toggler').click(function () {
+        $('.log-wrapper').toggleClass('active')
+    })
+
     
 </script>
 @endpush

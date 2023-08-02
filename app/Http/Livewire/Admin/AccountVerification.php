@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\User;
 use Livewire\Component;
 use App\Models\ActivationLog;
+use Illuminate\Support\Carbon;
 
 class AccountVerification extends Component
 {
@@ -40,19 +41,22 @@ class AccountVerification extends Component
     }
 
     public function set_status_filter($status) {
+        $this->reject_state = false;
+        $this->reject_message = '';
+        $this->verifyAccount = null;
+
         $this->status_filter = $status;
         $this->emitTo('users-table', 'setStatusFilter', $status);
     }
 
 
     public function setVerifyData($userID) {
-        $verifyUser = User::find($userID);
+        $verifyUser = User::with('activation_log')->find($userID);
         if ($verifyUser) {
             $this->verifyAccount = $verifyUser;
             $this->dispatchBrowserEvent('scroll-up');
         }
     }
-
 
 
     public function set_reject_state($status) {
@@ -107,6 +111,10 @@ class AccountVerification extends Component
     
             $this->verifyAccount = null;    
         }
+    }
+
+    public function format_datetime($datetime, $format) {
+        return Carbon::parse($datetime)->format($format);
     }
 
 }

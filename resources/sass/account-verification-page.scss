@@ -19,7 +19,7 @@
 
     &.active {
         padding: 15px 10px;
-        max-height: 100vh;
+        max-height: 500vh;
     }
 
     &.information {
@@ -357,6 +357,10 @@
             
             &.abort {
                 @include box-button($PrimaryDark, white);
+
+                &:hover {
+                    color: $LightenOrange;
+                }
             }
         }
     }
@@ -386,6 +390,32 @@
             margin-right: 10px;
             color: $PrimaryRed;
         }
+    }
+
+    .log-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+        height: fit-content;
+        max-height: 0vh;
+        transition: all ease-in-out 0.3s;
+        overflow: hidden;
+        
+        &.active {
+            max-height: 200vh;
+            padding: 0 20px;
+        }
+
+        .title {
+            font-weight: 600;
+        }
+
+        table {
+            font-size: 0.9rem;
+        }
+
+
     }
 
 }

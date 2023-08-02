@@ -36,10 +36,27 @@
   letter-spacing: 1px;
   transition: 0.2s;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .homepage .top-navigator .container .button-container .nav-button:hover {
   background-color: #ce0606;
   color: black;
+}
+.homepage .top-navigator .container .button-container .nav-button.ico span {
+  margin-left: 4px;
+}
+.homepage .top-navigator .container .button-container .nav-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+}
+.homepage .top-navigator .container .button-container .nav-button.hovered:hover span {
+  max-width: 200vw;
 }
 .homepage .top-navigator .container .button-container .nav-button-inverse {
   background-color: rgba(255, 255, 255, 0);
@@ -50,10 +67,27 @@
   letter-spacing: 1px;
   transition: 0.2s;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .homepage .top-navigator .container .button-container .nav-button-inverse:hover {
   background-color: rgba(217, 217, 217, 0);
   color: black;
+}
+.homepage .top-navigator .container .button-container .nav-button-inverse.ico span {
+  margin-left: 4px;
+}
+.homepage .top-navigator .container .button-container .nav-button-inverse.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+}
+.homepage .top-navigator .container .button-container .nav-button-inverse.hovered:hover span {
+  max-width: 200vw;
 }
 .homepage .top-navigator .container .button-container .logged-user {
   color: white;
@@ -437,11 +471,28 @@
   letter-spacing: 1px;
   transition: 0.2s;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
   border-radius: 0;
 }
 .homepage section.login-register .section-content-wrapper .content-box.lighter .container .dark-button:hover {
   background-color: #040404;
   color: black;
+}
+.homepage section.login-register .section-content-wrapper .content-box.lighter .container .dark-button.ico span {
+  margin-left: 4px;
+}
+.homepage section.login-register .section-content-wrapper .content-box.lighter .container .dark-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+}
+.homepage section.login-register .section-content-wrapper .content-box.lighter .container .dark-button.hovered:hover span {
+  max-width: 200vw;
 }
 .homepage section.login-register .section-content-wrapper .content-box.lighter .container .dark-button:hover {
   background-color: white;
@@ -477,10 +528,27 @@
   letter-spacing: 1px;
   transition: 0.2s;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .homepage section.login-register .section-content-wrapper .content-box.darker .container .light-button:hover {
   background-color: #b79805;
   color: black;
+}
+.homepage section.login-register .section-content-wrapper .content-box.darker .container .light-button.ico span {
+  margin-left: 4px;
+}
+.homepage section.login-register .section-content-wrapper .content-box.darker .container .light-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+}
+.homepage section.login-register .section-content-wrapper .content-box.darker .container .light-button.hovered:hover span {
+  max-width: 200vw;
 }
 .homepage section.login-register .section-content-wrapper .content-box.darker .container .light-button:hover {
   background-color: white;
