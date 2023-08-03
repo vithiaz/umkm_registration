@@ -41,21 +41,8 @@ final class UmkmsTable extends PowerGridComponent
     public function verifyUmkm($data) {
         $umkm_id = $data[0];
 
-        $Umkm = Umkm::find($umkm_id);
-        if ($Umkm) {
-            $Umkm->status = 'verified';
-            
-            if ($Umkm->save()) {
-                $msg = ['success' => 'UMKM / Koperasi diverifikasi'];
-            } else {
-                $msg = ['danger' => 'Terjadi Kesalahan'];
-            }
-            $this->dispatchBrowserEvent('display-message', $msg);
-            $this->fillData();
-        }
-
+        $this->emitTo('umkm-verification', 'setVerifyData', $umkm_id);
     }
-
 
 
     public function setUp(): array
@@ -65,13 +52,14 @@ final class UmkmsTable extends PowerGridComponent
             Footer::make()
                 ->showPerPage()
                 ->showRecordCount(),
-            Detail::make()
-                ->view('components.umkms-table-details')
-                ->showCollapseIcon(),
+            // Detail::make()
+            //     ->view('components.umkms-table-details')
+            //     ->showCollapseIcon(),
 
         ];
     }
 
+    public string $sortField = 'umkm.updated_at';
 
     public function datasource(): Builder
     {
@@ -99,6 +87,8 @@ final class UmkmsTable extends PowerGridComponent
             ->addColumn('owner_user', fn (Umkm $model) => $model->user->full_name)
             ->addColumn('owner_address', fn (Umkm $model) => $model->user->address)
             ->addColumn('recomendation_docs')
+            ->addColumn('updated_at')
+            ->addColumn('updated_at_formatted', fn (Umkm $model) => Carbon::parse($model->updated_at)->format('d/m/Y'))
             ->addColumn('created_at')
             ->addColumn('created_at_formatted', fn (Umkm $model) => Carbon::parse($model->created_at)->format('d/m/Y H:i:s'));
     }
@@ -109,8 +99,12 @@ final class UmkmsTable extends PowerGridComponent
             Column::make('ID', 'id')
                 ->searchable()
                 ->hidden(),
-
-            Column::make('Tipe', 'type')
+            
+            Column::make('Tanggal', 'updated_at_formatted', 'updated_at')
+                ->sortable()
+                ->searchable(),
+                
+            Column::make('Jenis', 'type')
                 ->searchable()
                 ->sortable(),
 
@@ -142,16 +136,22 @@ final class UmkmsTable extends PowerGridComponent
 
     public function actions(): array
     {
-        if ($this->status == 'pending') {
-            $actions = [
-                   Button::make('verify', 'Verifikasi')
-                       ->class('btn table-button-confirm')
-                       ->emit('verifyUmkm', ['id']),
-            ];
-        } else {
-            $actions = [];
-        }
+        // if ($this->status == 'pending') {
+        //     $actions = [
+        //            Button::make('details', 'Detail')
+        //                ->class('btn table-button-confirm')
+        //                ->emit('verifyUmkm', ['id']),
+        //     ];
+        // } else {
+        //     $actions = [];
+        // }
         
+        $actions = [
+                Button::make('details', 'Detail')
+                    ->class('btn table-button-confirm')
+                    ->emit('verifyUmkm', ['id']),
+        ];
+
         return $actions;
     }
 

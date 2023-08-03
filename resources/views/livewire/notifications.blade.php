@@ -46,12 +46,12 @@
         <div class="notification-card-wrapper">
             <span class="section-title">Dibaca</span>
             <div class="card-wrapper">
-                @forelse (range(0,4) as $notification)
+                @forelse ($this->Notifications as $notification)
                     <div class="page-card">
                         <div class="overlay"></div>
         
                         <div class="head-wrapper">
-                            <div class="title">Veniam pariatur laboris eiusmod consequat excepteur.</div>
+                            <div class="title">{{ $notification->title }}</div>
                             <button class="btn expand">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </button>
@@ -59,10 +59,9 @@
                                 <i class="fa-solid fa-window-minimize"></i>
                             </button>
                         </div>
-                        <span class="date">01/01/2023 18:30</span>
+                        <span class="date">{{ $notification->created_at }}</span>
                         <div class="body-container">
-                            <p>Pengajuan Aktivasi UMKM Dentaloc anda ditolak</p>
-                            <p>Harap melakukan upload surat keterangan dari kelurahan, karena data yang diupoad tidak bisa dibaca</p>
+                            {!! $notification->body !!}
                         </div>
                     </div>
                 @empty

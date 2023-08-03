@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\UmkmImage;
+use App\Models\UmkmActivationLog;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -29,6 +30,10 @@ class Umkm extends Model
 
     public function umkm_images() {
         return $this->hasMany(UmkmImage::class, 'umkm_id', 'id');
+    }
+
+    public function activation_log() {
+        return $this->hasMany(UmkmActivationLog::class, 'umkm_id', 'id');
     }
 
 }

@@ -105,7 +105,7 @@
   flex-direction: row;
   -moz-column-gap: 20px;
        column-gap: 20px;
-  row-gap: 10px;
+  row-gap: 5px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -262,7 +262,7 @@
   flex-direction: row;
   -moz-column-gap: 20px;
        column-gap: 20px;
-  row-gap: 10px;
+  row-gap: 5px;
   flex-wrap: wrap;
   align-items: center;
 }

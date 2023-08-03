@@ -6,7 +6,7 @@
 
     <div class="content">
         <a href="#" class="logo-hero">
-            KEMENKOPUKM
+            DISKOPUKM
         </a>
         <span class="page-hero-title">
             Admin Dashboard

@@ -56,6 +56,21 @@ entity umkm {
     * updated_at DATETIME
 }
 
+entity umkm_activation_log {
+    * id BIGINT PRIMARY KEY
+    --
+    * status STRING
+    ' acc
+    ' rejected
+    ' revoked
+    * message TEXT
+    --
+    * umkm_id UNSIGNED_BIGINT FOUREIGN(umkm_id)
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
 entity umkm_images{
     * id BIGINT PRIMARY KEY
     --
@@ -95,7 +110,7 @@ entity support_program_members {
     * updated_at DATETIME
 }
 
-entity notifications {
+entity user_notifications {
     * id BIGINT PRIMARY KEY
     --
     * title STRING
@@ -112,7 +127,7 @@ entity notifications {
 
 
 
-users ||--o{ notifications
+users ||--o{ user_notifications
 users ||--o{ umkm
 users ||--o{ activation_log
 
@@ -120,5 +135,6 @@ support_programs ||--o{ support_program_members
 umkm ||--o{ support_program_members
 
 umkm ||--o{ umkm_images
+umkm ||--o{ umkm_activation_log
 
 @enduml

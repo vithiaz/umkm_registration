@@ -6,6 +6,7 @@ use App\Models\User;
 use Livewire\Component;
 use App\Models\ActivationLog;
 use Illuminate\Support\Carbon;
+use App\Models\UserNotification;
 
 class AccountVerification extends Component
 {
@@ -25,6 +26,10 @@ class AccountVerification extends Component
     
     protected $rules = [
         'reject_message' => 'required|string'
+    ];
+
+    protected $messages = [
+        'reject_message.required' => 'Pesan penolakan harus diisi',
     ];
 
     public function mount() {
@@ -78,6 +83,18 @@ class AccountVerification extends Component
         $activationLog->message = $this->reject_message;
         $activationLog->user_id = $reject_user_id;
 
+        // Create Notification
+        $notificationBody = "
+            <p>Pengajuan Aktivasi akun anda ditolak</p>
+            <p>". $this->reject_message ."</p>
+        ";
+        $notification = new UserNotification;
+        $notification->title = 'Penolakan Aktivasi Akun';
+        $notification->body = $notificationBody;
+        $notification->is_read = false;
+        $notification->user_id = $this->verifyUser->id;
+        $notification->save();
+
         if ($activationLog->save()) {
             $msg = ['info' => 'Verifikasi Ditolak'];
         } else {
@@ -99,9 +116,22 @@ class AccountVerification extends Component
 
             $activationLog = new ActivationLog;
             $activationLog->status = 'acc';
-            $activationLog->message = 'Berkas diterima';
+            $activationLog->message = 'Berkas diterima dan akun diverifikasi';
             $activationLog->user_id = $this->verifyAccount->id;
             $activationLog->save();
+
+            // Create Notification
+            $notificationBody = "
+                <p>Pengajuan Aktivasi akun anda diterima, anda sekarang dapat melakukan registrasi Koperasi atau UMKM.</p>
+                <p>Silahkan mengakses menu Pendaftaran untuk registrasi Koperasi atau UMKM anda, atau klik <a href=\"/registration\">disini</a>.</p>
+                <p>Terima kasih telah mendaftar</p>
+            ";
+            $notification = new UserNotification;
+            $notification->title = 'Pengajuan Aktivasi Akun Diterima';
+            $notification->body = $notificationBody;
+            $notification->is_read = false;
+            $notification->user_id = $this->verifyUser->id;
+            $notification->save();
 
             $msg = ['success' => 'Pengajuan Diverifikasi'];
             $this->dispatchBrowserEvent('display-message', $msg);

@@ -87,6 +87,7 @@
             </div>
             
             <div class="message-container @if($this->reject_state) active @endif">
+                <span class="title">Tolak Pengajuan</span>
                 <textarea wire:model='reject_message' class="main-form-input" placeholder="Pesan alasan penolakan pendaftaran akun ..." rows="6"></textarea>
                 @error('reject_message')
                     <small class="error">{{ $message }}</small>
