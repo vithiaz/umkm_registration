@@ -15,7 +15,7 @@ class UmkmRegistration extends Component
     
     public function mount() {
         $this->User = Auth::user();
-        $this->Umkms = Umkm::where('owner_user', '=', $this->User->id)->get();
+        $this->Umkms = Umkm::with(['umkm_images'])->where('owner_user', '=', $this->User->id)->get();
     }
 
     public function render()

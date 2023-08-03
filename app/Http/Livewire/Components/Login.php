@@ -21,7 +21,8 @@ class Login extends Component
     ];
 
     protected $messages = [
-        'nip.required' => 'NIP tidak boleh kosong.',
+        'nip.required' => 'NIK tidak boleh kosong.',
+        'nip.numeric' => 'NIK harus berupa angka.',
         'birth.required' => 'Tanggal Lahir tidak boleh kosong.',
     ];
 
@@ -50,7 +51,7 @@ class Login extends Component
         } else {
             $this->nip = '';
             $this->birth = '';
-            session()->flash('error', 'NIP tidak di temukan!');
+            session()->flash('error', 'NIK tidak terdaftar!');
         }
     }
 }

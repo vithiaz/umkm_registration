@@ -32,7 +32,48 @@
             @enderror
         </div>
     </div>
+    <div class="row-wrapper picture-form">
+        <span class="input-title">Tambahkan Gambar</span>
+        <input wire:model='images' type="file" id="umkm-picture-input" style="display: none" multiple>
+        <div class="input-items image-wrapper">
+            <div class="input-button-container">
+                <button type="button" id="umkm-picture-input-button" class="btn submit-button ico hovered">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>upload</span>
+                </button>
+                
+                @error('images')
+                    <span class="error">{{ $message }}</span>
+                @else
+                    @if ($this->store_images)
+                        <span class="info">{{ count($this->store_images) }} gambar diupload</span>
+                    @endif
+                @enderror
+                
+            </div>
+            @if ($this->store_images)
+                @foreach ($this->store_images as $index => $image)
+                    <div wire:click='delete_stored_image({{ $index }})' class="image-container hovered">
+                        <div class="hovered-overlay">
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                        <img src="{{ $image->temporaryUrl() }}" alt="upload_umkm_image_{{ $index }}">
+                    </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
     <div class="button-wrapper">
         <button class="btn submit-button">Ajukan Pendaftaran</button>
     </div>
 </form>
+
+@push('script')
+<script>
+
+    $('#umkm-picture-input-button').click(function () {
+        $('#umkm-picture-input').click()
+    })
+
+</script>    
+@endpush

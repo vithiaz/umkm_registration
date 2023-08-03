@@ -489,36 +489,60 @@ body {
   background-color: #F9D00F;
   font-weight: 600;
   color: white;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-primary:hover {
-  cursor: pointer;
   background-color: #F92727;
   color: black;
 }
-.app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-primary.ico {
-  padding-left: 12px;
-}
 .app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-primary.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+.app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-primary.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-primary.hovered:hover span {
+  max-width: 200vw;
 }
 .app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary {
   background-color: white;
   font-weight: 600;
   color: #F9D00F;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
   border: 1px solid #F9D00F;
 }
 .app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary:hover {
-  cursor: pointer;
   background-color: #F9D00F;
   color: black;
 }
-.app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary.ico {
-  padding-left: 12px;
-}
 .app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+.app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary.hovered:hover span {
+  max-width: 200vw;
 }
 .app .row-container {
   display: flex;
@@ -1360,21 +1384,33 @@ body {
   background-color: black;
   font-weight: 600;
   color: white;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
   padding-left: 30px;
   padding-right: 30px;
   margin: 5px 0;
 }
 #auth_modal .modal-dialog .modal-content .login-button:hover, #umkm_bank_account_modal .modal-dialog .modal-content .login-button:hover {
-  cursor: pointer;
   background-color: white;
   color: black;
 }
-#auth_modal .modal-dialog .modal-content .login-button.ico, #umkm_bank_account_modal .modal-dialog .modal-content .login-button.ico {
-  padding-left: 12px;
-}
 #auth_modal .modal-dialog .modal-content .login-button.ico span, #umkm_bank_account_modal .modal-dialog .modal-content .login-button.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+#auth_modal .modal-dialog .modal-content .login-button.hovered span, #umkm_bank_account_modal .modal-dialog .modal-content .login-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+#auth_modal .modal-dialog .modal-content .login-button.hovered:hover span, #umkm_bank_account_modal .modal-dialog .modal-content .login-button.hovered:hover span {
+  max-width: 200vw;
 }
 #auth_modal .modal-dialog .modal-content .login-button:hover, #umkm_bank_account_modal .modal-dialog .modal-content .login-button:hover {
   cursor: pointer;
@@ -1517,54 +1553,90 @@ body {
   background-color: #F9D00F;
   font-weight: 600;
   color: white;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .btn-default-orange:hover {
-  cursor: pointer;
   background-color: #F0AE2C;
   color: white;
 }
-.btn-default-orange.ico {
-  padding-left: 12px;
-}
 .btn-default-orange.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+.btn-default-orange.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.btn-default-orange.hovered:hover span {
+  max-width: 200vw;
 }
 
 .btn-default-red {
   background-color: #F92727;
   font-weight: 600;
   color: white;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .btn-default-red:hover {
-  cursor: pointer;
   background-color: #fb6363;
   color: white;
 }
-.btn-default-red.ico {
-  padding-left: 12px;
-}
 .btn-default-red.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+.btn-default-red.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.btn-default-red.hovered:hover span {
+  max-width: 200vw;
 }
 
 .btn-default-dark {
   background-color: #2A2A2A;
   font-weight: 600;
   color: white;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .btn-default-dark:hover {
-  cursor: pointer;
   background-color: #494949;
   color: white;
 }
-.btn-default-dark.ico {
-  padding-left: 12px;
-}
 .btn-default-dark.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+.btn-default-dark.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.btn-default-dark.hovered:hover span {
+  max-width: 200vw;
 }
 
 @media screen and (max-width: 820px) {

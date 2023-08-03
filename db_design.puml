@@ -47,9 +47,20 @@ entity umkm {
     * status STRING
     ' verified
     ' pending
+    ' rejected
     permission_docs STRING
     --
     * owner_user UNSIGNED_BIGINT FOUREIGN(users.id)
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
+entity umkm_images{
+    * id BIGINT PRIMARY KEY
+    --
+    * image STRING
+    * umkm_id UNSIGNED_BIGINT FOUREIGN(umkm.id)
     --
     * created_at DATETIME
     * updated_at DATETIME
@@ -84,10 +95,30 @@ entity support_program_members {
     * updated_at DATETIME
 }
 
+entity notifications {
+    * id BIGINT PRIMARY KEY
+    --
+    * title STRING
+    * body TEXT
+    * is_read BOOLEAN
+    --
+    * user_id UNSIGNED_BIGINT FOUREIGN(users.id)
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+
+}
+
+
+
+
+users ||--o{ notifications
 users ||--o{ umkm
 users ||--o{ activation_log
 
 support_programs ||--o{ support_program_members
 umkm ||--o{ support_program_members
+
+umkm ||--o{ umkm_images
 
 @enduml

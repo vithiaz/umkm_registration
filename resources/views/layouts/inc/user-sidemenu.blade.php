@@ -56,6 +56,18 @@
                     </a>
                 </li>
 
+                <li
+                    @if ( \Request::route()->getName() == 'notifications')
+                        class="nav-item active"
+                    @else
+                        class="nav-item"
+                    @endif
+                    >
+                    <a href="{{ route('notifications') }}" class="main-item">
+                        <span class="nav-item-main">Notifikasi</span>
+                    </a>
+                </li>
+
 
                 {{-- <li
                     @if (   \Request::route()->getName() == 'cart-page' || 

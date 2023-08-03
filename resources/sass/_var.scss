@@ -76,19 +76,42 @@ $BoxShadow: 0px 3px 6px rgba(0,0,0,0.2);
     background-color: $bg;
     font-weight: 600;
     color: $color;
-    border-radius: 0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
 
     &:hover {
-        cursor: pointer;
         background-color: $bg_hover;
         color: $color_hover;
     }
     
     &.ico {
-        padding-left: 12px;
 
         span {
-            margin-left: 8px;
+            margin-left: 4px;
+        }
+    }
+
+
+    &.hovered {
+        
+        span {
+            display: block;
+            max-width: 0vw;
+            overflow: hidden;
+            transition: max-width ease-in-out 0.5s;
+            white-space: nowrap;
+            margin: 0;
+            text-indent: 10px;
+        }
+
+        &:hover {
+            
+            span {
+                max-width: 200vw;
+            }
         }
     }
 
@@ -172,7 +195,8 @@ $BoxShadow: 0px 3px 6px rgba(0,0,0,0.2);
 @mixin form-row-wrapper() {
     display: flex;
     flex-direction: row;
-    column-gap: 10px;
+    column-gap: 20px;
+    row-gap: 10px;
     flex-wrap: wrap;
     align-items: center;
 

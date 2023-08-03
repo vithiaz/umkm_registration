@@ -32,6 +32,21 @@ class Registration extends Component
         'photo' => 'required|image|max:2048',
     ];
 
+    protected $messages  = [
+        'nip.required' => 'NIK tidak boleh kosong',
+        'nip.numeric' => 'NIK hanya boleh diisi angka',
+        'full_name.required' => 'Nama Lengkap tidak boleh kosong',
+        'birth.required' => 'Tanggal Lahir tidak boleh kosong',
+        'gender.required' => 'Jenis Kelamin tidak boleh kosong',
+        'address.required' => 'Alamat tidak boleh kosong',
+        'ktp.required' => 'Foto KTP harus di upload',
+        'kk.required' => 'Foto KK harus di upload',
+        'photo.required' => 'Pass Foto harus di upload',
+        'ktp.image' => 'Foto KTP harus berupa gambar',
+        'kk.image' => 'Foto KK harus berupa gambar',
+        'photo.image' => 'Pass Foto harus berupa gambar',
+    ];
+
     public function mount() {
         $this->nip = '';
         $this->full_name = '';

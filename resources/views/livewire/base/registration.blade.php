@@ -17,9 +17,9 @@
                 <div class="content-row-wrapper">
                     <div class="main">
                         <div class="row-wrapper">
-                            <span class="input-title">NIP</span>
+                            <span class="input-title">NIK</span>
                             <div class="input-items">
-                                <input wire:model='nip' type="number" class="main-form-input" placeholder="NIP">
+                                <input wire:model='nip' type="number" class="main-form-input" placeholder="NIK">
                                 @error('nip')
                                     <small class="error">{{ $message }}</small>
                                 @enderror

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Base\Homepage;
+use App\Http\Livewire\Notifications;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\UmkmVerification;
 use App\Http\Livewire\Base\Registration;
@@ -28,11 +29,12 @@ Route::get('/logout', function () {
 // User Middleware
 Route::middleware('auth')->group(function () {
     Route::get('/profile-settings', ProfileSettings::class)->name('profile');
+    Route::get('/programs', UmkmPrograms::class)->name('umkm-programs');        
+    Route::get('/notifications', Notifications::class)->name('notifications');        
     
     Route::middleware(['is_verified'])->group(function () {
         Route::get('/registration', UmkmRegistration::class)->name('umkm-registration');
     });
-    Route::get('/programs', UmkmPrograms::class)->name('umkm-programs');        
     
 });
 

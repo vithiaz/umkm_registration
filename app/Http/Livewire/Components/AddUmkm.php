@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Components;
 
 use App\Models\Umkm;
 use Livewire\Component;
+use App\Models\UmkmImage;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,6 +16,8 @@ class AddUmkm extends Component
     public $name;
     public $type;
     public $recomendation_docs;
+    public $images = [];
+    public $store_images;
 
     protected $listeners = ['refreshComponent' => '$refresh'];
     
@@ -24,10 +27,19 @@ class AddUmkm extends Component
         'recomendation_docs' => 'required|image|max:2048',
     ];
 
+    public function updatedImages() {
+        $this->validate([
+            'images.*' => 'image',
+        ]);
+        $this->store_images = array_merge($this->store_images, $this->images);
+        $this->images = [];
+    }
+
     public function mount() {
         $this->name = '';
         $this->type = '';
         $this->recomendation_docs = null;
+        $this->store_images = [];
     }
     
     public function render()
@@ -49,14 +61,32 @@ class AddUmkm extends Component
         $umkm->recomendation_docs = $recomendation_docs_path;
 
         $umkm->save();
-        
+
+        // Store Umkm Images
+        if ($this->store_images) {
+            foreach($this->store_images as $image) {
+                $image_path = $image->store('umkm_images');
+                
+                $UmkmImage = new UmkmImage;
+                $UmkmImage->image = $image_path;
+                $UmkmImage->umkm_id = $umkm->id;
+                $UmkmImage->save();
+            }
+        }
+
         $msg = ['success' => $this->type . ' dalam pengajuan'];
         $this->dispatchBrowserEvent('display-message', $msg);
 
         $this->name = '';
         $this->type = '';
         $this->recomendation_docs = null;
+        $this->images = [];
+        $this->store_images = [];
         $this->emit('refreshComponent');
+    }
+
+    public function delete_stored_image($index) {
+        unset($this->store_images[$index]);
     }
 
 }

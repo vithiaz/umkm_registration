@@ -336,50 +336,86 @@
   background-color: #F9D00F;
   font-weight: 600;
   color: black;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .save-button:hover {
-  cursor: pointer;
   background-color: #F0AE2C;
   color: white;
 }
-.profile-page .container .page-content-card .card-content .button-wrapper .save-button.ico {
-  padding-left: 12px;
-}
 .profile-page .container .page-content-card .card-content .button-wrapper .save-button.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .save-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .save-button.hovered:hover span {
+  max-width: 200vw;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .edit-button {
   background-color: transparent;
   font-weight: 600;
   color: black;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .edit-button:hover {
-  cursor: pointer;
   background-color: #F9D00F;
   color: black;
 }
-.profile-page .container .page-content-card .card-content .button-wrapper .edit-button.ico {
-  padding-left: 12px;
-}
 .profile-page .container .page-content-card .card-content .button-wrapper .edit-button.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .edit-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .edit-button.hovered:hover span {
+  max-width: 200vw;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .abort-button {
   background-color: #2A2A2A;
   font-weight: 600;
   color: white;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .abort-button:hover {
-  cursor: pointer;
   background-color: #F9D00F;
   color: black;
 }
-.profile-page .container .page-content-card .card-content .button-wrapper .abort-button.ico {
-  padding-left: 12px;
-}
 .profile-page .container .page-content-card .card-content .button-wrapper .abort-button.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .abort-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.profile-page .container .page-content-card .card-content .button-wrapper .abort-button.hovered:hover span {
+  max-width: 200vw;
 }/*# sourceMappingURL=profile-page.css.map */

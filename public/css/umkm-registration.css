@@ -2,6 +2,10 @@
   background-color: #EDF0F3;
 }
 
+.btn {
+  border-radius: 4px !important;
+}
+
 .umkm-registration .container {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -89,17 +93,19 @@
   padding: 10px 20px;
   background-color: white;
   border-radius: 4px;
+  transition: all ease-in-out 0.3s;
 }
 .umkm-registration .container .page-card.col-wrap {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 .umkm-registration .container .page-card.col-wrap .row-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 10px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -136,6 +142,105 @@
 .umkm-registration .container .page-card.col-wrap .row-wrapper.top * {
   transition: 0s;
 }
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper {
+  flex-basis: 450px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .input-button-container {
+  width: 100%;
+  flex-basis: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .input-button-container .btn.submit-button {
+  background-color: #F9D00F;
+  font-weight: 600;
+  color: black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .input-button-container .btn.submit-button:hover {
+  background-color: #2A2A2A;
+  color: white;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .input-button-container .btn.submit-button.ico span {
+  margin-left: 4px;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .input-button-container .btn.submit-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .input-button-container .btn.submit-button.hovered:hover span {
+  max-width: 200vw;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .input-button-container .info {
+  color: #616161;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .input-button-container .error {
+  color: #F92727;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .image-container {
+  flex-basis: 380px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .image-container.hovered {
+  position: relative;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .image-container.hovered:hover .hovered-overlay {
+  display: grid;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .image-container .hovered-overlay {
+  display: none;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .image-container .hovered-overlay i {
+  font-size: 1.2rem;
+  color: #F92727;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .image-container #umkm-picture-input-button {
+  width: 100%;
+  height: 200px;
+  background-color: #FBF7F7;
+}
+.umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .image-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .umkm-registration .container .page-card.row-wrap {
   display: flex;
   flex-direction: row;
@@ -155,8 +260,9 @@
 .umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 10px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -193,6 +299,104 @@
 .umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper.top * {
   transition: 0s;
 }
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items.ico-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items.ico-wrap i {
+  font-size: 1.2rem;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items.ico-wrap i.info {
+  color: #616161;
+  font-size: 1rem;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items.ico-wrap i.active {
+  color: #F9D00F;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items.ico-wrap i.reject {
+  color: #F92727;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button {
+  background-color: #EDF0F3;
+  font-weight: 600;
+  color: black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button:hover {
+  background-color: #F9D00F;
+  color: black;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button.ico span {
+  margin-left: 4px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button.hovered:hover span {
+  max-width: 200vw;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button * {
+  font-size: 0.9rem;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button.active {
+  background-color: #F9D00F;
+}
+.umkm-registration .container .page-card.row-wrap .image-wrapper {
+  flex-grow: 1;
+  flex-basis: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  max-height: 0vh;
+  transition: all ease-in-out 0.3s;
+  padding-top: 0;
+  overflow: hidden;
+  position: relative;
+}
+.umkm-registration .container .page-card.row-wrap .image-wrapper.active {
+  flex-basis: 650px;
+  padding-top: 10px;
+  max-height: 1000vh;
+}
+.umkm-registration .container .page-card.row-wrap .image-wrapper.active .image-container img {
+  opacity: 1;
+}
+.umkm-registration .container .page-card.row-wrap .image-wrapper .image-container {
+  flex-basis: 320px;
+  flex-grow: 1;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: all ease-in-out 0.1s;
+}
+.umkm-registration .container .page-card.row-wrap .image-wrapper .image-container img {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+}
 .umkm-registration .container .page-card.row-wrap .download-container {
   display: flex;
   flex-direction: column;
@@ -224,17 +428,29 @@
   background-color: #F92727;
   font-weight: 600;
   color: white;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
   font-size: 0.9rem;
 }
 .umkm-registration .container .page-card .button-wrapper .submit-button:hover {
-  cursor: pointer;
   background-color: #F9D00F;
   color: black;
 }
-.umkm-registration .container .page-card .button-wrapper .submit-button.ico {
-  padding-left: 12px;
-}
 .umkm-registration .container .page-card .button-wrapper .submit-button.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+.umkm-registration .container .page-card .button-wrapper .submit-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.umkm-registration .container .page-card .button-wrapper .submit-button.hovered:hover span {
+  max-width: 200vw;
 }/*# sourceMappingURL=umkm-registration.css.map */

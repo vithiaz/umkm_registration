@@ -10,14 +10,14 @@
             <div class="logo-wrapper">
                 <img src="{{ asset('image\koperasi_dan_UMKM_RI_logo.png') }}" alt="kemenkopukm-logo">
                 <div class="brand">
-                    <span class="brand-name">KEMENKOPUKM</span>
+                    <span class="brand-name">DISKOPUKM</span>
                 </div>
             </div>
 
             <div class="title">Masuk</div>
             <div class="form-floating">
-                <input wire:model='nip' type="numeric" class="form-control @error('nip') is-invalid @enderror @if(Session::has('error')) is-invalid @endif" id="nip_input" placeholder="NIP">
-                <label for="nip_input">NIP</label>
+                <input wire:model='nip' type="numeric" class="form-control @error('nip') is-invalid @enderror @if(Session::has('error')) is-invalid @endif" id="nip_input" placeholder="NIK">
+                <label for="nip_input">NIK</label>
                 @error('nip')
                     <small class="error">{{ $message }}</small>
                 @enderror

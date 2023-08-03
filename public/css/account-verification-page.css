@@ -257,18 +257,30 @@
   background-color: #F92727;
   font-weight: 600;
   color: white;
-  border-radius: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .page-verify-card .card-content .button-wrapper .save-button:hover {
-  cursor: pointer;
   background-color: #F9D00F;
   color: black;
 }
-.page-verify-card .card-content .button-wrapper .save-button.ico {
-  padding-left: 12px;
-}
 .page-verify-card .card-content .button-wrapper .save-button.ico span {
-  margin-left: 8px;
+  margin-left: 4px;
+}
+.page-verify-card .card-content .button-wrapper .save-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.page-verify-card .card-content .button-wrapper .save-button.hovered:hover span {
+  max-width: 200vw;
 }
 .page-verify-card .button-wrapper {
   padding: 10px 0;

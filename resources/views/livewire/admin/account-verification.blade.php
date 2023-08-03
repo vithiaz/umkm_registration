@@ -27,7 +27,7 @@
 
                 <div class="content-wrapper">
                     <div class="row-wrapper">
-                        <span class="input-title">NIP</span>
+                        <span class="input-title">NIK</span>
                         <div class="input-items">
                             <span class="input-detail">{{ $this->verifyAccount ? $this->verifyAccount->nip : '' }}</span>
                         </div>

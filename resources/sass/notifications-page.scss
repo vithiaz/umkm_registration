@@ -1,0 +1,185 @@
+@import '_var.scss';
+
+.app-content {
+    background-color: $LightWhite;
+}
+
+.notifications-page {
+
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .page-title {
+            padding: 10px;
+            background-color: $LightenOrange;
+            border-radius: 4px;
+
+            h1 {
+                @include section-header-title();
+
+                span {
+                    color: $PrimaryRed;
+                }
+            }
+
+            &.secondary {
+                background-color: unset;
+                margin-top: 5px;
+            }
+        }
+
+        .notification-card-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: fit-content;
+            gap: 10px;
+            border-radius: 4px;
+            padding: 10px 0;
+
+            .section-title {
+                font-weight: 600;
+                color: $TextDarker;
+            }
+            
+            .card-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                background-color: white;
+                
+                .page-card {
+                    padding: 10px 20px;
+                    background-color: white;
+                    border-radius: 4px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    position: relative;
+                    overflow: hidden;
+                    transition: all ease-in-out 0.2s, background-color linear 0s;
+        
+                    &.hovered {
+                        background-color: $BorderVeryLight;
+                    }
+        
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background-color: transparent;
+                        cursor: pointer;
+        
+                        &.hidden {
+                            display: none;
+                        }
+                    }
+        
+                    &.empty {
+                        align-items: center;
+                        justify-content: center;
+                        row-gap: 5px;
+                        padding: 40px 20px;
+        
+                        span {
+                            color: $TextDarker;
+                        };
+                    }
+        
+                    .head-wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        flex-wrap: wrap-reverse;
+                        justify-content: space-between;
+                        
+                        .title {
+                            font-weight: 600;
+                        }
+        
+                        .btn {
+                            @include button-default(transparent, $PrimaryDark, $BorderVeryLight, white);
+                            border-radius: 4px;
+        
+                            &.expand {
+                                display: block;
+                            }
+                            &.minimize {
+                                display: none;
+                            }
+        
+                        }
+                    }
+        
+        
+                    .date {
+                        color: $TextDarker;
+                    }
+        
+                    .body-container {
+                        padding: 0;
+                        transition: all ease-in-out 0.3s;
+                        overflow: hidden;
+                        max-height: 0vh;
+                        
+                        p {
+                            margin-bottom: 5px;
+                            opacity: 0;
+                            transition: all ease-in-out 0.3s;
+                        }
+                    }
+        
+                    &.expand {
+                        border-top: 1px solid $BorderVeryLight;
+                        border-bottom: 1px solid $BorderVeryLight;
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+        
+                        .head-wrapper {
+        
+                            .btn.expand {
+                                display: none;
+                            }
+                            .btn.minimize {
+                                display: block;
+                            }
+                        }
+                        
+                        .body-container {
+                            padding: 10px 0;
+                            max-height: 1000vh;
+
+                            p {
+                                opacity: 1;
+                            }
+                        }
+                    }
+        
+        
+                }
+            }
+
+            .button-wrapper {
+                width: 100%;
+                display: grid;
+                place-items: center;
+
+                .btn-more {
+                    @include button-default($PrimaryDark, white, $LightenOrange, black);
+                    border-radius: 4px;
+                    font-size: 0.9rem;
+                }
+            }
+
+        }
+
+
+    }
+}

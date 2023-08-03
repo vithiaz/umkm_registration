@@ -98,7 +98,10 @@ final class UsersTable extends PowerGridComponent
 
     public function datasource(): Builder
     {
-        return User::where('active_status', '=', $this->status);
+        return User::where([
+            ['is_admin', '!=', true],
+            ['active_status', '=', $this->status],
+        ]);
     }
 
     public function relationSearch(): array
@@ -128,7 +131,7 @@ final class UsersTable extends PowerGridComponent
                 ->searchable()
                 ->hidden(),
 
-            Column::make('nip', 'nip')
+            Column::make('NIK', 'nip')
                 ->searchable(),
 
             Column::make('Nama Lengkap', 'full_name')
