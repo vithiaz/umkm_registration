@@ -347,7 +347,7 @@
   color: white;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .save-button.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .save-button.hovered span {
   display: block;
@@ -376,7 +376,7 @@
   color: black;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .edit-button.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .edit-button.hovered span {
   display: block;
@@ -405,7 +405,7 @@
   color: black;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .abort-button.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .profile-page .container .page-content-card .card-content .button-wrapper .abort-button.hovered span {
   display: block;

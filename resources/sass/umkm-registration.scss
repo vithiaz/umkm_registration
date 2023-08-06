@@ -117,89 +117,94 @@
                 .row-wrapper {
                     @include form-row-wrapper();
 
+
                     &.picture-form {
                         align-items: flex-start;
                         flex-wrap: wrap;
                         gap: 20px;
 
-                        .input-items.image-wrapper {
-                            flex-basis: 450px;
-                            display: flex;
-                            flex-direction: row;
-                            flex-wrap: wrap;
-                            gap: 20px;
-                            align-items: flex-start;
-                            justify-content: flex-start;
+                        .input-items {
 
-                            .input-button-container {
-                                width: 100%;
-                                flex-basis: 100%;
-                                height: fit-content;
+                            &.image-wrapper {
+                                flex-basis: 450px;
                                 display: flex;
                                 flex-direction: row;
-                                column-gap: 20px;
-                                row-gap: 10px;
-                                align-items: center;
                                 flex-wrap: wrap;
-                                
-                                .btn.submit-button {
-                                    @include button-default($LightenOrange, black, $PrimaryDark, white);
-                                }
-
-                                .info {
-                                    color: $TextDarker;
-                                }
-                                .error {
-                                    color: $PrimaryRed;
-                                }
-                            }
-                            
-                            .image-container {
-                                flex-basis: 380px;
-                                height: fit-content;
-                                
-                                &.hovered {
-                                    position: relative;
+                                gap: 20px;
+                                align-items: flex-start;
+                                justify-content: flex-start;
+    
+                                .input-button-container {
+                                    width: 100%;
+                                    flex-basis: 100%;
+                                    height: fit-content;
+                                    display: flex;
+                                    flex-direction: row;
+                                    column-gap: 20px;
+                                    row-gap: 10px;
+                                    align-items: center;
+                                    flex-wrap: wrap;
                                     
-                                    &:hover {
-
-                                        .hovered-overlay {
-                                            display: grid;
-                                        }
+                                    .btn.submit-button {
+                                        @include button-default($LightenOrange, black, $PrimaryDark, white);
                                     }
-                                    
-                                }
-
-                                .hovered-overlay {
-                                    display: none;
-                                    place-items: center;
-                                    position: absolute;
-                                    top: 0;
-                                    bottom: 0;
-                                    right: 0;
-                                    left: 0;
-                                    background-color: rgba(0,0,0,0.7);
-                                    cursor: pointer;
-
-                                    i {
-                                        font-size: 1.2rem;
+    
+                                    .info {
+                                        color: $TextDarker;
+                                    }
+                                    .error {
                                         color: $PrimaryRed;
                                     }
                                 }
                                 
-                                #umkm-picture-input-button {
-                                    width: 100%;
-                                    height: 200px;
-                                    background-color: $SecondaryWhite;
-                                }
-                                
-                                img {
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
+                                .image-container {
+                                    flex-basis: 380px;
+                                    height: fit-content;
+                                    
+                                    &.hovered {
+                                        position: relative;
+                                        
+                                        &:hover {
+    
+                                            .hovered-overlay {
+                                                display: grid;
+                                            }
+                                        }
+                                        
+                                    }
+    
+                                    .hovered-overlay {
+                                        display: none;
+                                        place-items: center;
+                                        position: absolute;
+                                        top: 0;
+                                        bottom: 0;
+                                        right: 0;
+                                        left: 0;
+                                        background-color: rgba(0,0,0,0.7);
+                                        cursor: pointer;
+    
+                                        i {
+                                            font-size: 1.2rem;
+                                            color: $PrimaryRed;
+                                        }
+                                    }
+                                    
+                                    #umkm-picture-input-button {
+                                        width: 100%;
+                                        height: 200px;
+                                        background-color: $SecondaryWhite;
+                                    }
+                                    
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
                                 }
                             }
                         }
+                        
                     }
                 }
             }
@@ -222,35 +227,65 @@
                     .row-wrapper {
                         @include form-row-wrapper();
 
-                        .input-items.ico-wrap {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            flex-wrap: nowrap;
-                            gap: 10px;
-
-                            i {
-                                font-size: 1.2rem;
-                            }
-
-                            i.info {
-                                color: $TextDarker;
-                                font-size: 1rem;
-                            }
-                            i.active {
-                                color: $LightenOrange;
-                            }
-                            i.reject {
-                                color: $PrimaryRed;
-                            }
-
+                        &.top-align {
+                            align-items: flex-start;
                         }
+                        
+                        .input-items {
+
+                            // .main-form-input {
+                            //     max-width: 500px;
+                            // }
+                        
+                            &.ico-wrap {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                flex-wrap: nowrap;
+                                gap: 10px;
+    
+                                i {
+                                    font-size: 1.2rem;
+                                }
+    
+                                i.info {
+                                    color: $TextDarker;
+                                    font-size: 1rem;
+                                }
+                                i.active {
+                                    color: $LightenOrange;
+                                }
+                                i.reject {
+                                    color: $PrimaryRed;
+                                }
+    
+                            }
+                        }
+                        
 
                         .row-button {
 
                             .btn.submit-button {
                                 @include button-default($LightWhite, black, $LightenOrange, black);
                                 width: fit-content;
+                                min-width: 45px;
+                                justify-content: center !important;
+                                transition: all ease-in-out 0.2s;
+
+                                * {
+                                    font-size: 0.9rem;
+                                }
+
+                                &.active {
+                                    background-color: $LightenOrange;
+                                }
+                            }
+                            .btn.add-button {
+                                @include button-default($PrimaryRed, white, $PrimaryRed, white);
+                                width: fit-content;
+                                min-width: 45px;
+                                justify-content: center !important;
+                                transition: all ease-in-out 0.2s;
 
                                 * {
                                     font-size: 0.9rem;
@@ -296,6 +331,39 @@
                         height: fit-content;
                         transition: all ease-in-out 0.1s;
 
+                        &.hovered {
+                            position: relative;
+                            
+                            &:hover {
+
+                                .hovered-overlay {
+                                    display: grid;
+                                }
+                            }
+                            
+                        }
+
+                        &.gone {
+                            display: none;
+                        }
+
+                        .hovered-overlay {
+                            display: none;
+                            place-items: center;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            left: 0;
+                            background-color: rgba(0,0,0,0.7);
+                            cursor: pointer;
+
+                            i {
+                                font-size: 1.2rem;
+                                color: $PrimaryRed;
+                            }
+                        }
+
                         img {
                             width: 100%;
                             height: fit-content;
@@ -306,15 +374,69 @@
                     }
                 }
 
-                .download-container {
+                .card-button-container {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-end;
                     justify-content: flex-end;
+                    gap: 5px;
 
-                    .download-button {
-                        font-size: 0.9rem;
+                    &.full-basis {
+                        flex-basis: 100%;
                     }
+
+                    .delete-button {
+                        @include button-default(transparent, black, $PrimaryRed, white);
+                        
+                        i {
+                            font-size: 1rem;
+                        }
+                        span {
+                            font-size: 0.9rem;
+                        }
+                    }
+                    .abort-button {
+                        @include button-default(transparent, black, $PrimaryDark, white);
+                        
+                        i {
+                            font-size: 1rem;
+                        }
+                        span {
+                            font-size: 0.9rem;
+                        }
+                    }
+                    .save-button {
+                        @include button-default(transparent, black, $LightenOrange, black);
+                        
+                        i {
+                            font-size: 1rem;
+                        }
+                        span {
+                            font-size: 0.9rem;
+                        }
+                    }
+                    .download-button {
+                        @include button-default($LightenOrange, black, $DarkerOrange, black);
+                        
+                        i {
+                            font-size: 1rem;
+                        }
+                        span {
+                            font-size: 0.9rem;
+                        }
+                    }
+                    
+                    .edit-button {
+                        @include button-default($PrimaryDark, white, $LightenOrange, black);
+                        
+                        i {
+                            font-size: 0.8rem;
+                        }
+                        span {
+                            font-size: 0.9rem;
+                        }
+                    }
+
                 }
             }
 

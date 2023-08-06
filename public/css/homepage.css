@@ -274,6 +274,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  padding: 20px 0 20px 0;
 }
 .homepage section.profile .container .section-title-wrapper .section-title {
   color: black;
@@ -296,8 +297,10 @@
 }
 .homepage section.profile .container .section-content-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 10px 0;
 }
 .homepage section.profile .container .section-content-wrapper .content {
@@ -305,6 +308,8 @@
   flex-direction: column;
   gap: 5px;
   padding-left: 20px;
+  flex-grow: 1;
+  flex-basis: 480px;
 }
 .homepage section.profile .container .section-content-wrapper .content .title {
   position: relative;
@@ -330,7 +335,7 @@
   flex-direction: column;
 }
 .homepage section.registration-info .container .section-title-wrapper {
-  padding: 20px 0;
+  padding: 40px 0 20px 0;
 }
 .homepage section.registration-info .container .section-title-wrapper .section-title {
   color: black;
@@ -354,15 +359,15 @@
 }
 .homepage section.registration-info .section-content-wrapper .content-box {
   flex-grow: 1;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-basis: 300px;
 }
 .homepage section.registration-info .section-content-wrapper .content-box.content {
-  padding: 20px 0;
+  padding: 40px 0;
 }
 .homepage section.registration-info .section-content-wrapper .content-box.content .container {
   display: flex;
@@ -442,8 +447,8 @@
 }
 .homepage section.login-register .section-content-wrapper .content-box {
   flex-grow: 1;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -455,9 +460,9 @@
 .homepage section.login-register .section-content-wrapper .content-box.lighter .container {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  row-gap: 10px;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  row-gap: 20px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -503,9 +508,9 @@
 .homepage section.login-register .section-content-wrapper .content-box.darker .container {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  row-gap: 10px;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  row-gap: 20px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;

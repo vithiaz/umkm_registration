@@ -500,7 +500,7 @@ body {
   color: black;
 }
 .app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-primary.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-primary.hovered span {
   display: block;
@@ -530,7 +530,7 @@ body {
   color: black;
 }
 .app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .app .page-section .container .product-detail-wrapper .cart-container .button-wrapper .btn-secondary.hovered span {
   display: block;
@@ -845,12 +845,12 @@ body {
   flex-direction: row;
   -moz-column-gap: 20px;
        column-gap: 20px;
-  row-gap: 10px;
+  row-gap: 20px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .main-footer .container .logo-wrapper {
   display: flex;
@@ -896,14 +896,14 @@ body {
   flex-basis: 450px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   align-items: flex-start;
 }
 .main-footer .container .contact-wrapper .row-wrapper {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -1398,7 +1398,7 @@ body {
   color: black;
 }
 #auth_modal .modal-dialog .modal-content .login-button.ico span, #umkm_bank_account_modal .modal-dialog .modal-content .login-button.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 #auth_modal .modal-dialog .modal-content .login-button.hovered span, #umkm_bank_account_modal .modal-dialog .modal-content .login-button.hovered span {
   display: block;
@@ -1564,7 +1564,7 @@ body {
   color: white;
 }
 .btn-default-orange.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .btn-default-orange.hovered span {
   display: block;
@@ -1594,7 +1594,7 @@ body {
   color: white;
 }
 .btn-default-red.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .btn-default-red.hovered span {
   display: block;
@@ -1624,7 +1624,7 @@ body {
   color: white;
 }
 .btn-default-dark.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .btn-default-dark.hovered span {
   display: block;

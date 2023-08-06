@@ -259,6 +259,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
+                padding: 20px 0 20px 0;
 
                 .section-title {
                     @include section-title();
@@ -272,8 +273,10 @@
             
             .section-content-wrapper {
                 display: flex;
-                flex-direction: column;
-                gap: 5px;
+                flex-direction: row;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                gap: 20px;
                 padding: 10px 0;
 
                 .content {
@@ -281,6 +284,8 @@
                     flex-direction: column;
                     gap: 5px;
                     padding-left: 20px;
+                    flex-grow: 1;
+                    flex-basis: 480px;
 
                     .title {
                         position: relative;
@@ -317,7 +322,7 @@
             flex-direction: column;
 
             .section-title-wrapper {
-                padding: 20px 0;
+                padding: 40px 0 20px 0;
 
                 .section-title {
                     @include section-title();
@@ -334,15 +339,15 @@
 
             .content-box {
                 flex-grow: 1;
-                padding-top: 20px;
-                padding-bottom: 20px;
+                padding-top: 40px;
+                padding-bottom: 40px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 flex-basis: 300px;
 
                 &.content {
-                    padding: 20px 0;
+                    padding: 40px 0;
 
                     .container {
                         display: flex;
@@ -434,8 +439,8 @@
 
             .content-box {
                 flex-grow: 1;
-                padding-top: 10px;
-                padding-bottom: 10px;
+                padding-top: 30px;
+                padding-bottom: 30px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -447,8 +452,8 @@
                     .container {
                         display: flex;
                         flex-direction: row;
-                        column-gap: 20px;
-                        row-gap: 10px;
+                        column-gap: 25px;
+                        row-gap: 20px;
                         align-items: center;
                         justify-content: center;
                         flex-wrap: wrap;
@@ -470,8 +475,8 @@
                     .container {
                         display: flex;
                         flex-direction: row;
-                        column-gap: 20px;
-                        row-gap: 10px;
+                        column-gap: 25px;
+                        row-gap: 20px;
                         align-items: center;
                         justify-content: center;
                         flex-wrap: wrap;
@@ -496,6 +501,7 @@
                         }
                     }
                 }
+
             }
         }
     }

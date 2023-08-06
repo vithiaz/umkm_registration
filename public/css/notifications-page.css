@@ -110,7 +110,7 @@
   color: white;
 }
 .notifications-page .container .notification-card-wrapper .card-wrapper .page-card .head-wrapper .btn.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .notifications-page .container .notification-card-wrapper .card-wrapper .page-card .head-wrapper .btn.hovered span {
   display: block;
@@ -185,7 +185,7 @@
   color: black;
 }
 .notifications-page .container .notification-card-wrapper .button-wrapper .btn-more.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .notifications-page .container .notification-card-wrapper .button-wrapper .btn-more.hovered span {
   display: block;

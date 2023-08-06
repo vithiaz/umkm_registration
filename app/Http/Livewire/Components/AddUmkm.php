@@ -47,7 +47,7 @@ class AddUmkm extends Component
         return view('livewire.components.add-umkm');
     }
 
-    public function store_umkm() {
+    public function store_umkm() {        
         $this->validate();
 
         $umkm = new Umkm;
@@ -74,15 +74,13 @@ class AddUmkm extends Component
             }
         }
 
-        $msg = ['success' => $this->type . ' dalam pengajuan'];
-        $this->dispatchBrowserEvent('display-message', $msg);
-
+        return redirect()->route('umkm-registration')->with('message', $this->type . ' dalam pengajuan');
+        
         $this->name = '';
         $this->type = '';
         $this->recomendation_docs = null;
         $this->images = [];
         $this->store_images = [];
-        $this->emit('refreshComponent');
     }
 
     public function delete_stored_image($index) {

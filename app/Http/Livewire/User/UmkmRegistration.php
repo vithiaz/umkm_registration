@@ -11,11 +11,10 @@ class UmkmRegistration extends Component
     // Model Variable
     public $User;
     public $Umkms;
-
     
     public function mount() {
         $this->User = Auth::user();
-        $this->Umkms = Umkm::with(['umkm_images'])->where('owner_user', '=', $this->User->id)->get();
+        $this->Umkms = Umkm::with(['umkm_images', 'activation_log'])->where('owner_user', '=', $this->User->id)->get();
     }
 
     public function render()

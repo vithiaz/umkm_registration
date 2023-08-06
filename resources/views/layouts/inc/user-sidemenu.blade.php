@@ -64,7 +64,7 @@
                     @endif
                     >
                     <a href="{{ route('notifications') }}" class="main-item">
-                        <span class="nav-item-main">Notifikasi</span>
+                        <span class="nav-item-main">Notifikasi {{ \Request::route()->getName() == 'notifications' ? '' : '(' . App\Models\UserNotification::where([['user_id', '=', Auth::user()->id],['is_read', '=', false],])->get()->count() . ')' }}</span>
                     </a>
                 </li>
 

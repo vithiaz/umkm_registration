@@ -64,7 +64,7 @@
         </div>
     </div>
     <div class="button-wrapper">
-        <button class="btn submit-button">Ajukan Pendaftaran</button>
+        <button type="submit" class="btn submit-button">Ajukan Pendaftaran</button>
     </div>
 </form>
 

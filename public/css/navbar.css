@@ -126,7 +126,7 @@
   color: black;
 }
 #navbar .container .auth-wrapper .auth .btn.auth-primary.ico span, #navbar .container .auth-wrapper .user .btn.auth-primary.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 #navbar .container .auth-wrapper .auth .btn.auth-primary.hovered span, #navbar .container .auth-wrapper .user .btn.auth-primary.hovered span {
   display: block;
@@ -155,7 +155,7 @@
   color: #F92727;
 }
 #navbar .container .auth-wrapper .auth .btn.auth-secondary.ico span, #navbar .container .auth-wrapper .user .btn.auth-secondary.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 #navbar .container .auth-wrapper .auth .btn.auth-secondary.hovered span, #navbar .container .auth-wrapper .user .btn.auth-secondary.hovered span {
   display: block;
@@ -188,7 +188,7 @@
   color: white;
 }
 #navbar .container .auth-wrapper .user .btn-dropdown.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 #navbar .container .auth-wrapper .user .btn-dropdown.hovered span {
   display: block;
@@ -277,7 +277,7 @@
   color: black;
 }
 .navbar-auth-dropdown .container .auth .btn.auth-primary.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .navbar-auth-dropdown .container .auth .btn.auth-primary.hovered span {
   display: block;
@@ -306,7 +306,7 @@
   color: #F92727;
 }
 .navbar-auth-dropdown .container .auth .btn.auth-secondary.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .navbar-auth-dropdown .container .auth .btn.auth-secondary.hovered span {
   display: block;
@@ -474,7 +474,7 @@
   color: black;
 }
 .navbar-search-dropdown .container .input-group button.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .navbar-search-dropdown .container .input-group button.hovered span {
   display: block;

@@ -184,7 +184,7 @@
   color: white;
 }
 .umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .input-button-container .btn.submit-button.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .umkm-registration .container .page-card.col-wrap .row-wrapper.picture-form .input-items.image-wrapper .input-button-container .btn.submit-button.hovered span {
   display: block;
@@ -299,6 +299,9 @@
 .umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper.top * {
   transition: 0s;
 }
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper.top-align {
+  align-items: flex-start;
+}
 .umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .input-items.ico-wrap {
   display: flex;
   flex-direction: row;
@@ -330,13 +333,16 @@
   flex-wrap: nowrap;
   width: -moz-fit-content;
   width: fit-content;
+  min-width: 45px;
+  justify-content: center !important;
+  transition: all ease-in-out 0.2s;
 }
 .umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button:hover {
   background-color: #F9D00F;
   color: black;
 }
 .umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button.hovered span {
   display: block;
@@ -354,6 +360,46 @@
   font-size: 0.9rem;
 }
 .umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.submit-button.active {
+  background-color: #F9D00F;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.add-button {
+  background-color: #F92727;
+  font-weight: 600;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 45px;
+  justify-content: center !important;
+  transition: all ease-in-out 0.2s;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.add-button:hover {
+  background-color: #F92727;
+  color: white;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.add-button.ico span {
+  margin-left: 8px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.add-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.add-button.hovered:hover span {
+  max-width: 200vw;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.add-button * {
+  font-size: 0.9rem;
+}
+.umkm-registration .container .page-card.row-wrap .col-wrap .row-wrapper .row-button .btn.add-button.active {
   background-color: #F9D00F;
 }
 .umkm-registration .container .page-card.row-wrap .image-wrapper {
@@ -388,6 +434,30 @@
   height: fit-content;
   transition: all ease-in-out 0.1s;
 }
+.umkm-registration .container .page-card.row-wrap .image-wrapper .image-container.hovered {
+  position: relative;
+}
+.umkm-registration .container .page-card.row-wrap .image-wrapper .image-container.hovered:hover .hovered-overlay {
+  display: grid;
+}
+.umkm-registration .container .page-card.row-wrap .image-wrapper .image-container.gone {
+  display: none;
+}
+.umkm-registration .container .page-card.row-wrap .image-wrapper .image-container .hovered-overlay {
+  display: none;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+.umkm-registration .container .page-card.row-wrap .image-wrapper .image-container .hovered-overlay i {
+  font-size: 1.2rem;
+  color: #F92727;
+}
 .umkm-registration .container .page-card.row-wrap .image-wrapper .image-container img {
   width: 100%;
   height: -moz-fit-content;
@@ -397,13 +467,189 @@
   opacity: 0;
   transition: all ease-in-out 0.3s;
 }
-.umkm-registration .container .page-card.row-wrap .download-container {
+.umkm-registration .container .page-card.row-wrap .card-button-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
+  gap: 5px;
 }
-.umkm-registration .container .page-card.row-wrap .download-container .download-button {
+.umkm-registration .container .page-card.row-wrap .card-button-container.full-basis {
+  flex-basis: 100%;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .delete-button {
+  background-color: transparent;
+  font-weight: 600;
+  color: black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .delete-button:hover {
+  background-color: #F92727;
+  color: white;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .delete-button.ico span {
+  margin-left: 8px;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .delete-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .delete-button.hovered:hover span {
+  max-width: 200vw;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .delete-button i {
+  font-size: 1rem;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .delete-button span {
+  font-size: 0.9rem;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .abort-button {
+  background-color: transparent;
+  font-weight: 600;
+  color: black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .abort-button:hover {
+  background-color: #2A2A2A;
+  color: white;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .abort-button.ico span {
+  margin-left: 8px;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .abort-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .abort-button.hovered:hover span {
+  max-width: 200vw;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .abort-button i {
+  font-size: 1rem;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .abort-button span {
+  font-size: 0.9rem;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .save-button {
+  background-color: transparent;
+  font-weight: 600;
+  color: black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .save-button:hover {
+  background-color: #F9D00F;
+  color: black;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .save-button.ico span {
+  margin-left: 8px;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .save-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .save-button.hovered:hover span {
+  max-width: 200vw;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .save-button i {
+  font-size: 1rem;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .save-button span {
+  font-size: 0.9rem;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .download-button {
+  background-color: #F9D00F;
+  font-weight: 600;
+  color: black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .download-button:hover {
+  background-color: #F0AE2C;
+  color: black;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .download-button.ico span {
+  margin-left: 8px;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .download-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .download-button.hovered:hover span {
+  max-width: 200vw;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .download-button i {
+  font-size: 1rem;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .download-button span {
+  font-size: 0.9rem;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .edit-button {
+  background-color: #2A2A2A;
+  font-weight: 600;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .edit-button:hover {
+  background-color: #F9D00F;
+  color: black;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .edit-button.ico span {
+  margin-left: 8px;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .edit-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .edit-button.hovered:hover span {
+  max-width: 200vw;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .edit-button i {
+  font-size: 0.8rem;
+}
+.umkm-registration .container .page-card.row-wrap .card-button-container .edit-button span {
   font-size: 0.9rem;
 }
 .umkm-registration .container .page-card .empty-container {
@@ -440,7 +686,7 @@
   color: black;
 }
 .umkm-registration .container .page-card .button-wrapper .submit-button.ico span {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .umkm-registration .container .page-card .button-wrapper .submit-button.hovered span {
   display: block;
