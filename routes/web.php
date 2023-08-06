@@ -4,6 +4,7 @@ use App\Http\Livewire\Base\Homepage;
 use App\Http\Livewire\Notifications;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\UmkmVerification;
+use App\Http\Livewire\Admin\AddNewsPage;
 use App\Http\Livewire\Base\Registration;
 use App\Http\Livewire\User\UmkmPrograms;
 use App\Http\Livewire\User\ProfileSettings;
@@ -44,6 +45,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/umkm-verification', UmkmVerification::class)->name('admin.umkm-verify');
         Route::get('/programs', AdminUmkmPrograms::class)->name('admin.umkm-programs');        
         Route::get('/program/{program_id}', UmkmProgramDetails::class)->name('admin.umkm-program-details');        
+        Route::get('/news', AddNewsPage::class)->name('admin.news');
     });
 });
 

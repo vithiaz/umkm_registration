@@ -1,0 +1,105 @@
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: unset;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper small.error {
+  color: red;
+  text-indent: 20px;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .note-editor {
+  border-radius: 0;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .note-editor .note-toolbar {
+  background-color: #F8F8F8;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .note-toolbar.floating {
+  position: fixed;
+  top: 0;
+  z-index: 139;
+  border: 1px #C9C9C9 solid;
+  transition: all 0.3s ease-in-out;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .dropdown-fontname, .add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .dropdown-fontsize, .add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .dropdown-line-height {
+  max-height: 250px;
+  overflow: auto;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .note-editing-area {
+  padding: 5px 20px 20px 30px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .note-image-popover {
+  left: 50% !important;
+  transform: translateX(-50%);
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .note-editable {
+  min-height: 170px !important;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .dropdown-fontsize.show {
+  display: block;
+  position: absolute;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .dropdown-fontsize li {
+  background-color: salmon;
+}
+.add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .dropdown-fontsize li a {
+  text-decoration: none !important;
+  color: black !important;
+}
+.add-news-page .container .page-content-card .powergrid-table-container .deactive-btn {
+  background-color: #DD3333;
+  font-weight: 600;
+  color: white;
+  font-size: 0.9rem;
+}
+.add-news-page .container .page-content-card .powergrid-table-container .deactive-btn:hover {
+  cursor: pointer;
+  background-color: #2A2A2A;
+  color: white;
+}
+.add-news-page .container .page-content-card .button-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.add-news-page .container .page-content-card .button-wrapper .submit-button {
+  background-color: #DD3333;
+  font-weight: 600;
+  color: white;
+  font-size: 0.9rem;
+}
+.add-news-page .container .page-content-card .button-wrapper .submit-button:hover {
+  cursor: pointer;
+  background-color: #2A2A2A;
+  color: white;
+}
+.add-news-page .news-detail-container {
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add-news-page .news-detail-container .detail-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.add-news-page .news-detail-container .content-body {
+  margin: 0;
+  padding: 0;
+}
+.add-news-page .news-detail-container .content-body p {
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=add-news-page.css.map */

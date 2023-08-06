@@ -1773,3 +1773,41 @@ body {
         }
     }
 }
+
+
+
+// Summernote Editor
+@mixin summernote-styles() {
+    .note-editor {
+        border-radius: 0;
+        
+        .note-toolbar {
+            background-color: $BorderVeryLight;
+        }
+    }
+
+    .note-toolbar.floating {
+        position: fixed;
+        top: 0;
+        z-index: 139;
+        border: 1px $CardBorder solid;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .dropdown-fontname, .dropdown-fontsize, .dropdown-line-height {
+        max-height: 250px;
+        overflow: auto;
+    }
+
+    .note-editing-area {
+        padding: 5px 20px 20px 30px;
+        height: fit-content;
+    }
+
+    .note-image-popover {
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+
+    
+}

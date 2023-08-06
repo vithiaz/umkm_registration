@@ -2,12 +2,19 @@
 
 namespace App\Http\Livewire\Base;
 
+use App\Models\News;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Homepage extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
+
     public function render()
     {
-        return view('livewire.base.homepage')->layout('layouts.app');
+        $news = News::where('is_active', '=', true)->paginate(4);
+        return view('livewire.base.homepage', ['News' => $news])->layout('layouts.app');
     }
 }

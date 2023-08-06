@@ -25,6 +25,13 @@
     <link href="{{ asset('/fontawesome/css/fontawesome.css') }}" rel="stylesheet">
     <link href="{{ asset('/fontawesome/css/brands.css') }}" rel="stylesheet">
     <link href="{{ asset('/fontawesome/css/solid.css') }}" rel="stylesheet">
+
+    {{-- SummerNote --}}
+    {{-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script> --}}
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
     
 
     @stack('stylesheet')

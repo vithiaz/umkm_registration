@@ -121,7 +121,17 @@ entity user_notifications {
     --
     * created_at DATETIME
     * updated_at DATETIME
+}
 
+entity news {
+    * id BIGINT PRIMARY KEY
+    --
+    * title STRING
+    * body TEXT
+    * is_active BOOLEAN
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
 }
 
 

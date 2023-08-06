@@ -49,6 +49,13 @@
                         >
                         <a href="{{ route('admin.umkm-programs') }}">Bantuan Koperasi / UMKM</a>
                     </li>
+                    <li
+                        @if (\Request::route()->getName() == 'admin.news')
+                            class="active"
+                        @endif
+                        >
+                        <a href="{{ route('admin.news') }}">Berita</a>
+                    </li>
                 </ul>
             </div>
         </div>

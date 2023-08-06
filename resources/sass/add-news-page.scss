@@ -1,0 +1,107 @@
+@import '_var.scss';
+@import '_var_admin.scss';
+
+.add-news-page {
+
+    .container {
+
+        .page-content-card {
+
+            .row-wrapper {
+                
+                .form-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    width: 100%;
+                    max-width: unset;
+
+                    small.error {
+                        color: red;
+                        text-indent: 20px;
+                    }
+
+                    #summernote-container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        position: relative;
+                        @include summernote-styles();
+
+                        .note-editable {
+                            min-height: 170px !important;
+                        }
+
+
+                        .dropdown-fontsize {
+
+                            &.show {
+                                display: block;
+                                position: absolute;
+                                
+                            }
+                            
+                            li {
+                                background-color: salmon;
+
+                                a {
+                                    text-decoration: none !important;
+                                    color: black !important;
+                                }
+                            }
+
+                        }
+                        
+                    }
+                }
+            }
+
+            .powergrid-table-container {
+
+                .deactive-btn {
+                    @include base-button($PrimaryRed, white, $PrimaryDark, white);
+                }
+            }
+
+            
+            .button-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-end;
+                justify-content: flex-end;
+
+                .submit-button {
+                    @include base-button($PrimaryRed, white, $PrimaryDark, white);
+                }
+            }
+        }
+    }
+
+    // Powergrid News Detail Container
+    .news-detail-container {
+        padding: 5px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+        .detail-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .content-body {
+            margin: 0;
+            padding: 0;
+            
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+    }
+
+}

@@ -151,6 +151,44 @@
             </div>
         </div>
     </section>
+
+    <section class="news">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">INFORMASI DAN BERITA</h2>    
+            </div>
+            <div class="section-content-wrapper">
+                @forelse ($News as $news)
+                    <div class="page-card">
+                        <div class="overlay"></div>
+        
+                        <div class="head-wrapper">
+                            <div class="title">{{ $news->title }}</div>
+                            <button class="btn expand">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <button class="btn minimize">
+                                <i class="fa-solid fa-window-minimize"></i>
+                            </button>
+                        </div>
+                        <span class="date">{{ $news->created_at }}</span>
+                        <div class="body-container">
+                            {!! $news->body !!}
+                        </div>
+                    </div>
+                @empty
+                    <div class="page-card empty">
+                        <span>. . .</span>
+                        <span>Belum ada Informasi / Berita</span>
+                    </div>
+                @endforelse
+            </div>
+            <div class="pagination-wrapper">
+                {{ $News->links() }}
+            </div>
+        </div>
+    </section>
+
     
     <livewire:components.login />
     
@@ -185,6 +223,43 @@
         $(this).toggleClass('active')
 
     })
+
+
+
+    // Page Card Scripts
+    function mount_script() {
+        // Handle Card Overlay Hover
+        $('.page-card .overlay').hover(
+            function () {
+                $( this ).parent().addClass('hovered')
+            },
+            function () {
+                $( this ).parent().removeClass('hovered')
+            })
+    
+        // Handle Card Overlay click
+        $('.page-card .overlay').click(function () {
+            $( this ).addClass('hidden')
+            $( this ).parent().addClass('expand')
+        })
+    
+        // Handle Minimize Button Click
+        $('.page-card .btn.minimize').click(function () {
+            let pageCard = $( this ).parent().parent()
+    
+            pageCard.find('.overlay').removeClass('hidden')
+            pageCard.removeClass('expand')
+        })
+    }
+
+    $( document ).ready(function () {
+        mount_script()
+    })
+    
+    $( window ).on('refreshScripts', function () {
+        mount_script()
+    })
+
 
 </script>
 @endpush
