@@ -29,7 +29,7 @@ class MyUmkmCard extends Component
     
     protected $rules = [
         'name' => 'required|string',
-        'recomendation_docs' => 'nullable|image|max:2048',
+        'recomendation_docs' => 'nullable|image|max:8192',
     ];
 
     protected $messages = [
@@ -42,7 +42,7 @@ class MyUmkmCard extends Component
     
     public function updatedImages() {
         $this->validate([
-            'images.*' => 'image',
+            'images.*' => 'image|max:8192',
         ]);
         $this->store_images = array_merge($this->store_images, $this->images);
         $this->images = [];

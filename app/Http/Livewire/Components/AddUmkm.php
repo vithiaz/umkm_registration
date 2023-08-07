@@ -24,12 +24,12 @@ class AddUmkm extends Component
     protected $rules = [
         'name' => 'required|string',
         'type' => 'required',
-        'recomendation_docs' => 'required|image|max:2048',
+        'recomendation_docs' => 'required|image|max:8192',
     ];
 
     public function updatedImages() {
         $this->validate([
-            'images.*' => 'image',
+            'images.*' => 'image|max:8192',
         ]);
         $this->store_images = array_merge($this->store_images, $this->images);
         $this->images = [];
