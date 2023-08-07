@@ -130,7 +130,7 @@ class AccountVerification extends Component
             $notification->title = 'Pengajuan Aktivasi Akun Diterima';
             $notification->body = $notificationBody;
             $notification->is_read = false;
-            $notification->user_id = $this->verifyUser->id;
+            $notification->user_id = $this->verifyAccount->id;
             $notification->save();
 
             $msg = ['success' => 'Pengajuan Diverifikasi'];
