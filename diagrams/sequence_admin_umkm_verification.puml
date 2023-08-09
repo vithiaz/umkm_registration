@@ -1,0 +1,60 @@
+@startuml
+
+' declare
+actor Admin
+participant Login
+participant "Verifikasi UMKM" as umkm_verify
+boundary "Tampilan Verifikasi Koperasi / UMKM" as verify_umkm_page
+control "Proses Verifikasi Data" as verify_data_process
+database "Tabel Umkm" as db_umkm
+entity "Data Koperasi / UMKM" as umkm_data
+
+
+
+
+' flow
+activate Admin
+Admin -> Login
+activate Login
+
+Login -> umkm_verify : verifikasi registrasi Koperasi / UMKM
+
+
+activate umkm_verify
+umkm_verify -> verify_umkm_page : masuk halaman verifikasi
+activate verify_umkm_page
+verify_umkm_page -> db_umkm : cari data
+activate db_umkm
+
+
+db_umkm -> umkm_data : muat data Koperasi / UMKM
+deactivate db_umkm
+activate umkm_data #Green
+umkm_data -[#Green]> verify_umkm_page : data Koperasi / UMKM
+
+verify_umkm_page -> verify_data_process : proses verifikasi
+activate verify_data_process
+verify_data_process -> umkm_data : update aktivasi data Koperasi / UMKM
+
+umkm_data -> db_umkm : simpan perubahan
+deactivate umkm_data
+activate db_umkm
+db_umkm -> verify_data_process : data tersimpan
+deactivate db_umkm
+
+verify_data_process -> verify_umkm_page : notifikasi verifikasi berhasil
+deactivate verify_data_process
+verify_umkm_page -> umkm_verify : verifikasi berhasil
+deactivate verify_umkm_page
+
+umkm_verify -> Login
+deactivate umkm_verify
+Login -> Admin : logout
+deactivate Login
+deactivate Admin
+
+
+
+
+
+@enduml

@@ -1,0 +1,37 @@
+|Admin|
+start
+
+:Login;
+:Masuk ke halaman Dashboard Admin;
+:Memilih menu Verifikasi Akun;
+
+|System|
+:Tampilkan Permintaan Verifikasi Pendaftaran Akun;
+
+
+|Admin|
+:Melihat Detail permintaan;
+:Terima / Tolak Permintaan;
+
+|System|
+if (Permintaan verifikasi diterima ? ) is (tidak) then
+    :Menampilkan Form penolakan verifikasi;
+
+    |Admin|
+    :Mengisi form;
+    :Submit;
+
+    |System|
+    :Kirim Notifikasi Penolakan Aktivasi Akun Ke User;
+
+else (ya)
+    |System|
+    :Aktifkan Akun;
+    :Kirim Notifikasi Aktivasi Akun Ke User;
+
+endif
+
+|Admin|
+:Lihat Daftar Permintaan;
+
+stop

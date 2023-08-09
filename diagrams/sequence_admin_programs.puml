@@ -1,0 +1,51 @@
+@startuml
+
+' Declare
+actor Admin
+participant Login
+participant "Tambah Program Bantuan" as Register
+boundary "Halaman Program Bantuan" as program_page
+control "Proses Program Bantuan" as program_process
+entity "Data Program Bantuan" as program_data
+database "Tabel Program" as db_program
+
+
+' Flow
+activate Admin
+Admin -> Login
+activate Login
+
+Login -> Register : registrasi Program Bantuan
+activate Register
+
+Register -> program_page : masuk halaman Program Bantuan
+activate program_page
+
+program_page -> program_process : input data Program Bantuan
+activate program_process
+program_process -> program_process : validasi data Program Bantuan
+activate program_process #Yellow
+program_process -> program_page : notifikasi validasi data gagal
+
+program_process -> program_data : data divalidasi
+deactivate program_process
+activate program_data
+program_data -> db_program : simpan data
+deactivate program_data
+activate db_program
+db_program -> program_process : data Program Bantuan tersimpan
+deactivate db_program
+program_process -> program_page : notifikasi data tersimpan
+deactivate program_process
+
+program_page -> Register : penambahan Program Bantuan berhasil
+deactivate program_page
+
+Register -> Login
+deactivate Register
+Login -> Admin : logout
+deactivate Login
+deactivate Admin
+
+
+@enduml

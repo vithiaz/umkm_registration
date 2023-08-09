@@ -1,0 +1,56 @@
+@startuml
+
+
+|Admin|
+start
+:Login;
+:Masuk ke halaman Dashboard Admin;
+:Memilih menu Bantuan Koperasi / UMKM;
+
+|System|
+:Menampilkan Form Tambah Program bantuan;
+:Menampilkan Daftar Program bantuan;
+
+
+repeat :Mengisi Form Program Bantuan Koperasi / UMKM;
+:Submit;
+
+|System|
+:Validasi Data Form;
+backward :Tampilkan pesan error;
+repeat while (Data divalidasi) is (Tidak) not (Ya)
+:Simpan Program Bantuan;
+
+
+|Admin|
+:Melihat Detail Program Bantuan;
+
+|System|
+:Tampilkan Detail Program Bantuan;
+:Tampilkan Daftar Permintaan Pendaftaran Program Bantuan;
+
+|Admin|
+:Melihat Detail permintaan;
+:Terima / Tolak Permintaan;
+
+|System|
+if (Permintaan pendaftaran diterima ? ) is (tidak) then
+    :Tolak Permintaan;
+
+    |System|
+    :Kirim Notifikasi Penolakan Pendaftaran program Ke User;
+
+else (ya)
+    |System|
+    :Daftarkan UMKM / Koperasi ke Program Bantuan;
+    :Kirim Notifikasi Pendaftaran Program Ke User;
+
+endif
+
+
+
+stop
+
+
+
+@enduml

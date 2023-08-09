@@ -1,0 +1,37 @@
+|Admin|
+start
+
+:Login;
+:Masuk ke halaman Dashboard Admin;
+:Memilih menu Verifikasi Koperasi / UMKM;
+
+|System|
+:Tampilkan Permintaan Verifikasi Pendaftaran Koperasi / UMKM;
+
+|Admin|
+:Melihat Detail permintaan;
+:Terima / Tolak Permintaan;
+
+
+|System|
+if (Permintaan verifikasi diterima ? ) is (tidak) then
+    :Menampilkan Form penolakan verifikasi;
+
+    |Admin|
+    :Mengisi form;
+    :Submit;
+
+    |System|
+    :Kirim Notifikasi Penolakan Aktivasi Koperasi / UMKM Ke User;
+
+else (ya)
+    |System|
+    :Aktifkan Koperasi / UMKM;
+    :Kirim Notifikasi Aktivasi Koperasi / UMKM Ke User;
+
+endif
+
+|Admin|
+:Lihat Daftar Permintaan;
+
+stop

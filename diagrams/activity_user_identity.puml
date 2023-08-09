@@ -1,0 +1,34 @@
+@startuml
+
+|User|
+start
+
+:Login;
+:Masuk ke halaman Data Identitas;
+
+if (data akun diverifikasi ?) is (ya) then
+    :Lihat Data Identitas;
+    end
+
+else (tidak)
+    :Edit Data Akun;
+    |System|
+    :Tampilkan Form Edit Data;
+
+    |User|
+    repeat :Mengisi Form Edit Data;
+    :Submit;
+
+    |System|
+    :Validasi Data Akun;
+    backward :Tampilkan pesan error;
+    Repeat while (data divalidasi?) is (Tidak) not (Ya)
+
+    :Simpan Perubahan;
+    :Tambahkan ke permintaan verifikasi akun;
+    stop
+endif
+
+
+
+@enduml

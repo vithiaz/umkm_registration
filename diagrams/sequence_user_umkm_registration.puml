@@ -1,0 +1,52 @@
+@startuml
+
+' Declare
+actor User
+participant Login
+participant "Registrasi Koperasi / UMKM" as Register
+boundary "Tampilan Registrasi Koperasi / UMKM" as registration_page
+control "Proses Data Koperasi / UMKM" as umkm_data_process
+entity "Data Koperasi / UMKM" as user_data
+database "Tabel Umkm" as db_umkm
+
+
+
+' Flow
+activate User
+User -> Login
+activate Login
+
+Login -> Register : registrasi Koperasi / UMKM
+activate Register
+
+Register -> registration_page : masuk halaman registrasi
+activate registration_page
+
+registration_page -> umkm_data_process : input data Koperasi / UMKM
+activate umkm_data_process
+umkm_data_process -> umkm_data_process : validasi data Koperasi / UMKM
+activate umkm_data_process #Yellow
+umkm_data_process -> registration_page : notifikasi validasi data gagal
+
+umkm_data_process -> user_data : data divalidasi
+deactivate umkm_data_process
+activate user_data
+user_data -> db_umkm : simpan data
+deactivate user_data
+activate db_umkm
+db_umkm -> umkm_data_process : data Koperasi / UMKM tersimpan
+deactivate db_umkm
+umkm_data_process -> registration_page : notifikasi data tersimpan
+deactivate umkm_data_process
+
+registration_page -> Register : registrasi berhasil, menunggu verifikasi admin
+deactivate registration_page
+
+Register -> Login
+deactivate Register
+Login -> User : logout
+deactivate Login
+deactivate User
+
+
+@enduml

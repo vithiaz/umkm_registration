@@ -1,0 +1,33 @@
+@startuml
+
+
+|Admin|
+start
+:Login;
+:Masuk ke halaman Dashboard Admin;
+:Memilih menu Berita;
+
+|System|
+:Menampilkan Form Tambah Berita;
+:Menampilkan Daftar Berita;
+
+
+repeat :Mengisi Form Berita;
+:Submit;
+
+|System|
+:Validasi Data Form;
+backward :Tampilkan pesan error;
+repeat while (Data divalidasi) is (Tidak) not (Ya)
+:Simpan Berita;
+
+
+|Admin|
+:Melihat Detail Berita;
+
+|System|
+:Tampilkan Detail Berita;
+
+stop
+
+@enduml

@@ -1,0 +1,61 @@
+left to right direction
+skinparam PackageStyle recangle
+
+actor Admin
+actor User
+
+rectangle Aplikasi {
+
+    rectangle "Dashboard Admin" as admin_menu {
+        usecase "Verifikasi Akun Pendaftar" as account_verify
+        usecase "Verifikasi Koperasi / UMKM" as umkm_verify
+        usecase "Buat Program Bantuan" as create_program
+        usecase "Verifikasi Koperasi / UMKM ke Program Bantuan" as verify_program_member
+        usecase "Tambah Berita" as create_news
+    }
+
+    
+    usecase "Lihat Berita" as view_news
+    usecase "Lihat program bantuan" as view_program
+
+    rectangle "Menu User" as user_menu {
+        usecase "Pendaftaran Koperasi / UMKM" as register_umkm
+        usecase "Edit Data Identitas" as edit_account
+        usecase "Pendaftaran Program Bantuan" as register_program
+        usecase "Lihat Notifikasi" as view_notification
+    }
+
+    usecase Login
+    usecase Daftar
+}
+
+
+
+
+Login -- Admin
+view_program -- Admin
+account_verify -- Admin
+umkm_verify -- Admin
+create_program -- Admin
+verify_program_member -- Admin
+view_news -- Admin
+
+create_news <-down. view_news #line:red;text:red; : include
+register_umkm <-down. umkm_verify #line:blue;text:blue; : extends
+
+register_program .> create_program #line:red;text:red; : include
+
+User -- Login
+User -- view_news
+User -- register_umkm
+User -- view_program
+User -- edit_account
+User -- register_program
+User -- view_notification
+User -- Daftar
+
+
+
+Login .-up-> Daftar #line:red;text:red; : include
+admin_menu .up-> Login #line:red;text:red; : include
+user_menu .up-> Login #line:red;text:red; : include

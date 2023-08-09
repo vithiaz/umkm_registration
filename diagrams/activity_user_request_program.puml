@@ -1,0 +1,28 @@
+|User|
+start
+
+:Login;
+:Masuk ke halaman Pengajuan Bantuan;
+|System|
+:Tampilkan Program Bantuan yang Aktif;
+
+
+|User|
+if (data akun diverifikasi ?) is (tidak) then
+    end
+
+else (ya)
+    |System|
+    :Tampilkan Form Pendaftaran Program;
+    :Tampilkan Pilihan UMKM / Koperasi yang terdaftar;    
+
+    |User|
+    :Pilih Koperasi / UMKM;
+    :Ajukan Pendaftaran;
+
+    |System|
+    :Tambahkan ke permintaan pendaftaran program bantuan;
+
+    stop
+
+endif

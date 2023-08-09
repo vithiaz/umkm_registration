@@ -12,6 +12,7 @@ rectangle Aplikasi {
         usecase "Verifikasi Pengajuan Pendaftar UMKM" as umkm_register_ver
         usecase "Verifikasi Pengajuan Pendaftar Koperasi" as koperasi_register_ver
         usecase "Verifikasi Pengajuan Pendaftar Bantuan UMKM" as umkm_sup_register_ver
+        
     }
 
     package MenuUser as user_menu {

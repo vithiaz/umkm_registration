@@ -1,0 +1,49 @@
+@startuml
+
+|User|
+start
+
+:Login;
+if (data akun diverifikasi ?) is (tidak) then
+    end
+
+else (ya)
+    |User|
+    :Masuk ke halaman Pendaftaran Koperasi / UMKM;
+    |User|
+    repeat :Mengisi Form Pendaftaran Koperasi / UMKM;
+    :Submit;
+
+    |System|
+    :Validasi Data Form;
+    backward :Tampilkan pesan error;
+    repeat while (Data divalidasi) is (Tidak) not (Ya)
+    :Simpan Data Koperasi / UMKM;
+    :Tambahkan ke permintaan verifikasi Koperasi / UMKM;
+endif
+
+|User|
+:Lihat Koperasi / UMKM yang didaftarkan;
+if (UMKM / Koperasi diverifikasi ?) is (ya) then
+    :Download Surat Ijin;
+
+
+else (tidak)
+    :Edit Data Koperasi / UMKM;
+    repeat :Mengisi Form Edit Koperasi / UMKM;
+    :Submit;
+
+    |System|
+    :Validasi Data Form;
+    backward :Tampilkan pesan error;
+    repeat while (Data divalidasi) is (Tidak) not (Ya)
+    :Simpan Perubahan;
+        
+endif
+
+
+|User|
+stop
+
+
+@enduml

@@ -1,0 +1,61 @@
+@startuml
+
+' declare
+actor Admin
+participant Login
+participant "Verifikasi Akun" as user_acc_verify
+boundary "Tampilan Verifikasi Registrasi Akun" as verify_regis_page
+control "Proses Verifikasi Data" as verify_data_process
+database "Tabel User" as db_user
+entity "Data User" as user_data
+
+
+
+
+
+' flow
+activate Admin
+Admin -> Login
+activate Login
+
+Login -> user_acc_verify : verifikasi registrasi akun
+
+
+activate user_acc_verify
+user_acc_verify -> verify_regis_page : masuk halaman verifikasi
+activate verify_regis_page
+verify_regis_page -> db_user : cari data
+activate db_user
+
+
+db_user -> user_data : muat data user
+deactivate db_user
+activate user_data #Green
+user_data -[#Green]> verify_regis_page : data user
+
+verify_regis_page -> verify_data_process : proses verifikasi
+activate verify_data_process
+verify_data_process -> user_data : update aktivasi data user
+
+user_data -> db_user : simpan perubahan
+deactivate user_data
+activate db_user
+db_user -> verify_data_process : data tersimpan
+deactivate db_user
+
+verify_data_process -> verify_regis_page : notifikasi verifikasi berhasil
+deactivate verify_data_process
+verify_regis_page -> user_acc_verify : verifikasi berhasil
+deactivate verify_regis_page
+
+user_acc_verify -> Login
+deactivate user_acc_verify
+Login -> Admin : logout
+deactivate Login
+deactivate Admin
+
+
+
+
+
+@enduml

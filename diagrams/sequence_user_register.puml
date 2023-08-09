@@ -1,0 +1,47 @@
+@startuml
+
+' Declare
+actor User
+participant Register
+boundary "Tampilan Registrasi Akun" as registration_page
+control "Proses Data Identitas" as user_data_process
+entity "Data User" as user_data
+database "Tabel User" as db_user
+
+
+
+' Flow
+activate User
+User -> Register : registrasi akun
+activate Register
+
+Register -> registration_page : masuk halaman registrasi
+activate registration_page
+
+registration_page -> user_data_process : input data identitas 
+activate user_data_process
+user_data_process -> user_data_process : validasi data identitas
+activate user_data_process #Yellow
+user_data_process -> registration_page : notifikasi validasi data gagal
+
+user_data_process -> user_data : data divalidasi
+deactivate user_data_process
+activate user_data
+user_data -> db_user : simpan data
+deactivate user_data
+activate db_user
+db_user -> user_data_process : data identitas tersimpan
+deactivate db_user
+user_data_process -> registration_page : notifikasi data tersimpan
+deactivate user_data_process
+
+registration_page -> Register : registrasi berhasil, menunggu verifikasi admin
+deactivate registration_page
+
+Register -> User
+deactivate Register
+deactivate User
+
+
+
+@enduml

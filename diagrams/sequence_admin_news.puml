@@ -1,0 +1,51 @@
+@startuml
+
+' Declare
+actor Admin
+participant Login
+participant "Tambah Berita" as Register
+boundary "Halaman Tambah Berita" as add_news_page
+control "Proses Berita" as news_process
+entity "Data Berita" as news_data
+database "Tabel Program" as db_news
+
+
+' Flow
+activate Admin
+Admin -> Login
+activate Login
+
+Login -> Register : tambah Berita
+activate Register
+
+Register -> add_news_page : masuk halaman Berita
+activate add_news_page
+
+add_news_page -> news_process : input data Berita
+activate news_process
+news_process -> news_process : validasi data Berita
+activate news_process #Yellow
+news_process -> add_news_page : notifikasi validasi data gagal
+
+news_process -> news_data : data divalidasi
+deactivate news_process
+activate news_data
+news_data -> db_news : simpan data
+deactivate news_data
+activate db_news
+db_news -> news_process : data Berita tersimpan
+deactivate db_news
+news_process -> add_news_page : notifikasi data tersimpan
+deactivate news_process
+
+add_news_page -> Register : penambahan Berita berhasil
+deactivate add_news_page
+
+Register -> Login
+deactivate Register
+Login -> Admin : logout
+deactivate Login
+deactivate Admin
+
+
+@enduml
