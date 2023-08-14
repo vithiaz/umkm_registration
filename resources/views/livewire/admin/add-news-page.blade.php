@@ -62,6 +62,7 @@
             toolbar: [
                 ['style', ['bold', 'italic', 'underline', 'clear']],
                 ['fontsize', ['fontsize']],
+                ['insert', ['picture']],
             ],
             callbacks: {
                 onChange: (contents, $editable) => {

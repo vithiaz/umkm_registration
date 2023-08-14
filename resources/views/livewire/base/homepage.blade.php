@@ -134,10 +134,16 @@
         <div class="section-content-wrapper">
             <div class="content-box lighter">
                 <div class="container">
-                    <div class="description-wrapper">
-                        <span>Sudah Memiliki akun?</span>
-                    </div>
-                    <button href="#" class="btn dark-button" data-bs-toggle="modal" data-bs-target="#auth_modal">Masuk</button>
+                    @auth
+                        <div class="description-wrapper">
+                            <span>Anda Login Sebagai {{ Auth::user()->full_name }}</span>
+                        </div>
+                    @else
+                        <div class="description-wrapper">
+                            <span>Sudah Memiliki akun?</span>
+                        </div>
+                        <button href="#" class="btn dark-button" data-bs-toggle="modal" data-bs-target="#auth_modal">Masuk</button>
+                    @endauth
                 </div>
             </div>
             <div class="content-box darker">

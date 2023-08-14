@@ -52,5 +52,18 @@
         // $('.modal-backdrop').remove();
     }
 
+    $('#nip_input').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            @this.check_login();
+        }
+    });
+    $('#birth_input').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            @this.check_login();
+        }
+    });
+
 </script>
 @endpush

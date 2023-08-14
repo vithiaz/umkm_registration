@@ -38,11 +38,44 @@ class AddNewsPage extends Component
 
         $News = new News;
         $News->title = $this->title;
-        $News->body = $this->body;
+        $News->body = $this->process_image_on_body();
         $News->is_active = true;
         $News->save();
 
         return redirect()->route('admin.news')->with('message', 'Berita Ditambahkan');
+    }
+
+    private function process_image_on_body () {
+        if ($this->body != null) {
+            $dom = new \DOMDocument();
+            libxml_use_internal_errors(true);
+            $dom->loadHTML($this->body);
+            libxml_clear_errors();
+            
+            $dom_images = $dom->getElementsByTagName('img');
+            foreach ($dom_images as $imageElem) {
+                $src = $imageElem->getAttribute('src');
+                if (preg_match('/data:image/', $src)) {
+                    preg_match('/data:image\/(?<mime>.*?)\;/', $src, $groups);
+                    $mimetype = $groups['mime'];
+                    $file_name = uniqid('img_', true);
+                    $file_path = ("storage/news_image/$file_name.$mimetype");
+                    
+                    //Decode and save image
+                    list($type, $src) = explode(';', $src);
+                    list(, $src)      = explode(',', $src);
+                    $img = base64_decode($src);
+                    file_put_contents(public_path($file_path), $img);
+                    
+                    $new_src = str_replace('admin.', '', asset($file_path));
+                    $imageElem->removeAttribute('src');
+                    $imageElem->setAttribute('src', $new_src);
+                }
+            }
+            return $dom->saveHTML();  
+        }
+        return '';
+
     }
 
 

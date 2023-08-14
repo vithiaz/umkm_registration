@@ -54,4 +54,8 @@ class Login extends Component
             session()->flash('error', 'NIK tidak terdaftar!');
         }
     }
+
+    public function check_login() {
+        $this->login();
+    }
 }
