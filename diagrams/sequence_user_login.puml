@@ -1,0 +1,54 @@
+@startuml
+
+' Delcare
+actor User
+participant Login
+boundary "Tampilan Form Login" as login_form
+control "Proses Data Login" as login_controller
+database "Tabel User" as db_user
+participant "Login ke Sistem" as logged_in
+
+
+' Flow
+activate User
+User -> Login : login ke aplikasi
+activate Login
+
+Login -> login_form
+activate login_form
+login_form -> login_controller : input NIK dan tanggal lahir
+activate login_controller
+login_controller -> login_controller : validasi NIK dan Tanggal lahir
+activate login_controller #Yellow
+
+login_controller -> db_user : cari NIK dan Tanggal lahir dalam database
+activate db_user
+
+db_user -> login_controller
+deactivate db_user
+login_controller -> login_form : notifikasi validasi login
+
+login_controller -> logged_in : login ke sistem
+deactivate login_controller
+activate logged_in
+logged_in -> login_controller : login berhasil
+deactivate logged_in
+
+login_controller -> login_form : tutup form login
+deactivate login_controller
+
+login_form -> Login
+deactivate login_form
+
+Login -> User
+deactivate Login
+
+
+
+
+
+
+
+
+
+@enduml

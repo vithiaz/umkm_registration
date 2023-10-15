@@ -1,0 +1,68 @@
+@startuml
+
+' Delcare
+actor User
+participant Login
+participant "Edit Data Identitas" as edit_identity
+boundary "Halaman Data Identitas" as identity_page
+control "Edit Data Controller" as edit_controller
+
+entity "Data User" as data_user
+database "Tabel User" as db_user
+
+
+' Flow
+activate User
+User -> Login
+activate Login
+
+Login -> edit_identity : edit data identitas
+activate edit_identity
+
+edit_identity -> identity_page : masuk halaman data identitas
+activate identity_page
+identity_page -> db_user : cari data user
+
+activate db_user
+db_user -> data_user
+deactivate db_user
+
+activate data_user
+data_user -> identity_page : tampilkan data user
+deactivate data_user
+
+identity_page -> edit_controller : edit data identitas
+activate edit_controller
+edit_controller -> edit_controller : validasi data
+activate edit_controller #Yellow
+edit_controller -> identity_page : notifikasi validasi gagal
+
+
+edit_controller -> data_user : data diubah
+deactivate edit_controller
+activate data_user
+
+data_user -> db_user : siman perubahan
+deactivate data_user
+activate db_user
+db_user -> edit_controller : perubahan tersimpan
+deactivate db_user
+
+edit_controller -> identity_page : notifikasi data diubah
+deactivate edit_controller
+
+identity_page -> edit_identity
+deactivate identity_page
+
+edit_identity -> Login : logout
+deactivate edit_identity
+
+Login -> User
+deactivate Login
+
+
+
+
+
+
+@enduml

@@ -1,0 +1,77 @@
+@startuml
+
+' Delcare
+actor User
+participant Login
+participant "Pengajuan Bantuan" as request_program
+boundary "Halaman Pengajuan Bantuan" as request_program_page
+control "Pengajuan Bantuan Controller" as request_controller
+
+entity "Program Bantuan" as entity_program
+database "Tabel Program Bantuan" as db_programs
+
+
+entity "Koperasi / UMKM" as entity_umkm
+database "Tabel Umkm" as db_umkm
+entity "Pendaftar Program Bantuan" as entity_program_member
+database "Tabel Program Bantuan" as db_program_member
+
+
+
+' Flow
+activate User
+User -> Login
+activate Login
+
+Login -> request_program : pengajuan bantuan Koperasi / UMKM
+activate request_program
+
+request_program -> request_program_page : masuk halaman pengajuan bantuan
+activate request_program_page
+activate db_programs
+db_programs -> request_program_page : program bantuan aktif
+deactivate db_programs
+
+request_program_page -> request_controller : proses pengajuan
+activate request_controller
+request_controller -> db_programs : cari program
+activate db_programs
+db_programs -> entity_program : program bantuan
+deactivate db_programs
+activate entity_program
+
+entity_program -> entity_program_member : ID Program Bantuan
+deactivate entity_program
+activate entity_program_member
+
+request_controller -> db_umkm : cari koperasi / umkm
+activate db_umkm
+
+db_umkm -> entity_umkm : koperasi / UMKM aktif
+deactivate db_umkm
+activate entity_umkm
+entity_umkm -> entity_program_member : ID Koperasi / UMKM
+deactivate entity_umkm
+
+entity_program_member -> db_program_member : simpan pendaftar program
+deactivate entity_program_member
+activate db_program_member
+db_program_member -> request_controller : pendaftar program tersimpan
+deactivate db_program_member
+
+request_controller -> request_program_page : notifikasi pengajuan terdaftar
+deactivate request_controller
+
+request_program_page -> request_program
+deactivate request_program_page
+
+request_program -> Login : logout
+deactivate request_program
+
+Login -> User
+deactivate Login
+
+
+
+
+@enduml
