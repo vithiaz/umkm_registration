@@ -8,8 +8,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start !important;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: unset !important;
   flex-wrap: wrap;
 }

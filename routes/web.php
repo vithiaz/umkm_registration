@@ -3,6 +3,7 @@
 use App\Http\Livewire\Base\Homepage;
 use App\Http\Livewire\Notifications;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Admin\Dashboard as AdminDashboard;
 use App\Http\Livewire\UmkmVerification;
 use App\Http\Livewire\Admin\AddNewsPage;
 use App\Http\Livewire\Base\Registration;
@@ -41,6 +42,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::prefix('admin')->group(function () {
+        Route::get('/', AdminDashboard::class)->name('admin.dashboard');
         Route::get('/account-verification', AccountVerification::class)->name('admin.account-verify');
         Route::get('/umkm-verification', UmkmVerification::class)->name('admin.umkm-verify');
         Route::get('/programs', AdminUmkmPrograms::class)->name('admin.umkm-programs');        

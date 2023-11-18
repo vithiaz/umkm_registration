@@ -20,6 +20,7 @@ class MyUmkmCard extends Component
     // Binding Variable
     public $edit_state;
     public $name;
+    public $sub_district;
     public $recomendation_docs;
     public $images = [];
     public $store_images;
@@ -29,11 +30,13 @@ class MyUmkmCard extends Component
     
     protected $rules = [
         'name' => 'required|string',
+        'sub_district' => 'required',
         'recomendation_docs' => 'nullable|image|max:8192',
     ];
 
     protected $messages = [
         'name.required' => 'Nama UMKM harus diisi',
+        'sub_district.required' => 'Kecamatan harus diisi',
         'name.recomendation_docs.image' => 'Surat rekomendasi harus berupa gambar',
         'name.recomendation_docs.max' => 'Ukuran gambar surat rekomendasi tidak boleh lebih dari 2 MB',
 
@@ -51,6 +54,7 @@ class MyUmkmCard extends Component
     private function reset_state() {
         $this->edit_state = false;
         $this->name = $this->umkm->name;
+        $this->sub_district = $this->umkm->sub_district;
         $this->recomendation_docs = '';
         $this->store_images = [];
         $this->delete_image_ids = [];
@@ -91,6 +95,7 @@ class MyUmkmCard extends Component
         $editUmkm = Umkm::find($this->umkm->id);
         if ($editUmkm) {
             $editUmkm->name = $this->name;
+            $editUmkm->sub_district = $this->sub_district;
             
             if ($this->recomendation_docs) {
                 $oldPath = public_path() . '/storage/' . $editUmkm->recomendation_docs;

@@ -41,8 +41,7 @@
 .umkm-programs .container .page-card.col-wrap .row-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 5px;
   flex-wrap: wrap;
   align-items: center;
@@ -132,8 +131,7 @@
 .umkm-programs .container .page-card .button-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 10px;
   align-items: center;
   justify-content: flex-end;

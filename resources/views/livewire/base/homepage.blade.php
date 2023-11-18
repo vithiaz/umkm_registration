@@ -13,7 +13,7 @@
             <div id="navigator-menu-dropdown" class="menu-dropdown">
                 <ul>
                     @if (Auth::user()->is_admin)
-                        <li><a href="{{ route('admin.account-verify') }}">Admin Panel</a></li>
+                        <li><a href="{{ route('admin.dashboard') }}">Admin Panel</a></li>
                     @else
                         <li><a href="{{ route('profile') }}">Pengaturan Akun</a></li>
                     @endif

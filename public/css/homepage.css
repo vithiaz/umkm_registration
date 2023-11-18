@@ -15,8 +15,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -163,8 +162,7 @@
 .homepage section.hero .container .row-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 10px;
   flex-wrap: wrap-reverse;
   min-height: 350px;
@@ -208,7 +206,6 @@
 }
 .homepage section.hero .container .row-wrapper .main-content-wrapper .city-logo-wrapper img {
   height: 40px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .homepage section.hero .container .row-wrapper .main-content-wrapper .city-logo-wrapper .logo-title {
@@ -221,7 +218,6 @@
   flex-direction: column;
 }
 .homepage section.hero .container .row-wrapper .sub-content-wrapper .main-logo-wrapper {
-  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -230,7 +226,6 @@
 }
 .homepage section.hero .container .row-wrapper .sub-content-wrapper .main-logo-wrapper img {
   height: 120px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .homepage section.hero .menu-wrapper {
@@ -243,8 +238,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 10px;
   align-items: center;
   justify-content: flex-start;
@@ -379,8 +373,7 @@
 .homepage section.registration-info .section-content-wrapper .content-box.content .container .row-item {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   align-items: center;
 }
 .homepage section.registration-info .section-content-wrapper .content-box.content .container .row-item .number {
@@ -460,8 +453,7 @@
 .homepage section.login-register .section-content-wrapper .content-box.lighter .container {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 25px;
-       column-gap: 25px;
+  column-gap: 25px;
   row-gap: 20px;
   align-items: center;
   justify-content: center;
@@ -508,8 +500,7 @@
 .homepage section.login-register .section-content-wrapper .content-box.darker .container {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 25px;
-       column-gap: 25px;
+  column-gap: 25px;
   row-gap: 20px;
   align-items: center;
   justify-content: center;
@@ -584,8 +575,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 2px;
 }
 .homepage section.news .container .section-content-wrapper .page-card {

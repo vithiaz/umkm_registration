@@ -22,6 +22,22 @@
         </div>
     </div>
     <div class="row-wrapper">
+        <span class="input-title">Kecamatan</span>
+        <div class="input-items">
+            <select wire:model='sub_district' class="form-select" aria-label="Default select example">
+                <option selected value="" hidden>Pilih Kecamatan</option>
+                <option value="Tomohon Barat">Tomohon Barat</option>
+                <option value="Tomohon Selatan">Tomohon Selatan</option>
+                <option value="Tomohon Tengah">Tomohon Tengah</option>
+                <option value="Tomohon Timur">Tomohon Timur</option>
+                <option value="Tomohon Utara">Tomohon Utara</option>
+            </select>
+            @error('sub_district')
+                <small class="error">{{ $message }}</small>
+            @enderror
+        </div>
+    </div>
+    <div class="row-wrapper">
         <span class="input-title">Surat Pengantar</span>
         <div class="input-items">
             <input wire:model='recomendation_docs' type="file" class="form-control file" accept="image/*" >

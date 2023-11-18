@@ -325,6 +325,22 @@
                 display: flex;
                 flex-direction: column;
                 row-gap: 5px;
+
+                &.no-sub {
+
+                    a.menu-title {
+                        text-decoration: none;
+                        color: white;
+
+                        &.active, &:hover {
+                            color: $LightenOrange;
+
+                            i {
+                                transform: rotate(-90deg);
+                            }
+                        }
+                    }
+                }
         
                 .menu-title {
                     width: 100%;

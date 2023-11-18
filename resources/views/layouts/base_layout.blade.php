@@ -122,6 +122,9 @@
     {{-- AlpineJS  --}}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
             
+    {{-- ChartJS --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     @livewireScripts
 
     @stack('script')

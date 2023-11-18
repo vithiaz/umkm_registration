@@ -15,6 +15,7 @@ class AddUmkm extends Component
     // Binding Variable
     public $name;
     public $type;
+    public $sub_district;
     public $recomendation_docs;
     public $images = [];
     public $store_images;
@@ -24,6 +25,7 @@ class AddUmkm extends Component
     protected $rules = [
         'name' => 'required|string',
         'type' => 'required',
+        'sub_district' => 'required',
         'recomendation_docs' => 'required|image|max:8192',
     ];
 
@@ -38,6 +40,7 @@ class AddUmkm extends Component
     public function mount() {
         $this->name = '';
         $this->type = '';
+        $this->sub_district = '';
         $this->recomendation_docs = null;
         $this->store_images = [];
     }
@@ -53,6 +56,7 @@ class AddUmkm extends Component
         $umkm = new Umkm;
         $umkm->name = $this->name;
         $umkm->type = $this->type;
+        $umkm->sub_district = $this->sub_district;
         $umkm->status = 'pending';
         $umkm->owner_user = Auth::user()->id;
 
@@ -78,6 +82,7 @@ class AddUmkm extends Component
         
         $this->name = '';
         $this->type = '';
+        $this->sub_district = '';
         $this->recomendation_docs = null;
         $this->images = [];
         $this->store_images = [];

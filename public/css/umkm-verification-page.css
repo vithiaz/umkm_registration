@@ -1,5 +1,4 @@
 .umkm-verification .container .page-content-card.page-verify-card {
-  height: -moz-fit-content;
   height: fit-content;
   max-height: 0vh;
   transition: all ease-in-out 0.3s;
@@ -21,8 +20,7 @@
 .umkm-verification .container .page-content-card .info-wrapper .row-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 5px;
   flex-wrap: wrap;
   align-items: center;
@@ -78,7 +76,6 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .umkm-verification .container .page-content-card .info-wrapper .row-wrapper .input-items.row-button .btn:hover {
@@ -141,17 +138,14 @@
 }
 .umkm-verification .container .page-content-card .info-wrapper .row-wrapper .input-items.row-button .docs-wrapper .image-container, .umkm-verification .container .page-content-card .info-wrapper .row-wrapper .input-items.row-button .umkm-picture-wrapper .image-container {
   max-width: 800px;
-  height: -moz-fit-content;
   height: fit-content;
   opacity: 0;
   transition: all ease-in-out 0.3s;
 }
 .umkm-verification .container .page-content-card .info-wrapper .row-wrapper .input-items.row-button .docs-wrapper .image-container img, .umkm-verification .container .page-content-card .info-wrapper .row-wrapper .input-items.row-button .umkm-picture-wrapper .image-container img {
   width: 100%;
-  height: -moz-fit-content;
   height: fit-content;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .umkm-verification .container .page-content-card .info-wrapper .row-wrapper .input-items.row-button .docs-wrapper.umkm-picture-wrapper, .umkm-verification .container .page-content-card .info-wrapper .row-wrapper .input-items.row-button .umkm-picture-wrapper.umkm-picture-wrapper {
   flex-direction: row;
@@ -179,8 +173,7 @@
 .umkm-verification .container .page-content-card .info-wrapper .owner-info-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 20px;
   justify-content: space-around;
   flex-wrap: wrap-reverse;
@@ -197,24 +190,20 @@
 }
 .umkm-verification .container .page-content-card .info-wrapper .owner-info-wrapper .profile-wrapper .image-container {
   width: 100%;
-  height: -moz-fit-content;
   height: fit-content;
   border-radius: 4px;
   overflow: hidden;
 }
 .umkm-verification .container .page-content-card .info-wrapper .owner-info-wrapper .profile-wrapper .image-container img {
   width: 100%;
-  height: -moz-fit-content;
   height: fit-content;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .umkm-verification .container .page-content-card .log-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 0;
-  height: -moz-fit-content;
   height: fit-content;
   max-height: 0vh;
   transition: all ease-in-out 0.3s;
@@ -258,8 +247,7 @@
 .umkm-verification .container .page-content-card .message-container .row-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 5px;
   flex-wrap: wrap;
   align-items: center;

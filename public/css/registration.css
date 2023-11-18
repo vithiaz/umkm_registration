@@ -44,8 +44,7 @@
 .registration .container .registration-content-body .content .content-row-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 25px;
   flex-wrap: wrap;
   align-items: center;
@@ -77,8 +76,7 @@
 .registration .container .registration-content-body .content .row-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   flex-wrap: wrap;
   align-items: center;
 }

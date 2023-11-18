@@ -1,0 +1,29 @@
+.admin-dashboard .container .content-card-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.admin-dashboard .container .content-card-wrapper .page-content-card {
+  flex-basis: 380px;
+  flex-grow: 1;
+}
+.admin-dashboard .container .content-card-wrapper .page-content-card .chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.admin-dashboard .container .content-card-wrapper .page-content-card .chart-container .canvas-container {
+  width: 100%;
+  max-width: 420px;
+}
+.admin-dashboard .container .content-card-wrapper .page-content-card.bar-card {
+  flex-basis: 100%;
+}
+.admin-dashboard .container .content-card-wrapper .page-content-card.bar-card .canvas-container {
+  width: 100%;
+  max-width: 95%;
+}/*# sourceMappingURL=admin-dashboard-page.css.map */

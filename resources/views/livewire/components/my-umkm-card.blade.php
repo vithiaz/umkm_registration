@@ -13,6 +13,26 @@
                 @endif
             </div>
         </div>
+        <div class="row-wrapper">
+            <span class="input-title">Kecamatan</span>
+            <div class="input-items">
+                @if ($this->edit_state)
+                    <select wire:model='sub_district' class="form-select" aria-label="Default select example">
+                        <option selected value="" hidden>Pilih Kecamatan</option>
+                        <option value="Tomohon Barat">Tomohon Barat</option>
+                        <option value="Tomohon Selatan">Tomohon Selatan</option>
+                        <option value="Tomohon Tengah">Tomohon Tengah</option>
+                        <option value="Tomohon Timur">Tomohon Timur</option>
+                        <option value="Tomohon Utara">Tomohon Utara</option>
+                    </select>
+                    @error('sub_district')
+                        <small class="error">{{ $message }}</small>
+                    @enderror                    
+                @else
+                    <span class="label">{{ $umkm->sub_district }}</span>
+                @endif
+            </div>
+        </div>
         @if ($this->edit_state)
             <div class="row-wrapper">
                 <span class="input-title">Surat Pengantar</span>

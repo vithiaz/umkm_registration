@@ -25,7 +25,6 @@
 }
 .profile-page .container .page-content-card {
   width: 100%;
-  height: -moz-fit-content;
   height: fit-content;
   border-radius: 4px;
   background-color: white;
@@ -41,8 +40,7 @@
 .profile-page .container .page-content-card.information .row-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 10px;
   align-items: flex-start;
   justify-content: flex-start;
@@ -80,8 +78,7 @@
 .profile-page .container .page-content-card .card-title-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   row-gap: 5px;
   flex-wrap: wrap;
   align-items: center;
@@ -102,8 +99,7 @@
 .profile-page .container .page-content-card .card-content {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 40px;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -118,8 +114,7 @@
 .profile-page .container .page-content-card .card-content .content-wrapper .row-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   row-gap: 3px !important;
   flex-wrap: wrap;
   align-items: center;
@@ -162,8 +157,7 @@
 .profile-page .container .page-content-card .card-content .picture-wrapper {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   row-gap: 10px;
   align-items: center;
   justify-content: space-evenly;
@@ -180,8 +174,7 @@
 .profile-page .container .page-content-card .card-content .picture-wrapper .image-container img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .profile-page .container .page-content-card .card-content .picture-wrapper .image-container .input-trigger-overlay {
   position: absolute;
@@ -231,8 +224,7 @@
   flex-basis: 100%;
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
+  column-gap: 40px;
   row-gap: 10px;
   flex-wrap: wrap;
 }
@@ -241,8 +233,7 @@
   flex-basis: 400px;
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   row-gap: 3px !important;
   justify-content: space-between;
 }
@@ -261,7 +252,6 @@
   flex-direction: column;
   gap: 3px;
   position: relative;
-  height: -moz-fit-content;
   height: fit-content;
 }
 .profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .input-trigger-overlay {
@@ -289,14 +279,12 @@
 }
 .profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .image-container {
   max-width: 400px;
-  height: -moz-fit-content;
   height: fit-content;
 }
 .profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .image-container img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .profile-page .container .page-content-card .card-content .document-wrapper .row-wrapper .input-items .input-detail {
   text-align: justify;
@@ -326,8 +314,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   row-gap: 10px;
   align-items: center;
   justify-content: flex-end;

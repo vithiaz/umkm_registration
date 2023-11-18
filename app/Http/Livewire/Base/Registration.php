@@ -22,7 +22,7 @@ class Registration extends Component
     public $photo;
 
     protected $rules = [
-        'nip' => 'required|numeric',
+        'nip' => 'required|numeric|unique:users,nip',
         'full_name' => 'required|string',
         'birth' => 'required|date',
         'gender' => 'required|string',
@@ -35,6 +35,7 @@ class Registration extends Component
     protected $messages  = [
         'nip.required' => 'NIK tidak boleh kosong',
         'nip.numeric' => 'NIK hanya boleh diisi angka',
+        'nip.unique' => 'NIK sudah terdaftar',
         'full_name.required' => 'Nama Lengkap tidak boleh kosong',
         'birth.required' => 'Tanggal Lahir tidak boleh kosong',
         'gender.required' => 'Jenis Kelamin tidak boleh kosong',
@@ -85,9 +86,7 @@ class Registration extends Component
         $newUser->photo = $photo_path;
 
         $newUser->save();
-
         return redirect()->route('homepage');
-        
     }
 
 }

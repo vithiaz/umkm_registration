@@ -21,6 +21,7 @@ class Umkm extends Model
         "status",
         "permission_docs",
         "owner_user",
+        "sub_district",
     ];
 
     public function user()

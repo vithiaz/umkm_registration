@@ -13,8 +13,18 @@
         </span>
         <span class="page-title">Menu</span>
         <div class="menu-wrapper">
+            <div class="menu-item no-sub">
+                <a href="{{ route('admin.dashboard') }}" class="menu-title
+                    @if (\Request::route()->getName() == 'admin.dashboard')
+                        active
+                    @endif
+                ">
+                    <span>Dashboard</span>
+                    <i class="fa-sharp fa-solid fa-angle-down"></i>
+                </a>
+                <div class="sub-menu-item-wrapper"></div>
+            </div>
             <div class="menu-item">
-                {{-- <div class="menu-title"> --}}
                 <div class="menu-title">
                     <span>Verifikasi</span>
                     <i class="fa-sharp fa-solid fa-angle-down"></i>

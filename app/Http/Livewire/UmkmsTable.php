@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Umkm;
+use App\Exports\UmkmExport;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\Builder;
@@ -44,11 +45,19 @@ final class UmkmsTable extends PowerGridComponent
         $this->emitTo('umkm-verification', 'setVerifyData', $umkm_id);
     }
 
+    public function xlsx_export() {
+        $current_time = Carbon::now()->timestamp;
+        $filename = $this->status . '_report_koperasi_umkm_' . $current_time . '.xlsx';
+        return (new UmkmExport($this->status))->download($filename);
+    }
+
 
     public function setUp(): array
     {
         return [
-            Header::make()->showSearchInput(),
+            Header::make()
+                ->includeViewOnTop('components.audit-report-table-header-export')
+                ->showSearchInput(),
             Footer::make()
                 ->showPerPage()
                 ->showRecordCount(),

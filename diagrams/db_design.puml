@@ -48,6 +48,7 @@ entity umkm {
     ' verified
     ' pending
     ' rejected
+    * sub_district STRING
     permission_docs STRING
     --
     * owner_user UNSIGNED_BIGINT FOUREIGN(users.id)

@@ -34,7 +34,6 @@
 }
 .add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .note-editing-area {
   padding: 5px 20px 20px 30px;
-  height: -moz-fit-content;
   height: fit-content;
 }
 .add-news-page .container .page-content-card .row-wrapper .form-wrapper #summernote-container .note-image-popover {
