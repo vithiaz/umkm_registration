@@ -56,21 +56,21 @@
         </div>
 
         <div class="page-title">
-            <h1>PENDAFTARAN UMKM</h1>
+            <h1>PENDAFTARAN Koperasi</h1>
         </div>
 
-        <livewire:components.add-umkm />
+        <livewire:components.add-koperasi />
 
         <div class="page-title secondary">
-            <h1>UMKM Saya</h1>
+            <h1>Koperasi Saya</h1>
         </div>
 
-        @forelse ($Umkms as $index => $umkm)
-            <livewire:components.my-umkm-card :umkm='$umkm' :index='$index' />
+        @forelse ($Koperasi as $index => $kop)
+            <livewire:components.my-koperasi-card :koperasi='$kop' :index='$index' />
         @empty
             <div class="page-card col-wrap">
                 <div class="empty-container">
-                    <span>Belum ada UMKM yang terdaftar...</span>
+                    <span>Belum ada Koperasi yang terdaftar...</span>
                 </div>
             </div>
         @endforelse

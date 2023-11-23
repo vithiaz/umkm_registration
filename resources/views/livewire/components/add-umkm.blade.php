@@ -2,13 +2,13 @@
     <div class="row-wrapper">
         <span class="input-title">Nama</span>
         <div class="input-items">
-            <input wire:model='name' type="text" class="main-form-input" placeholder="Nama Koperasi / UMKM">
+            <input wire:model='name' type="text" class="main-form-input" placeholder="Nama UMKM">
             @error('name')
                 <small class="error">{{ $message }}</small>
             @enderror
         </div>
     </div>
-    <div class="row-wrapper">
+    {{-- <div class="row-wrapper">
         <span class="input-title">Jenis</span>
         <div class="input-items">
             <select wire:model='type' class="form-select" aria-label="Default select example">
@@ -20,7 +20,7 @@
                 <small class="error">{{ $message }}</small>
             @enderror
         </div>
-    </div>
+    </div> --}}
     <div class="row-wrapper">
         <span class="input-title">Kecamatan</span>
         <div class="input-items">

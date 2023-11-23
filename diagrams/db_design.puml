@@ -30,7 +30,7 @@ entity activation_log {
     ' revoked
     * message TEXT
     --
-    * user_id UNSIGNED_BIGINT FOUREIGN(users.id)
+    * user_id UNSIGNED_BIGINT FOREIGN(users.id)
     --
     * created_at DATETIME
     * updated_at DATETIME
@@ -51,7 +51,7 @@ entity umkm {
     * sub_district STRING
     permission_docs STRING
     --
-    * owner_user UNSIGNED_BIGINT FOUREIGN(users.id)
+    * owner_user UNSIGNED_BIGINT FOREIGN(users.id)
     --
     * created_at DATETIME
     * updated_at DATETIME
@@ -66,7 +66,45 @@ entity umkm_activation_log {
     ' revoked
     * message TEXT
     --
-    * umkm_id UNSIGNED_BIGINT FOUREIGN(umkm_id)
+    * umkm_id UNSIGNED_BIGINT FOREIGN(umkm.id)
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
+entity koperasi {
+    * id BIGINT PRIMARY KEY
+    --
+    * name STRING
+    * legal_number STRING 
+    ' nomor badan hukum
+    * legal_date DATE
+    * status STRING
+    ' verified
+    ' pending
+    ' rejected
+    * address STRING
+    * village
+    ' kelurahan
+    * sub_district STRING
+    * city STRING
+    --
+    * owner_user UNSIGNED_BIGINT FOREIGN(users.id)
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
+entity koperasi_activation_log {
+    * id BIGINT PRIMARY KEY
+    --
+    * status STRING
+    ' acc
+    ' rejected
+    ' revoked
+    * message TEXT
+    --
+    * koperasi_id UNSIGNED_BIGINT FOREIGN(koperasi.id)
     --
     * created_at DATETIME
     * updated_at DATETIME
@@ -76,7 +114,7 @@ entity umkm_images{
     * id BIGINT PRIMARY KEY
     --
     * image STRING
-    * umkm_id UNSIGNED_BIGINT FOUREIGN(umkm.id)
+    * umkm_id UNSIGNED_BIGINT FOREIGN(umkm.id)
     --
     * created_at DATETIME
     * updated_at DATETIME
@@ -104,8 +142,8 @@ entity support_program_members {
     ' pending
     ' verified
     --
-    * program_id UNSIGNED_BIGINT FOUREIGN(support_programs.id)
-    * umkm_id UNSIGNED_BIGINT FOUREIGN(umkm.id)
+    * program_id UNSIGNED_BIGINT FOREIGN(support_programs.id)
+    * umkm_id UNSIGNED_BIGINT FOREIGN(umkm.id)
     --
     * created_at DATETIME
     * updated_at DATETIME
@@ -118,7 +156,7 @@ entity user_notifications {
     * body TEXT
     * is_read BOOLEAN
     --
-    * user_id UNSIGNED_BIGINT FOUREIGN(users.id)
+    * user_id UNSIGNED_BIGINT FOREIGN(users.id)
     --
     * created_at DATETIME
     * updated_at DATETIME
@@ -140,6 +178,7 @@ entity news {
 
 users ||--o{ user_notifications
 users ||--o{ umkm
+users ||--o{ koperasi
 users ||--o{ activation_log
 
 support_programs ||--o{ support_program_members

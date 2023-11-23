@@ -46,12 +46,12 @@
                 </div>
             </div>
         @else
-            <div class="row-wrapper">
+            {{-- <div class="row-wrapper">
                 <span class="input-title">Jenis</span>
                 <div class="input-items">
                     <span class="">{{ $umkm->type }}</span>
                 </div>
-            </div>
+            </div> --}}
             <div class="row-wrapper">
                 <span class="input-title">Status</span>
                 <div class="input-items ico-wrap">

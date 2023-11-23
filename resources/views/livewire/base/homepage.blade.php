@@ -130,6 +130,75 @@
         </div>
     </section>
 
+
+    <section class="chart-info">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">INFORMASI UMKM DAN KOPERASI AKTIF</h2>    
+            </div>
+            <div class="section-content-wrapper">
+                <div class="content-box">
+                    <div class="bar-chart-container">
+                        <div class="canvas-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="bar-chart-container">
+                        <div class="canvas-container donut">
+                            <canvas id="umkmPerDistrictChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="bar-chart-container">
+                        <div class="canvas-container donut">
+                            <canvas id="koperasiPerDistrictChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+    
+                {{-- <div class="content-box darker">
+                    <div class="container">
+                        <span class="content-title">SIAPKAN <span class="lighter">BERKAS</span> PENDAFTARAN</span>
+                    </div>
+                </div>
+                <div class="content-box content">
+                    <div class="container">
+                        <div class="row-item">
+                            <div class="number">1</div>
+                            <div class="content-wrapper">
+                                <span class="title">Kartu Tanda Penduduk <span class="thin">(KTP)</span></span>
+                            </div>
+                        </div>
+                        <div class="row-item">
+                            <div class="number">2</div>
+                            <div class="content-wrapper">
+                                <span class="title">Kartu Keluarga <span class="thin">(KK)</span></span>
+                            </div>
+                        </div>
+                        <div class="row-item">
+                            <div class="number">3</div>
+                            <div class="content-wrapper">
+                                <span class="title">Surat Pengantar</span>
+                                <p class="subtitle">Surat pengantar diambil di kantor kelurahan / surat domisili</p>
+                            </div>
+                        </div>
+                        <div class="row-item">
+                            <div class="number">4</div>
+                            <div class="content-wrapper">
+                                <span class="title">Pas Foto</span>
+                                <p class="subtitle">Pas foto pemilik usaha, ukuran 3x4 (cm)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+    </section>
+
     <section class="login-register">
         <div class="section-content-wrapper">
             <div class="content-box lighter">
@@ -264,6 +333,102 @@
     
     $( window ).on('refreshScripts', function () {
         mount_script()
+    })
+
+
+    // Chart
+    const countByLocation = (sub_district, labels) => {
+        let count = []
+        labels.forEach(label => {
+            count.push(sub_district[label].length)
+        });
+
+        return count
+    }
+
+    const createDoughnut = (title, ctx_id, sub_district_data, label) => {
+        const ctx = $(ctx_id);
+        new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: label,
+            datasets: [{
+            label: 'Jumlah',
+            data: countByLocation(sub_district_data, label),
+            borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    display: false,
+                },
+                y: {
+                    display: false,
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: title,
+                    color: '#2A2A2A',
+                    font: {
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                }
+            }
+        }
+        });
+    }
+
+    const createBarChart = (ctx_id, labels, data) => {
+        const bar_ctx = $(ctx_id);
+        new Chart(bar_ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'jumlah',
+                data: data,
+                borderWidth: 1,
+                backgroundColor: [
+                    '#4270EE',
+                    '#F92727',
+                ],
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Koperasi / UMKM Aktif',
+                    color: '#2A2A2A',
+                    font: {
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                },
+                legend: {
+                    position: 'top'
+                },
+            },
+            indexAxis: 'y',
+        }
+        });
+    }
+
+    $(document).ready(() => {
+        createBarChart('#barChart', ['UMKM', 'Koperasi'], [@this.umkm_count, @this.koperasi_count])
+        createDoughnut('UMKM Aktif per Kecamatan', '#umkmPerDistrictChart', @this.umkm_sub_district, @this.umkm_sub_district_label)
+        createDoughnut('Koperasi Aktif per Kecamatan', '#koperasiPerDistrictChart', @this.koperasi_sub_district, @this.koperasi_sub_district_label)
     })
 
 

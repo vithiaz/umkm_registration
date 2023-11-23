@@ -431,6 +431,64 @@
   letter-spacing: 5px;
   font-weight: 600;
 }
+.homepage section.chart-info .container {
+  display: flex;
+  flex-direction: column;
+}
+.homepage section.chart-info .container .section-title-wrapper {
+  padding: 40px 0 20px 0;
+}
+.homepage section.chart-info .container .section-title-wrapper .section-title {
+  color: black;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  font-weight: 600;
+  margin: 0;
+}
+.homepage section.chart-info .container .section-title-wrapper .section-title .lighter {
+  color: #F92727;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+.homepage section.chart-info .container .section-content-wrapper {
+  width: 100%;
+  gap: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.homepage section.chart-info .container .section-content-wrapper .content-box {
+  flex-grow: 1;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 300px;
+  padding: 40px 0;
+}
+.homepage section.chart-info .container .section-content-wrapper .content-box .bar-chart-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.homepage section.chart-info .container .section-content-wrapper .content-box .bar-chart-container .canvas-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.homepage section.chart-info .container .section-content-wrapper .content-box .bar-chart-container .canvas-container.donut {
+  max-width: 350px !important;
+}
+.homepage section.chart-info .container .section-content-wrapper .content-box .bar-chart-container .canvas-container canvas {
+  object-fit: contain;
+  width: 100% !important;
+  height: 100% !important;
+}
 .homepage section.login-register .section-content-wrapper {
   width: 100%;
   gap: 0;

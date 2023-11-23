@@ -2,18 +2,17 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Umkm;
-use App\Exports\UmkmExport;
+use App\Models\Koperasi;
 use Illuminate\Support\Carbon;
+use App\Exports\KoperasiExport;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\Builder;
-use PowerComponents\LivewirePowerGrid\Detail;
 use PowerComponents\LivewirePowerGrid\Filters\Filter;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridColumns};
 
-final class UmkmsTable extends PowerGridComponent
+final class KoperasiTable extends PowerGridComponent
 {
     use ActionButton;
 
@@ -25,7 +24,7 @@ final class UmkmsTable extends PowerGridComponent
     {
         return array_merge(
             parent::getListeners(), [
-                'verifyUmkm',
+                'verifyKoperasi',
                 'refreshTable',
                 'setStatusFilter',
             ]);
@@ -39,17 +38,18 @@ final class UmkmsTable extends PowerGridComponent
         $this->status = $filter;
     }
 
-    public function verifyUmkm($data) {
-        $umkm_id = $data[0];
+    public function verifyKoperasi($data) {
+        $koperasi_id = $data[0];
 
-        $this->emitTo('umkm-verification', 'setVerifyData', $umkm_id);
+        $this->emitTo('koperasi-verification', 'setVerifyData', $koperasi_id);
     }
 
     public function xlsx_export() {
         $current_time = Carbon::now()->timestamp;
-        $filename = $this->status . '_report_umkm_' . $current_time . '.xlsx';
-        return (new UmkmExport($this->status))->download($filename);
+        $filename = $this->status . '_report_koperasi_' . $current_time . '.xlsx';
+        return (new KoperasiExport($this->status))->download($filename);
     }
+
 
 
     public function setUp(): array
@@ -68,13 +68,13 @@ final class UmkmsTable extends PowerGridComponent
         ];
     }
 
-    public string $sortField = 'umkm.updated_at';
+    public string $sortField = 'koperasi.updated_at';
 
     public function datasource(): Builder
     {
-        return Umkm::with([
-                        'user',
-                    ])->where('status', '=', $this->status);
+        return Koperasi::with([
+            'user',
+        ])->where('status', '=', $this->status);
     }
 
     public function relationSearch(): array
@@ -92,14 +92,18 @@ final class UmkmsTable extends PowerGridComponent
         return PowerGrid::columns()
             ->addColumn('id')
             ->addColumn('name')
-            ->addColumn('type')
-            ->addColumn('owner_user', fn (Umkm $model) => $model->user->full_name)
-            ->addColumn('owner_address', fn (Umkm $model) => $model->user->address)
-            ->addColumn('recomendation_docs')
+            ->addColumn('legal_number')
+            ->addColumn('legal_date')
+            ->addColumn('legal_date_formatted', fn (Koperasi $model) => Carbon::parse($model->legal_date)->format('d/m/Y'))
+            ->addColumn('address')
+            ->addColumn('village')
+            ->addColumn('sub_district')
+            ->addColumn('owner_user', fn (Koperasi $model) => $model->user->full_name)
+            ->addColumn('owner_address', fn (Koperasi $model) => $model->user->address)
             ->addColumn('updated_at')
-            ->addColumn('updated_at_formatted', fn (Umkm $model) => Carbon::parse($model->updated_at)->format('d/m/Y'))
+            ->addColumn('updated_at_formatted', fn (Koperasi $model) => Carbon::parse($model->updated_at)->format('d/m/Y'))
             ->addColumn('created_at')
-            ->addColumn('created_at_formatted', fn (Umkm $model) => Carbon::parse($model->created_at)->format('d/m/Y H:i:s'));
+            ->addColumn('created_at_formatted', fn (Koperasi $model) => Carbon::parse($model->created_at)->format('d/m/Y H:i:s'));
     }
 
     public function columns(): array
@@ -112,12 +116,21 @@ final class UmkmsTable extends PowerGridComponent
             Column::make('Tanggal', 'updated_at_formatted', 'updated_at')
                 ->sortable()
                 ->searchable(),
-                
-            // Column::make('Jenis', 'type')
-            //     ->searchable()
-            //     ->sortable(),
 
             Column::make('Nama', 'name')
+                ->searchable(),
+
+            Column::make('No. Badan Hukum', 'legal_number')
+                ->searchable(),
+
+            Column::make('Tanggal Badan Hukum', 'legal_date_formatted', 'legal_date')
+                ->sortable()
+                ->searchable(),
+
+            Column::make('Desa / Kelurahan', 'village')
+                ->searchable(),
+
+            Column::make('Kecamatan', 'sub_district')
                 ->searchable(),
 
             Column::make('Nama Pemilik', 'owner_user')
@@ -135,6 +148,11 @@ final class UmkmsTable extends PowerGridComponent
         ];
     }
 
+    /**
+     * PowerGrid Filters.
+     *
+     * @return array<int, Filter>
+     */
     public function filters(): array
     {
         return [
@@ -145,24 +163,15 @@ final class UmkmsTable extends PowerGridComponent
 
     public function actions(): array
     {
-        // if ($this->status == 'pending') {
-        //     $actions = [
-        //            Button::make('details', 'Detail')
-        //                ->class('btn table-button-confirm')
-        //                ->emit('verifyUmkm', ['id']),
-        //     ];
-        // } else {
-        //     $actions = [];
-        // }
-        
         $actions = [
                 Button::make('details', 'Detail')
                     ->class('btn table-button-confirm')
-                    ->emit('verifyUmkm', ['id']),
+                    ->emit('verifyKoperasi', ['id']),
         ];
 
         return $actions;
     }
+
 
     /*
     |--------------------------------------------------------------------------
@@ -173,7 +182,7 @@ final class UmkmsTable extends PowerGridComponent
     */
 
     /**
-     * PowerGrid Umkm Action Rules.
+     * PowerGrid Koperasi Action Rules.
      *
      * @return array<int, RuleActions>
      */
@@ -185,7 +194,7 @@ final class UmkmsTable extends PowerGridComponent
 
            //Hide button edit for ID 1
             Rule::button('edit')
-                ->when(fn($umkm) => $umkm->id === 1)
+                ->when(fn($koperasi) => $koperasi->id === 1)
                 ->hide(),
         ];
     }

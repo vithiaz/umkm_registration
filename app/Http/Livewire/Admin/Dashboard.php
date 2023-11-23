@@ -4,11 +4,13 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Umkm;
 use Livewire\Component;
+use App\Models\Koperasi;
 
 class Dashboard extends Component
 {
     // Model Variable
     public $umkm;
+    public $koperasi;
 
     // Binding Variable
     public $koperasi_count;
@@ -20,36 +22,23 @@ class Dashboard extends Component
 
     public function mount() {
         $this->umkm = Umkm::where('status', '=', 'verified')->get();
-
-        $this->koperasi_sub_district = Umkm::where([
-            ['status', '=', 'verified'],
-            ['type', '=', 'Koperasi'],
-        ])->get()->groupBy('sub_district')->toArray();
         $this->umkm_sub_district = Umkm::where([
             ['status', '=', 'verified'],
-            ['type', '=', 'UMKM'],
+            ])->get()->groupBy('sub_district')->toArray();
+        $this->umkm_count = $this->umkm->count();
+        
+        $this->koperasi = Koperasi::where('status', '=', 'verified')->get();
+        $this->koperasi_sub_district = Koperasi::where([
+            ['status', '=', 'verified'],
         ])->get()->groupBy('sub_district')->toArray();
-
+        $this->koperasi_count = $this->koperasi->count();
+        
         $this->koperasi_sub_district_label = array_values(array_filter(array_keys($this->koperasi_sub_district), function($values) {
             return $values != '';
         }));
         $this->umkm_sub_district_label = array_values(array_filter(array_keys($this->umkm_sub_district), function($values) {
             return $values != '';
         }));
-
-        // dd($this->koperasi_sub_district, $this->koperasi_district_label);
-
-        
-        $this->koperasi_count = Umkm::where([
-            ['status', '=', 'verified'],
-            ['type', '=', 'Koperasi'],
-        ])->count();
-        $this->umkm_count = Umkm::where([
-            ['status', '=', 'verified'],
-            ['type', '=', 'UMKM'],
-        ])->count();
-
-
     }
 
     public function render()

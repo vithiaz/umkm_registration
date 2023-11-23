@@ -5,60 +5,58 @@
 <div class="content-body umkm-verification">
     <div class="container">
         <div id="verify-page-title" class="page-title">
-            <h1>Verifikasi Pendaftaran UMKM</h1>
+            <h1>Verifikasi Pendaftaran Koperasi</h1>
         </div>
 
-        <div class="page-content-card page-verify-card @if($this->verifyUmkm) active @endif">
+        <div class="page-content-card page-verify-card @if($this->verifyKoperasi) active @endif">
             <div class="info-wrapper">
                 <span class="content-title">Informasi Pemilik</span>
                 <div class="owner-info-wrapper">
                     <div class="info-wrapper">
                         <div class="row-wrapper">
                             <span class="input-title">Nama Pemilik</span>
-                            <div class="input-items">{{ $this->verifyUmkm ? $this->verifyUmkm->user->full_name : '' }}</div>
+                            <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->user->full_name : '' }}</div>
                         </div>
                         <div class="row-wrapper">
                             <span class="input-title">Alamat Pemilik</span>
-                            <div class="input-items">{{ $this->verifyUmkm ? $this->verifyUmkm->user->address : '' }}</div>
+                            <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->user->address : '' }}</div>
                         </div>                    
                     </div>
-                    @if ($this->verifyUmkm)
+                    @if ($this->verifyKoperasi)
                         <div class="profile-wrapper">
                             <div class="image-container">
-                                <img src="{{ asset('storage/'.$this->verifyUmkm->user->photo) }}" alt="{{ $this->verifyUmkm->user ? $this->verifyUmkm->user->full_name : '' }}_pass_foto">
+                                <img src="{{ asset('storage/'.$this->verifyKoperasi->user->photo) }}" alt="{{ $this->verifyKoperasi->user ? $this->verifyKoperasi->user->full_name : '' }}_pass_foto">
                             </div>
                         </div>                        
                     @endif
                 </div>
 
-                <span class="content-title">Informasi UMKM</span>
+                <span class="content-title">Informasi Koperasi</span>
                 <div class="row-wrapper">
                     <span class="input-title">Nama</span>
-                    <div class="input-items">{{ $this->verifyUmkm ? $this->verifyUmkm->name : '' }}</div>
+                    <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->name : '' }}</div>
                 </div>
                 <div class="row-wrapper">
-                    <span class="input-title">Jenis</span>
-                    <div class="input-items">{{ $this->verifyUmkm ? $this->verifyUmkm->type : '' }}</div>
+                    <span class="input-title">No. Badan Hukum</span>
+                    <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->legal_number : '' }}</div>
                 </div>
-                <div class="row-wrapper top-align">
-                    <span class="input-title">Surat Rekomendasi</span>
-                    <div class="input-items row-button">
-                        <button id="recomendation-docs-toggler" type="button" class="btn submit-button ico hovered">
-                            <i class="fa-solid fa-eye expand show"></i>
-                            <span class="expand show">Lihat</span>
-                            <i class="fa-solid fa-chevron-up minimize"></i>
-                            <span class="minimize">Tutup</span>
-                        </button>
-                        @if ($this->verifyUmkm)
-                            <div class="docs-wrapper">
-                                <div class="image-container">
-                                    <img src="{{ asset('storage/'.$this->verifyUmkm->recomendation_docs) }}" alt="{{ $this->verifyUmkm->name }}_rekomendasi">
-                                </div>
-                            </div>
-                        @endif
-                    </div>
+                <div class="row-wrapper">
+                    <span class="input-title">Tanggal Badan Hukum</span>
+                    <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->legal_date : '' }}</div>
                 </div>
-                @if ($this->verifyUmkm && $this->verifyUmkm->umkm_images->count() > 0)
+                <div class="row-wrapper">
+                    <span class="input-title">Alamat Lengkap</span>
+                    <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->address : '' }}</div>
+                </div>
+                <div class="row-wrapper">
+                    <span class="input-title">Kecamatan</span>
+                    <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->sub_district : '' }}</div>
+                </div>
+                <div class="row-wrapper">
+                    <span class="input-title">Desa / Kelurahan</span>
+                    <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->village : '' }}</div>
+                </div>
+                {{-- @if ($this->verifyKoperasi && $this->verifyKoperasi->umkm_images->count() > 0)
                     <div class="row-wrapper top-align">
                         <span class="input-title">Gambar</span>
                         <div class="input-items row-button">
@@ -69,27 +67,27 @@
                                 <span class="minimize">Tutup</span>
                             </button>
                             <div class="umkm-picture-wrapper">
-                                @foreach ($this->verifyUmkm->umkm_images as $index => $image)
+                                @foreach ($this->verifyKoperasi->umkm_images as $index => $image)
                                     <div class="image-container">
-                                        <img src="{{ asset('storage/'.$image->image) }}" alt="{{ $this->verifyUmkm->name }}_gambar_{{ $index }}">
+                                        <img src="{{ asset('storage/'.$image->image) }}" alt="{{ $this->verifyKoperasi->name }}_gambar_{{ $index }}">
                                     </div>
                                 @endforeach
 
                             </div>
                         </div>
                     </div>
-                @endif
+                @endif --}}
             </div>
 
             <div class="message-container @if($this->reject_state) active @endif">
                 <span class="title">Tolak Pengajuan</span>
-                <textarea wire:model='reject_message' class="main-form-input" placeholder="Pesan alasan penolakan pendaftaran {{  $this->verifyUmkm ? $this->verifyUmkm->type : '' }} ..." rows="6"></textarea>
+                <textarea wire:model='reject_message' class="main-form-input" placeholder="Pesan alasan penolakan pendaftaran {{  $this->verifyKoperasi ? $this->verifyKoperasi->type : '' }} ..." rows="6"></textarea>
                 @error('reject_message')
                     <small class="error">{{ $message }}</small>
                 @enderror
             </div>
 
-            <div class="message-container @if($this->acc_state) active @endif">
+            {{-- <div class="message-container @if($this->acc_state) active @endif">
                 <span class="title">Verifikasi Pengajuan</span>
                 <div class="row-wrapper">
                     <span class="input-title">Surat Ijin</span>
@@ -98,7 +96,7 @@
                         <small class="error">{{ $message }}</small>
                     @enderror
                 </div>
-            </div>
+            </div> --}}
             
             <div class="button-wrapper">
                 <button id="log-wrapper-toggler" type="button" class="btn btn-abort hovered ico">
@@ -107,7 +105,7 @@
                 </button>
 
                 @if ($this->reject_state != true && $this->acc_state != true)
-                    @if ($this->verifyUmkm && $this->verifyUmkm->status != 'verified' && $this->verifyUmkm->status != 'rejected')
+                    @if ($this->verifyKoperasi && $this->verifyKoperasi->status != 'verified' && $this->verifyKoperasi->status != 'rejected')
                         <button wire:click='set_acc_state(true)' type="button" class="btn btn-accept">
                             <span>Verifikasi</span>
                         </button>
@@ -134,7 +132,7 @@
 
             </div>
 
-            @if ($this->verifyUmkm)
+            @if ($this->verifyKoperasi)
                 <div class="log-wrapper">
                     <span class="title">Riwayat Permintaan Aktivasi</span>
                     <table class="table">
@@ -147,7 +145,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($this->verifyUmkm->activation_log->sortByDesc('created_at') as $log)
+                            @forelse ($this->verifyKoperasi->activation_log->sortByDesc('created_at') as $log)
                                 <tr>
                                     <td>{{ $this->format_datetime($log->created_at, 'd/m/Y') }}</td>
                                     <td>{{ $this->format_datetime($log->created_at, 'H:i') }}</td>
@@ -173,10 +171,10 @@
         </div>
         <div class="page-content-card">
             <div class="card-title-wrapper">
-                <span class="card-title">Daftar UMKM</span>
+                <span class="card-title">Daftar Koperasi</span>
             </div>
             <div class="powergrid-table-container">
-                <livewire:umkms-table />
+                <livewire:koperasi-table />
             </div>
         </div>
 

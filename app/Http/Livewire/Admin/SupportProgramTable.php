@@ -105,6 +105,7 @@ final class SupportProgramTable extends PowerGridComponent
                 ->sortable(),
 
             Column::make('Program', 'program_type')
+                ->hidden()
                 ->searchable()
                 ->sortable(),
 

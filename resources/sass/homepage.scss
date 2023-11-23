@@ -428,6 +428,72 @@
 
     }
 
+    section.chart-info {
+
+        .container {
+            display: flex;
+            flex-direction: column;
+
+            .section-title-wrapper {
+                padding: 40px 0 20px 0;
+
+                .section-title {
+                    @include section-title();
+                }
+            }
+
+            .section-content-wrapper {
+                width: 100%;
+                gap: 0;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                
+
+                .content-box {
+                    flex-grow: 1;
+                    padding-top: 40px;
+                    padding-bottom: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    flex-basis: 300px;
+                    padding: 40px 0;
+
+                    .bar-chart-container {
+                        // width: 100%;
+                        // height: 400px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+
+                        .canvas-container {
+                            width: 100%;
+                            height: 100%;
+                            display: grid;
+                            place-items: center;
+
+                            &.donut {
+                                max-width: 350px !important;
+                            }
+                            
+                            canvas {
+                                object-fit: contain;
+                                width: 100% !important;
+                                height: 100% !important;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+    }
+
     section.login-register {
         
         .section-content-wrapper {

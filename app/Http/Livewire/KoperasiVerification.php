@@ -4,19 +4,21 @@ namespace App\Http\Livewire;
 
 use App\Models\Umkm;
 use Livewire\Component;
+use App\Models\Koperasi;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Carbon;
 use App\Models\UserNotification;
 use App\Models\UmkmActivationLog;
+use App\Models\KoperasiActivationLog;
 
-class UmkmVerification extends Component
+class KoperasiVerification extends Component
 {
     use WithFileUploads;
 
     // Binding Variable
     public $status_filter;
 
-    public $verifyUmkm;
+    public $verifyKoperasi;
     public $reject_state;
     public $reject_message;
 
@@ -38,22 +40,22 @@ class UmkmVerification extends Component
 
     public function setVerifyData($userID) {
         $this->reset_state();
-        $verifyUmkm = Umkm::with(['user', 'umkm_images', 'activation_log'])->find($userID);
+        $verifyKoperasi = Koperasi::with(['user', 'activation_log'])->find($userID);
         
-        if ($verifyUmkm) {
-            $this->verifyUmkm = $verifyUmkm;
+        if ($verifyKoperasi) {
+            $this->verifyKoperasi = $verifyKoperasi;
             $this->dispatchBrowserEvent('scroll-up');
         }
     }
 
     private function reset_state() {
-        $this->verifyUmkm = null;
+        $this->verifyKoperasi = null;
         $this->reject_state = false;
         $this->reject_message = '';
         $this->acc_state = false;
         $this->permission_docs = null;
 
-        $this->emitTo('umkms-table', 'refreshTable');
+        $this->emitTo('koperasi-table', 'refreshTable');
     }
 
     public function mount() {
@@ -64,14 +66,14 @@ class UmkmVerification extends Component
 
     public function render()
     {
-        return view('livewire.umkm-verification')->layout('layouts.admin_app');
+        return view('livewire.koperasi-verification')->layout('layouts.admin_app');
     }
 
     public function set_status_filter($status) {
         $this->reset_state();
         
         $this->status_filter = $status;
-        $this->emitTo('umkms-table', 'setStatusFilter', $status);
+        $this->emitTo('koperasi-table', 'setStatusFilter', $status);
     }
 
     public function set_reject_state($status) {
@@ -95,27 +97,27 @@ class UmkmVerification extends Component
     public function reject_request () {
         $this->validate();
 
-        if ($this->verifyUmkm) {
-            $this->verifyUmkm->status = 'rejected';
-            $this->verifyUmkm->save();
+        if ($this->verifyKoperasi) {
+            $this->verifyKoperasi->status = 'rejected';
+            $this->verifyKoperasi->save();
 
             // Create Activation Log
-            $activationLog = new UmkmActivationLog;
+            $activationLog = new KoperasiActivationLog;
             $activationLog->status = 'rejected';
             $activationLog->message = $this->reject_message;
-            $activationLog->umkm_id = $this->verifyUmkm->id;
+            $activationLog->koperasi_id = $this->verifyKoperasi->id;
             $activationLog->save();
 
             // Create Notification
             $notificationBody = "
-                <p>Pengajuan Aktivasi " . $this->verifyUmkm->type ." dengan nama ". $this->verifyUmkm->name ." ditolak</p>
+                <p>Pengajuan Aktivasi Koperasi dengan nama ". $this->verifyKoperasi->name ." ditolak</p>
                 <p>". $this->reject_message ."</p>
             ";
             $notification = new UserNotification;
-            $notification->title = 'Penolakan Aktivasi '.$this->verifyUmkm->type;
+            $notification->title = 'Penolakan Aktivasi Koperasi';
             $notification->body = $notificationBody;
             $notification->is_read = false;
-            $notification->user_id = $this->verifyUmkm->user->id;
+            $notification->user_id = $this->verifyKoperasi->user->id;
             $notification->save();
 
             $msg = ['info' => 'Pengajuan Ditolak'];
@@ -126,39 +128,36 @@ class UmkmVerification extends Component
     }
 
     public function acc_request() {
-        $this->validate([
-            'permission_docs' => 'required|mimes:pdf',
-        ],
-        [
-            'permission_docs.required' => 'Surat Ijin harus di upload',
-            'permission_docs.file' => 'Surat Ijin harus dalam bentuk .pdf',
-            'permission_docs.mimes' => 'Surat Ijin harus dalam bentuk .pdf',
-        ]);
+        // $this->validate([
+        //     'permission_docs' => 'required|mimes:pdf',
+        // ],
+        // [
+        //     'permission_docs.required' => 'Surat Ijin harus di upload',
+        //     'permission_docs.file' => 'Surat Ijin harus dalam bentuk .pdf',
+        //     'permission_docs.mimes' => 'Surat Ijin harus dalam bentuk .pdf',
+        // ]);
 
-        if ($this->verifyUmkm) {
-            $this->verifyUmkm->status = 'verified';
-            $this->verifyUmkm->permission_docs = $this->permission_docs->store('permission_docs');
-            $this->verifyUmkm->save();
+        if ($this->verifyKoperasi) {
+            $this->verifyKoperasi->status = 'verified';
+            // $this->verifyKoperasi->permission_docs = $this->permission_docs->store('permission_docs');
+            $this->verifyKoperasi->save();
 
             // Create Activation Log
-            $activationLog = new UmkmActivationLog;
+            $activationLog = new KoperasiActivationLog;
             $activationLog->status = 'acc';
-            $activationLog->message = 'Pengajuan aktivasi ' . $this->verifyUmkm->type . ' diterima';
-            $activationLog->umkm_id = $this->verifyUmkm->id;
+            $activationLog->message = $this->reject_message;
+            $activationLog->koperasi_id = $this->verifyKoperasi->id;
             $activationLog->save();
 
             // Create Notification
             $notificationBody = "
-                <p>Pengajuan Aktivasi " . $this->verifyUmkm->type ." dengan nama ". $this->verifyUmkm->name ." diterima.</p>
-                <p>Silahkan mendownload Surat Ijin Koperasi / UMKM yang anda daftarkan melalui menu Pendaftaran Koperasi dan UMKM, atau klik <a href=\"/registration\">disini</a>.</p>
-                <p>". $this->verifyUmkm->type ." yang sudah aktif dapat anda ajukan ke program bantuan yang tersedia dan dapat anda lihat pada menu Pengajuan Bantuan atau klik <a href=\"/programs\">disini</a>.</p>
-                <p>Terima kasih telah mendaftar</p>
+                <p>Pengajuan Aktivasi Koperasi dengan nama ". $this->verifyKoperasi->name ." diterima.</p>
             ";
             $notification = new UserNotification;
-            $notification->title = 'Pengajuan aktivasi '.$this->verifyUmkm->type . ' diterima';
+            $notification->title = 'Pengajuan aktivasi Koperasi diterima';
             $notification->body = $notificationBody;
             $notification->is_read = false;
-            $notification->user_id = $this->verifyUmkm->user->id;
+            $notification->user_id = $this->verifyKoperasi->user->id;
             $notification->save();
 
             $msg = ['success' => 'Pengajuan Diterima'];
@@ -173,9 +172,6 @@ class UmkmVerification extends Component
     public function format_datetime($datetime, $format) {
         return Carbon::parse($datetime)->format($format);
     }
-
-
-    
 
 
 }

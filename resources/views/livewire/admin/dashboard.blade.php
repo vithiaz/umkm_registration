@@ -96,8 +96,8 @@ const createBarChart = (ctx_id, labels, data) => {
             data: data,
             borderWidth: 1,
             backgroundColor: [
-                '#1EBFD1',
-                '#1ED189',
+                '#4270EE',
+                '#F92727',
             ],
         }]
     },

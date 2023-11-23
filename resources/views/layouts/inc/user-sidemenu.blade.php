@@ -23,7 +23,7 @@
                 @if (Auth::user()->active_status != 'active')
                     <li class="nav-item disabled">
                         <span class="main-item">
-                            Pendaftaran
+                            Pendaftaran UMKM
                         </span>
                     </li>
                 @else
@@ -32,13 +32,36 @@
                             class="nav-item active"
                         >
                             <a href="{{ route('umkm-registration') }}" class="main-item">
-                                <span class="nav-item-main">Pendaftaran</span>
+                                <span class="nav-item-main">Pendaftaran UMKM</span>
                             </a>
                         @else
                             class="nav-item"
                         >
                             <a href="{{ route('umkm-registration') }}" class="main-item">
-                                <span class="nav-item-main">Pendaftaran</span>
+                                <span class="nav-item-main">Pendaftaran UMKM</span>
+                            </a>
+                        @endif
+                    </li>                    
+                @endif
+                @if (Auth::user()->active_status != 'active')
+                    <li class="nav-item disabled">
+                        <span class="main-item">
+                            Pendaftaran Koperasi
+                        </span>
+                    </li>
+                @else
+                    <li
+                        @if ( \Request::route()->getName() == 'koperasi-registration')
+                            class="nav-item active"
+                        >
+                            <a href="{{ route('koperasi-registration') }}" class="main-item">
+                                <span class="nav-item-main">Pendaftaran Koperasi</span>
+                            </a>
+                        @else
+                            class="nav-item"
+                        >
+                            <a href="{{ route('koperasi-registration') }}" class="main-item">
+                                <span class="nav-item-main">Pendaftaran Koperasi</span>
                             </a>
                         @endif
                     </li>                    

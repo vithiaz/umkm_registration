@@ -5,7 +5,7 @@
 <div class="content-body">
     <div class="container">
         <div class="page-title">
-            <h1>Program Bantuan Koperasi / UMKM</h1>
+            <h1>Program Bantuan UMKM</h1>
         </div>
 
         <div class="page-title secondary">
@@ -14,7 +14,7 @@
         <form wire:submit.prevent='store_program' class="page-content-card">
             <div class="row-wrapper">
                 <div class="row-item-wrapper form-wrapper">
-                    <div class="form-input-wrapper row">
+                    {{-- <div class="form-input-wrapper row">
                         <span class="form-title">Bantuan</span>
                         <div class="form-items">
                             <select wire:model='program_type' id="input-category-select">
@@ -26,7 +26,7 @@
                                 <small class="error">{{ $message }}</small>
                             @enderror
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="form-input-wrapper row">
                         <span class="form-title">Nama Program</span>
                         <div class="form-items">

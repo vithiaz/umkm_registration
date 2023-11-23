@@ -42,7 +42,14 @@
                             class="active"
                         @endif
                         >
-                        <a href="{{ route('admin.umkm-verify') }}">Koperasi / UMKM</a>
+                        <a href="{{ route('admin.umkm-verify') }}">UMKM</a>
+                    </li>
+                    <li
+                        @if (\Request::route()->getName() == 'admin.koperasi-verify')
+                            class="active"
+                        @endif
+                        >
+                        <a href="{{ route('admin.koperasi-verify') }}">Koperasi</a>
                     </li>
                 </ul>
             </div>
@@ -57,7 +64,7 @@
                             class="active"
                         @endif
                         >
-                        <a href="{{ route('admin.umkm-programs') }}">Bantuan Koperasi / UMKM</a>
+                        <a href="{{ route('admin.umkm-programs') }}">Bantuan UMKM</a>
                     </li>
                     <li
                         @if (\Request::route()->getName() == 'admin.news')

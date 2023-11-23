@@ -20,7 +20,6 @@ class UmkmPrograms extends Component
     protected $rules = [
         'name' => 'required|string',
         'description' => 'required|string',
-        'program_type' => 'required',
         'quota' => 'nullable|numeric',
         'open_date' => 'nullable|date',
         'end_date' => 'nullable|date',
@@ -29,7 +28,7 @@ class UmkmPrograms extends Component
     public function mount() {
         $this->name = '';
         $this->description = '';
-        $this->program_type = '';
+        $this->program_type = 'UMKM';
         $this->quota = '';
         $this->open_date = '';
         $this->end_date = '';
@@ -50,7 +49,7 @@ class UmkmPrograms extends Component
         $this->validate();
         
         $Program = new SupportProgram;
-        $Program->program_type = $this->program_type;
+        $Program->program_type = 'UMKM';
         $Program->name = $this->name;
         $Program->description = $this->description;
         $Program->active = true;
@@ -60,7 +59,7 @@ class UmkmPrograms extends Component
 
         $this->name = '';
         $this->description = '';
-        $this->program_type = '';
+        $this->program_type = 'UMKM';
         $this->quota = '';
         $this->open_date = '';
         $this->end_date = '';

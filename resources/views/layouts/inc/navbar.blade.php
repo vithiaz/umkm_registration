@@ -18,11 +18,16 @@
                 ><a href="{{ route('homepage') }}">Beranda</a></li>
 
                 @auth
-                    <li
+                    {{-- <li
                         @if (\Request::route()->getName() == 'umkm-registration')
                             class="active"
                         @endif
-                    ><a href="{{ route('umkm-registration') }}">Koperasi / UMKM</a></li>
+                    ><a href="{{ route('umkm-registration') }}"> UMKM</a></li>
+                    <li
+                        @if (\Request::route()->getName() == 'koperasi-registration')
+                            class="active"
+                        @endif
+                    ><a href="{{ route('koperasi-registration') }}">Koperasi</a></li> --}}
                     <li
                         @if (\Request::route()->getName() == 'umkm-programs')
                             class="active"
@@ -83,6 +88,8 @@
             </div>
             <ul>
                 <li><a href="{{ route('profile') }}">Pengaturan Akun</a></li>
+                <li><a href="{{ route('umkm-registration') }}">UMKM</a></li>
+                <li><a href="{{ route('koperasi-registration') }}">Koperasi</a></li>
                 <li><a href="{{ route('logout') }}">Logout</a></li>
                 {{-- @if (Auth::user()->user_type == 1)
                     <li><a href="{{ route('admin.products', ['status' => 'active']) }}">Admin Panel</a></li>

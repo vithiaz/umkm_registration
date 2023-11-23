@@ -5,7 +5,7 @@
 <div class="content-body">
     <div class="container">
         <div class="page-title">
-            <h1>Program Bantuan Koperasi / UMKM</h1>
+            <h1>Program Bantuan UMKM</h1>
         </div>
 
         <div class="page-content-card">

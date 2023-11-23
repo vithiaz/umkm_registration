@@ -24,7 +24,7 @@
                 </div>
                 <div class="contact-item">
                     <i class="fa-sharp fa-solid fa-location-dot"></i>
-                    <span class="contact-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+                    <span class="contact-text">Jl. Raya Lingkar Timur Talete Dua Kota Tomohon, Sulawesi Utara</span>
                 </div>
             </div>
         </div>
