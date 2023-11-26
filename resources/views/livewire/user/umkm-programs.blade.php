@@ -10,7 +10,7 @@
 <div class="umkm-programs">
     <div class="container">
         <div class="page-title">
-            <h1>PROGRAM BANTUAN KOPERASI DAN UMKM</h1>
+            <h1>PROGRAM BANTUAN UMKM</h1>
         </div>
 
         @forelse ($SupportProgram as $program)
@@ -23,7 +23,7 @@
         @empty
             <div class="page-card col-wrap">
                 <div class="empty-container">
-                    <span>Program bantuan Koperasi dan UMKM belum tersedia ...</span>
+                    <span>Program bantuan UMKM belum tersedia ...</span>
                 </div>
             </div>
         @endforelse

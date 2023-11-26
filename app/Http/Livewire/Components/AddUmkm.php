@@ -52,7 +52,7 @@ class AddUmkm extends Component
 
         $umkm = new Umkm;
         $umkm->name = $this->name;
-        $umkm->type = 'umkm';
+        $umkm->type = 'UMKM';
         $umkm->sub_district = $this->sub_district;
         $umkm->status = 'pending';
         $umkm->owner_user = Auth::user()->id;

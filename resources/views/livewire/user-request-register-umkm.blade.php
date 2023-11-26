@@ -25,7 +25,7 @@
             </div>
             <span class="info">Koperasi dan UMKM yang dapat didaftarkan adalah yang sudah terdaftar dan diverifikasi</span>
             <div class="row-wrapper">
-                <span class="input-title">Koperasi / UMKM</span>
+                <span class="input-title">UMKM</span>
                 <div class="input-items">
                     <select wire:model='selectedUmkmId' class="form-select" aria-label="Default select example">
                         <option selected value="" hidden>Pilih Koperasi / UMKM</option>
