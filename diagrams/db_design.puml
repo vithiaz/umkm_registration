@@ -57,6 +57,36 @@ entity umkm {
     * updated_at DATETIME
 }
 
+entity solar_recomendation_request {
+    * id BIGINT PRIMARY KEY
+    --
+    * status STRING
+    ' pending
+    ' proceed
+    ' done
+    ' rejected
+    message TEXT
+    --
+    * umkm_id UNSIGNED_BIGINT FOREIGN(umkm.id)
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
+entity solar_recomendation {
+    * id BIGINT PRIMARY KEY
+    --
+    * document_number STRING
+    * registration_date DATE
+    * expired_date DATE
+    solar_recomendation_docs STRING
+    --
+    request_id UNSIGNED_BIGINT FOREIGN(solar_recomendation_request.id)
+    --
+    * created_at DATETIME
+    * updated_at DATETIME
+}
+
 entity umkm_activation_log {
     * id BIGINT PRIMARY KEY
     --
@@ -186,5 +216,7 @@ umkm ||--o{ support_program_members
 
 umkm ||--o{ umkm_images
 umkm ||--o{ umkm_activation_log
+umkm ||--o{ solar_recomendation_request
+solar_recomendation_request ||--o| solar_recomendation
 
 @enduml

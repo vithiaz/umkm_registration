@@ -1,0 +1,286 @@
+.app-content {
+  background-color: #EDF0F3;
+}
+
+.recomendation-solar-page .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.recomendation-solar-page .container .title-container {
+  display: flex;
+  flex-direction: column;
+  column-gap: 20px;
+  row-gap: 10px;
+  width: 100%;
+}
+.recomendation-solar-page .container .title-container .page-title {
+  padding: 10px;
+  background-color: #F9D00F;
+  border-radius: 4px;
+}
+.recomendation-solar-page .container .title-container .page-title h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.recomendation-solar-page .container .title-container .page-title h1 span {
+  color: #F92727;
+}
+.recomendation-solar-page .container .title-container .page-title.secondary {
+  background-color: unset;
+  margin-top: 5px;
+}
+.recomendation-solar-page .container .title-container .select-umkm-card {
+  padding: 20px;
+  background-color: #FBF7F7;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  row-gap: 3px !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.recomendation-solar-page .container .title-container .select-umkm-card .input-title {
+  flex-basis: 150px;
+  letter-spacing: 1px;
+}
+.recomendation-solar-page .container .title-container .select-umkm-card .input-items {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.recomendation-solar-page .container .title-container .select-umkm-card .input-items .input-detail {
+  text-align: justify;
+}
+.recomendation-solar-page .container .title-container .select-umkm-card .input-items input, .recomendation-solar-page .container .title-container .select-umkm-card .input-items textarea {
+  width: 100%;
+}
+.recomendation-solar-page .container .title-container .select-umkm-card .input-items select, .recomendation-solar-page .container .title-container .select-umkm-card .input-items .file {
+  max-width: 420px;
+}
+.recomendation-solar-page .container .title-container .select-umkm-card .input-items small {
+  margin-left: 10px;
+}
+.recomendation-solar-page .container .title-container .select-umkm-card .input-items small.error {
+  color: #F92727;
+}
+.recomendation-solar-page .container .recomendation-card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 4px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  row-gap: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper .input-title {
+  flex-basis: 150px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper .input-items {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper .input-items input, .recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper .input-items textarea {
+  width: 100%;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper .input-items select, .recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper .input-items .file {
+  max-width: 420px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper .input-items small {
+  margin-left: 10px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper .input-items small.error {
+  color: #F92727;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper .input-items .label {
+  font-weight: 600;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper textarea {
+  min-height: 110px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper.top {
+  align-items: flex-start;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card.col-wrap .row-wrapper.top * {
+  transition: 0s;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .card-title {
+  font-weight: 600;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .card-seperator-text {
+  font-weight: 600;
+  color: #616161;
+  letter-spacing: 2px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .content {
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: justify;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .registration-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 5px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .registration-wrapper .title-box {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  gap: 20px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .registration-wrapper .title-box::after {
+  content: "";
+  position: relative;
+  background-color: #D4D4D4;
+  height: 1px;
+  flex-grow: 1;
+  transform: translateY(-50%);
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .registration-wrapper .title-box .card-title {
+  color: #616161;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .registration-wrapper .info {
+  font-size: 0.9rem;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .empty-container {
+  height: 120px;
+  display: grid;
+  place-items: center;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .empty-container span {
+  color: #616161;
+  font-size: 0.9rem;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .button-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .button-wrapper .submit-button {
+  background-color: #F92727;
+  font-weight: 600;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 0.9rem;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .button-wrapper .submit-button:hover {
+  background-color: #F9D00F;
+  color: black;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .button-wrapper .submit-button.ico span {
+  margin-left: 8px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .button-wrapper .submit-button.hovered span {
+  display: block;
+  max-width: 0vw;
+  overflow: hidden;
+  transition: max-width ease-in-out 0.5s;
+  white-space: nowrap;
+  margin: 0;
+  text-indent: 10px;
+}
+.recomendation-solar-page .container .recomendation-card-container .page-card .button-wrapper .submit-button.hovered:hover span {
+  max-width: 200vw;
+}
+.recomendation-solar-page .container .recomendation-card-container .section-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.recomendation-solar-page .container .recomendation-card-container .section-title-wrapper .add-button {
+  font-weight: 600;
+  cursor: pointer;
+}
+.recomendation-solar-page .container .recomendation-card-container .section-title-wrapper .add-button:hover {
+  text-decoration: underline;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper .label {
+  flex-basis: 150px;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper .values.bold {
+  font-weight: 600;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper .values.download {
+  font-weight: 600;
+  color: #F0AE2C;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper .values.download:hover {
+  cursor: pointer;
+  color: #F92727;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper .values.abort {
+  font-weight: 600;
+  color: #F92727;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper .values.abort:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper .values-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 8px;
+  align-items: center;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper .values-wrapper .info {
+  color: #F9D00F;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper .values-wrapper .reject {
+  color: #F92727;
+}
+.recomendation-solar-page .container .recomendation-card-container .solar-recomendation-card .row-wrapper .values-wrapper .active {
+  color: #27f939;
+}/*# sourceMappingURL=user-recomendation-solar-page.css.map */

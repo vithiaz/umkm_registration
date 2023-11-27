@@ -20,6 +20,7 @@ class Registration extends Component
     public $ktp;
     public $kk;
     public $photo;
+    public $phone;
 
     protected $rules = [
         'nip' => 'required|numeric|unique:users,nip',
@@ -27,6 +28,7 @@ class Registration extends Component
         'birth' => 'required|date',
         'gender' => 'required|string',
         'address' => 'required|string',
+        'phone' => 'required|numeric',
         'ktp' => 'required|image|max:2048',
         'kk' => 'required|image|max:2048',
         'photo' => 'required|image|max:2048',
@@ -39,6 +41,7 @@ class Registration extends Component
         'full_name.required' => 'Nama Lengkap tidak boleh kosong',
         'birth.required' => 'Tanggal Lahir tidak boleh kosong',
         'gender.required' => 'Jenis Kelamin tidak boleh kosong',
+        'phone.required' => 'Nomor Telepon tidak boleh kosong',
         'address.required' => 'Alamat tidak boleh kosong',
         'ktp.required' => 'Foto KTP harus di upload',
         'kk.required' => 'Foto KK harus di upload',
@@ -57,6 +60,7 @@ class Registration extends Component
         $this->ktp = '';
         $this->kk = '';
         $this->photo = '';
+        $this->phone = '';
     }
 
     public function render()
@@ -75,6 +79,7 @@ class Registration extends Component
         $newUser->gender = $this->gender;
         $newUser->birth = $this->birth;
         $newUser->address = $this->address;
+        $newUser->phone = $this->phone;
         
         // Storing Image
         $ktp_path = $this->ktp->store('ktp');

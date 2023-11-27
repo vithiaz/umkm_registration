@@ -129,6 +129,19 @@
                         </div>
                     </div>
                     <div class="row-wrapper">
+                        <span class="input-title">Nomor Telepon</span>
+                        <div class="input-items">
+                            @if ($this->editState)
+                                <input wire:model='phone_edit' type="text" class="main-form-input">
+                                @error('phone_edit')
+                                    <small class="error">{{ $message }}</small>
+                                @enderror
+                            @else
+                                <span class="input-detail">{{ $User->phone }}</span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row-wrapper">
                         <span class="input-title">Alamat</span>
                         <div class="input-items">
                             @if ($this->editState)

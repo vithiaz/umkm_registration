@@ -80,6 +80,18 @@
                 </li>
 
                 <li
+                    @if ( \Request::route()->getName() == 'solar-recomendation')
+                        class="nav-item active"
+                    @else
+                        class="nav-item"
+                    @endif
+                    >
+                    <a href="{{ route('solar-recomendation') }}" class="main-item">
+                        <span class="nav-item-main">Pengajuan Rekomendasi Solar</span>
+                    </a>
+                </li>
+
+                <li
                     @if ( \Request::route()->getName() == 'notifications')
                         class="nav-item active"
                     @else

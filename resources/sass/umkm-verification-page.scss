@@ -205,6 +205,10 @@
         
                 table {
                     font-size: 0.9rem;
+
+                    tr.current {
+                        background-color: $BorderVeryLight;
+                    }
                 }
             }
 
@@ -252,6 +256,12 @@
 
                         &.file {
                             max-width: 320px;
+                        }
+                        
+                        &.form {
+                            max-width: 420px;
+                            display: flex;
+                            flex-direction: row;
                         }
                     }
                 }

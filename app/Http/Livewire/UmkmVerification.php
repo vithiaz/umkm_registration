@@ -48,8 +48,8 @@ class UmkmVerification extends Component
 
     private function reset_state() {
         $this->verifyUmkm = null;
-        $this->reject_state = false;
         $this->reject_message = '';
+        $this->reject_state = false;
         $this->acc_state = false;
         $this->permission_docs = null;
 

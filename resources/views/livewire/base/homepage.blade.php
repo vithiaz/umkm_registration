@@ -85,6 +85,22 @@
         </div>
     </section>
 
+    <section class="structure">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h2 class="section-title"><span class="lighter">S</span>TRUKTUR ORGANISASI</h2>
+                <div class="button-toggler" id="structure-toggler">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </div>
+            <div class="section-content-wrapper" id="structure-container">
+                <div class="image-container">
+                    <img src="{{ asset('image\org_tree.png') }}" alt="struktur organisasi DISKOPUKM KOTA TOMOHON">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="registration-info">
         <div class="container">
             <div class="section-title-wrapper">
@@ -430,6 +446,18 @@
         createDoughnut('UMKM Aktif per Kecamatan', '#umkmPerDistrictChart', @this.umkm_sub_district, @this.umkm_sub_district_label)
         createDoughnut('Koperasi Aktif per Kecamatan', '#koperasiPerDistrictChart', @this.koperasi_sub_district, @this.koperasi_sub_district_label)
     })
+
+
+    // Organization Structure Toggler
+    $('#structure-toggler').click(function () {
+        $( this ).toggleClass('active')
+        $('#structure-container').toggleClass('show')
+    })
+    $('#structure-toggler').mouseenter(function () {
+        $( this ).toggleClass('active')
+        $('#structure-container').toggleClass('show')
+    })
+
 
 
 </script>

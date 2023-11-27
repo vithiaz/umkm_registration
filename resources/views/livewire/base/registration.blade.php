@@ -56,6 +56,15 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row-wrapper">
+                            <span class="input-title">Nomor Telepon</span>
+                            <div class="input-items">
+                                <input wire:model='phone' type="number" class="main-form-input" placeholder="Nomor telepon">
+                                @error('phone')
+                                    <small class="error">{{ $message }}</small>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="row-wrapper top">
                             <span class="input-title">Alamat</span>
                             <div class="input-items">

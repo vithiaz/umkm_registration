@@ -51,6 +51,12 @@
                         </div>
                     </div>
                     <div class="row-wrapper">
+                        <span class="input-title">Telepon</span>
+                        <div class="input-items">
+                            <span class="input-detail">{{ $this->verifyAccount ? $this->verifyAccount->phone : '' }}</span>
+                        </div>
+                    </div>
+                    <div class="row-wrapper">
                         <span class="input-title">Alamat</span>
                         <div class="input-items">
                             <span class="input-detail">{{ $this->verifyAccount ? $this->verifyAccount->address : '' }}</span>

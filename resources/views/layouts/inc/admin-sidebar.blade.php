@@ -67,6 +67,13 @@
                         <a href="{{ route('admin.umkm-programs') }}">Bantuan UMKM</a>
                     </li>
                     <li
+                        @if (\Request::route()->getName() == 'admin.solar-recomendation')
+                            class="active"
+                        @endif
+                        >
+                        <a href="{{ route('admin.solar-recomendation') }}">Rekomendasi Solar</a>
+                    </li>
+                    <li
                         @if (\Request::route()->getName() == 'admin.news')
                             class="active"
                         @endif

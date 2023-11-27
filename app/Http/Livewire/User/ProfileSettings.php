@@ -22,6 +22,7 @@ class ProfileSettings extends Component
     public $fullname_edit;
     public $gender_edit;
     public $birth_edit;
+    public $phone_edit;
     public $address_edit;
     public $profile_edit;
     public $ktp_edit;
@@ -32,6 +33,7 @@ class ProfileSettings extends Component
         'fullname_edit' => 'required|string',
         'gender_edit' => 'required|string',
         'birth_edit' => 'required|date',
+        'phone_edit' => 'required|numeric',
         'address_edit' => 'required|string',
         'profile_edit' => 'nullable|image|max:2048',
         'ktp_edit' => 'nullable|image|max:2048',
@@ -44,6 +46,7 @@ class ProfileSettings extends Component
         $this->fullname_edit = $this->User->full_name;
         $this->gender_edit = $this->User->gender;
         $this->birth_edit = $this->User->birth;
+        $this->phone_edit = $this->User->phone_edit;
         $this->address_edit = $this->User->address;
         $this->profile_edit = '';
         $this->ktp_edit = '';
@@ -84,6 +87,7 @@ class ProfileSettings extends Component
         $UserEdit->gender = $this->gender_edit;
         $UserEdit->birth = $this->birth_edit;
         $UserEdit->address = $this->address_edit;
+        $UserEdit->phone_edit = $this->phone_edit;
 
         if ($this->profile_edit) {
             $profile_dir = public_path() . '/storage/' . $UserEdit->photo;

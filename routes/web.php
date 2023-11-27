@@ -10,9 +10,11 @@ use App\Http\Livewire\User\UmkmPrograms;
 use App\Http\Livewire\KoperasiVerification;
 use App\Http\Livewire\User\ProfileSettings;
 use App\Http\Livewire\User\UmkmRegistration;
+use App\Http\Livewire\User\SolarRecomendation;
 use App\Http\Livewire\Admin\UmkmProgramDetails;
 use App\Http\Livewire\Admin\AccountVerification;
 use App\Http\Livewire\User\KoperasiRegistration;
+use App\Http\Livewire\Admin\VerifySolarRecomendation;
 use App\Http\Livewire\Admin\Dashboard as AdminDashboard;
 use App\Http\Livewire\Admin\UmkmPrograms as AdminUmkmPrograms;
 
@@ -34,6 +36,7 @@ Route::get('/logout', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/profile-settings', ProfileSettings::class)->name('profile');
     Route::get('/programs', UmkmPrograms::class)->name('umkm-programs');        
+    Route::get('/solar-recomendations', SolarRecomendation::class)->name('solar-recomendation');        
     Route::get('/notifications', Notifications::class)->name('notifications');        
     
     Route::middleware(['is_verified'])->group(function () {
@@ -51,6 +54,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/koperasi-verification', KoperasiVerification::class)->name('admin.koperasi-verify');
         Route::get('/programs', AdminUmkmPrograms::class)->name('admin.umkm-programs');        
         Route::get('/program/{program_id}', UmkmProgramDetails::class)->name('admin.umkm-program-details');        
+        Route::get('/solar-recomendation', VerifySolarRecomendation::class)->name('admin.solar-recomendation');
         Route::get('/news', AddNewsPage::class)->name('admin.news');
     });
 });

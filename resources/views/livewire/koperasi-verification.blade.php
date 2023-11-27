@@ -14,12 +14,16 @@
                 <div class="owner-info-wrapper">
                     <div class="info-wrapper">
                         <div class="row-wrapper">
-                            <span class="input-title">Nama Pemilik</span>
+                            <span class="input-title">Nama</span>
                             <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->user->full_name : '' }}</div>
                         </div>
                         <div class="row-wrapper">
-                            <span class="input-title">Alamat Pemilik</span>
+                            <span class="input-title">Alamat</span>
                             <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->user->address : '' }}</div>
+                        </div>                    
+                        <div class="row-wrapper">
+                            <span class="input-title">Kontak</span>
+                            <div class="input-items">{{ $this->verifyKoperasi ? $this->verifyKoperasi->user->phone : '' }}</div>
                         </div>                    
                     </div>
                     @if ($this->verifyKoperasi)

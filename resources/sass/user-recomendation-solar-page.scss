@@ -1,0 +1,288 @@
+@import '_var.scss';
+
+.app-content {
+    background-color: $LightWhite;
+}
+
+.recomendation-solar-page {
+    
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            column-gap: 20px;
+            row-gap: 10px;
+            width: 100%;
+
+            .page-title {
+                padding: 10px;
+                background-color: $LightenOrange;
+                border-radius: 4px;
+    
+                h1 {
+                    @include section-header-title();
+    
+                    span {
+                        color: $PrimaryRed;
+                    }
+                }
+    
+                &.secondary {
+                    background-color: unset;
+                    margin-top: 5px;
+                }
+            }
+
+            .select-umkm-card {
+                padding: 20px;
+                background-color: $SecondaryWhite;
+
+                display: flex;
+                flex-direction: row;
+                column-gap: 10px;
+                row-gap: 3px !important;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: flex-start;
+
+                .input-title {
+                    flex-basis: 150px;
+                    letter-spacing: 1px;
+                }
+
+                .input-items {
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+
+                    .input-detail {
+                        text-align: justify;
+                    }
+                    
+                    input, textarea {
+                        width: 100%;
+                    }
+
+                    select, .file {
+                        // flex-grow: 1;
+                        max-width: 420px;
+                        // flex-basis: 250px;
+                        // width: 50%;
+                    }
+
+
+                    small {
+                        margin-left: 10px;
+                        
+                        &.error {
+                            color: $PrimaryRed;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .recomendation-card-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-top: 20px;
+            
+            .page-card {
+                padding: 10px 20px;
+                background-color: white;
+                border-radius: 4px;
+    
+                &.col-wrap {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    
+                    .row-wrapper {
+                        @include form-row-wrapper();
+                    }
+                }
+    
+                .card-title {
+                    font-weight: 600;
+                }
+    
+                .card-seperator-text {
+                    font-weight: 600;
+                    color: $TextDarker;
+                    letter-spacing: 2px;
+                }
+    
+                .content {
+                    font-size: 0.9rem;
+                    margin: 0;
+                    text-align: justify;
+                }
+    
+                .registration-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin-top: 5px;
+                    
+                    .title-box {
+                        display: flex;
+                        flex-direction: row;
+                        position: relative;
+                        align-items: center;
+                        gap: 20px;
+                        
+                        &::after {
+                            content: '';
+                            position: relative;
+                            background-color: $BorderVeryLight;
+                            height: 1px;
+                            flex-grow: 1;
+                            transform: translateY(-50%);
+                        }
+    
+                        .card-title {
+                            color: $TextDarker;
+                        }
+                    }
+    
+                    .info {
+                        font-size: 0.9rem;
+                    }
+    
+                }
+    
+    
+                .empty-container {
+                    height: 120px;
+                    display: grid;
+                    place-items: center;
+    
+                    span {
+                        color: $TextDarker;
+                        font-size: 0.9rem;
+                    }
+                }
+    
+                .button-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 20px;
+                    row-gap: 10px;
+                    align-items: center;
+                    justify-content: flex-end;
+    
+                    .submit-button {
+                        @include button-default($PrimaryRed, white, $LightenOrange, black);
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+            .section-title-wrapper {
+                display: flex;
+                flex-direction: row;
+                column-gap: 40px;
+                row-gap: 10px;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 20px;
+
+                .section-title {
+                    
+                }
+
+                .add-button {
+                    font-weight: 600;
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+
+            }
+
+            .solar-recomendation-card {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .row-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    column-gap: 20px;
+                    row-gap: 20px;
+                    
+                    .label {
+                        flex-basis: 150px;
+                    }
+
+                    .values {
+
+                        &.bold {
+                            font-weight: 600;
+                        }
+
+                        &.download {
+                            font-weight: 600;
+                            color: $DarkerOrange;
+
+                            &:hover {
+                                cursor: pointer;
+                                color: $PrimaryRed;
+                            }
+                        }
+
+                        &.abort {
+                            font-weight: 600;
+                            color: $PrimaryRed;
+
+                            &:hover {
+                                cursor: pointer;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    .values-wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        column-gap: 20px;
+                        row-gap: 8px;
+                        align-items: center;
+
+                        .info {
+                            color: $LightenOrange;
+                        }
+                        .reject {
+                            color: $PrimaryRed;
+                        }
+                        .active {
+                            color: $PrimaryGreen;
+                        }
+
+                    }
+                }
+            }
+
+        }
+        
+
+        
+
+
+    }
+}

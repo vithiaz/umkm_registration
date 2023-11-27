@@ -219,6 +219,9 @@
 .umkm-verification .container .page-content-card .log-wrapper table {
   font-size: 0.9rem;
 }
+.umkm-verification .container .page-content-card .log-wrapper table tr.current {
+  background-color: #D4D4D4;
+}
 .umkm-verification .container .page-content-card .message-container {
   padding: 0;
   width: 100%;
@@ -295,6 +298,11 @@
 }
 .umkm-verification .container .page-content-card .message-container .row-wrapper .input-items.file {
   max-width: 320px;
+}
+.umkm-verification .container .page-content-card .message-container .row-wrapper .input-items.form {
+  max-width: 420px;
+  display: flex;
+  flex-direction: row;
 }
 .umkm-verification .container .page-content-card .button-wrapper {
   display: flex;
