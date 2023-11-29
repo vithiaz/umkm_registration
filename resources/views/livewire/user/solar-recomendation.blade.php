@@ -28,15 +28,17 @@
         <section class="recomendation-card-container">
             <div class="section-title-wrapper">
                 <span class="section-title">Daftar Surat Rekomendasi</span>
-                <span wire:click='request_recomendation' class="add-button">+ Buat Pengajuan</span>
+                @if ($this->selected_umkm != '')
+                    <span wire:click='request_recomendation' class="add-button">+ Buat Pengajuan</span>
+                @endif
             </div>
             @forelse ($this->recomendations->sortBy('updated_at', SORT_REGULAR, true) as $recomendation)
                 <div class="solar-recomendation-card page-card">
+                    <div class="row-wrapper">
+                        <span class="label">Waktu Pengajuan</span>
+                        <span class="values">{{ $recomendation->created_at }}</span>
+                    </div>
                     @if ($recomendation->status == 'pending')
-                        <div class="row-wrapper">
-                            <span class="label">Tanggal Pengajuan</span>
-                            <span class="values">{{ $recomendation->created_at }}</span>
-                        </div>
                         <div class="row-wrapper">
                             <span class="label">Status</span>
                             <div class="values-wrapper ico-wrap">
@@ -62,31 +64,43 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="row-wrapper">
-                            <span class="label">Nomor Surat</span>
-                            <span class="values">No. 2023/XX/YYY/SOL103</span>
-                        </div>
-                        <div class="row-wrapper">
-                            <span class="label">Masa Berlaku</span>
-                            <div class="values-wrapper">
-                                <span class="values bold">11/27/2023</span>
-                                <span>sampai</span>
-                                <span class="values bold">12/30/2023</span>
-                            </div>
-                        </div>
                         @if ($recomendation->status == 'done')
+                            <div class="row-wrapper">
+                                <span class="label">Nomor Surat</span>
+                                <span class="values">No. 2023/XX/YYY/SOL103</span>
+                            </div>
+                            <div class="row-wrapper">
+                                <span class="label">Masa Berlaku</span>
+                                <div class="values-wrapper">
+                                    <span class="values bold">11/27/2023</span>
+                                    <span>sampai</span>
+                                    <span class="values bold">12/30/2023</span>
+                                </div>
+                            </div>
                             <div class="row-wrapper">
                                 <span class="label">Surat Rekomendasi</span>
                                 <span wire:click='download_docs({{ $recomendation->id }})' class="values download">Download Surat Rekomendasi</span>
                             </div>
                         @endif
+
+                        @if ($recomendation->status == 'rejected')
+                            <div class="row-wrapper">
+                                <span class="label">Keterangan</span>
+                                <span class="values">{{ $recomendation->message }}</span>
+                            </div>
+                        @endif
+
                     @endif
                 </div>
                 
             @empty
                 <div class="page-card col-wrap">
                     <div class="empty-container">
-                        <span>Tidak ada surat rekomendasi ...</span>
+                        @if ($this->selected_umkm == '')
+                            <span>Silahkan pilih UMKM terlebih dahulu untuk melihat daftar surat rekomendasi</span>
+                        @else
+                            <span>Tidak ada surat rekomendasi ...</span>
+                        @endif
                     </div>
                 </div>
             @endforelse

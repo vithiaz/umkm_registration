@@ -219,4 +219,6 @@ umkm ||--o{ umkm_activation_log
 umkm ||--o{ solar_recomendation_request
 solar_recomendation_request ||--o| solar_recomendation
 
+koperasi ||--o{ koperasi_activation_log
+
 @enduml
