@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\ActivationLog;
 use Illuminate\Support\Carbon;
 use App\Models\UserNotification;
+use Illuminate\Support\Facades\Auth;
 
 class AccountVerification extends Component
 {
@@ -75,8 +76,12 @@ class AccountVerification extends Component
 
     public function reject_request() {
         $this->validate();
-        
+
         $reject_user_id = $this->verifyAccount['id'];
+        
+        $UserEdit = User::find($reject_user_id);
+        $UserEdit->active_status = 'rejected';
+        $UserEdit->save();
         
         $activationLog = new ActivationLog;
         $activationLog->status = 'rejected';
@@ -107,6 +112,7 @@ class AccountVerification extends Component
         $this->reject_message = '';
 
         $this->verifyAccount = null;
+        $this->status_filter = 'rejected';
     }
 
     public function verify_request() {

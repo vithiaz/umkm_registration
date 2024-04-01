@@ -88,6 +88,7 @@ class ProfileSettings extends Component
         $UserEdit->birth = $this->birth_edit;
         $UserEdit->address = $this->address_edit;
         $UserEdit->phone = $this->phone_edit;
+        $UserEdit->active_status = 'pending';
 
         if ($this->profile_edit) {
             $profile_dir = public_path() . '/storage/' . $UserEdit->photo;

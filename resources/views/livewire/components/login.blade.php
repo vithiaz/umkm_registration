@@ -37,7 +37,7 @@
             </button>
             <div class="register-suggest">
                 <span>Belum punya akun?</span>
-                <a href="#" class="register"> Buat Akun</a>
+                <a href="{{ route('register') }}" class="register"> Buat Akun</a>
             </div>
         </form>
     </div>

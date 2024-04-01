@@ -23,7 +23,7 @@ class Registration extends Component
     public $phone;
 
     protected $rules = [
-        'nip' => 'required|numeric|unique:users,nip',
+        'nip' => 'required|numeric|digits:16|unique:users,nip',
         'full_name' => 'required|string',
         'birth' => 'required|date',
         'gender' => 'required|string',
@@ -37,6 +37,7 @@ class Registration extends Component
     protected $messages  = [
         'nip.required' => 'NIK tidak boleh kosong',
         'nip.numeric' => 'NIK hanya boleh diisi angka',
+        'nip.digits' => 'NIK harus 16 karakter',
         'nip.unique' => 'NIK sudah terdaftar',
         'full_name.required' => 'Nama Lengkap tidak boleh kosong',
         'birth.required' => 'Tanggal Lahir tidak boleh kosong',

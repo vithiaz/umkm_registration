@@ -153,6 +153,7 @@
         <div class="content-menu-wrapper">
             <a wire:click.prevent='set_status_filter("pending")' href="#" class="menu-item @if($status_filter == 'pending') active @endif">Permintaan</a>
             <a wire:click.prevent='set_status_filter("active")' href="#" class="menu-item @if($status_filter == 'active') active @endif">Aktif</a>
+            <a wire:click.prevent='set_status_filter("rejected")' href="#" class="menu-item @if($status_filter == 'rejected') active @endif">Ditolak</a>
         </div>
         <div class="page-content-card">
             <div class="card-title-wrapper">
