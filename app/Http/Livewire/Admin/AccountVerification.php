@@ -113,6 +113,7 @@ class AccountVerification extends Component
 
         $this->verifyAccount = null;
         $this->status_filter = 'rejected';
+        $this->emitTo('users-table', 'setStatusFilter', $this->status_filter);
     }
 
     public function verify_request() {
