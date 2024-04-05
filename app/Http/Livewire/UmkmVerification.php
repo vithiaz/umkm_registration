@@ -92,7 +92,7 @@ class UmkmVerification extends Component
         }
     }
 
-    public function reject_request () {
+    public function reject_request() {
         $this->validate();
 
         if ($this->verifyUmkm) {
@@ -125,6 +125,10 @@ class UmkmVerification extends Component
         }
     }
 
+    public function confirm_acc_request() {
+        $this->dispatchBrowserEvent('show-verify-modal');
+    }
+    
     public function acc_request() {
         $this->validate([
             'permission_docs' => 'required|mimes:pdf',

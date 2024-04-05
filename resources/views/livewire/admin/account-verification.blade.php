@@ -108,7 +108,7 @@
 
                 @if ($this->reject_state != true)
                     @if ($this->verifyAccount && $this->verifyAccount->active_status != 'active')
-                        <button wire:click='verify_request' class="btn">Verifikasi</button>
+                        <button wire:click='confirm_verify_request' class="btn">Verifikasi</button>
                         <button wire:click='set_reject_state({{ 1 }})' class="btn reject">Tolak</button>                    
                     @endif
                 @else
@@ -181,6 +181,26 @@
     $('#log-wrapper-toggler').click(function () {
         $('.log-wrapper').toggleClass('active')
     })
+
+    $( window ).on('show-verify-modal', function () {
+        Swal.fire({
+            title: "Konfirmasi verifikasi",
+            showCancelButton: true,
+            confirmButtonText: "Ya",
+            cancelButtonText: "Tidak"
+            }).then((result) => {
+            if (result.isConfirmed) {
+                @this.verify_request()
+                Swal.fire("Verifikasi berhasil", "", "success");
+            }
+        });
+    })
+    
+    $( window ).on('table-show-verify-modal', function (userId) {
+        @this.setVerifyData(userId.detail.userId)
+        @this.confirm_verify_request()
+    })
+    
 
     
 </script>

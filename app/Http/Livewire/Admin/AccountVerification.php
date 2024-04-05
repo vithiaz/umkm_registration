@@ -116,6 +116,10 @@ class AccountVerification extends Component
         $this->emitTo('users-table', 'setStatusFilter', $this->status_filter);
     }
 
+    public function confirm_verify_request() {
+        $this->dispatchBrowserEvent('show-verify-modal');
+    }
+    
     public function verify_request() {
         if ($this->verifyAccount) {
             $this->verifyAccount->active_status = 'active';
@@ -142,6 +146,7 @@ class AccountVerification extends Component
 
             $msg = ['success' => 'Pengajuan Diverifikasi'];
             $this->dispatchBrowserEvent('display-message', $msg);
+            $this->emitTo('users-table', 'refreshTable');
 
             $this->reject_state = false;
             $this->reject_message = '';

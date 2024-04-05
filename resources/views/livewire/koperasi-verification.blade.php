@@ -125,13 +125,13 @@
                             <span>Tolak</span>
                         </button>   
                         @endif
-                    @if ($this->acc_state)
+                    {{-- @if ($this->acc_state)
                         <button style="display: none"></button>
                         <button wire:click='set_acc_state(false)' class="btn btn-abort">Batalkan</button>
                         <button wire:click='acc_request' type="button" class="btn btn-accept">
                             <span>Verifikasi</span>
                         </button>   
-                    @endif
+                    @endif --}}
                 @endif
 
             </div>
@@ -217,6 +217,20 @@
 
     $('#log-wrapper-toggler').click(function () {
         $('.log-wrapper').toggleClass('active')
+    })
+
+    $( window ).on('show-verify-modal', function () {
+        Swal.fire({
+            title: "Konfirmasi verifikasi",
+            showCancelButton: true,
+            confirmButtonText: "Ya",
+            cancelButtonText: "Tidak"
+            }).then((result) => {
+            if (result.isConfirmed) {
+                @this.acc_request()
+                Swal.fire("Verifikasi berhasil", "", "success");
+            }
+        });
     })
     
 </script>

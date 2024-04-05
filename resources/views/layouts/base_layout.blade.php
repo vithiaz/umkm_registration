@@ -32,8 +32,6 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
-    
-
     @stack('stylesheet')
     @livewireStyles
 
@@ -71,6 +69,9 @@
     {{-- SwiperJS CDN --}}
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
+    {{-- Sweet Alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     {{-- Session Message Events Scripts--}}
     <script>
         function show_message($msg, $class) {

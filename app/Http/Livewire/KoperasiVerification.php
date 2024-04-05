@@ -86,12 +86,13 @@ class KoperasiVerification extends Component
     }
     
     public function set_acc_state($status) {
-        if ($status == true) {
-            $this->acc_state = true;
-        } else {
-            $this->acc_state = false;
-            $this->permission_docs = null;
-        }
+        $this->dispatchBrowserEvent('show-verify-modal');
+        // if ($status == true) {
+        //     $this->acc_state = true;
+        // } else {
+        //     $this->acc_state = false;
+        //     $this->permission_docs = null;
+        // }
     }
 
     public function reject_request () {

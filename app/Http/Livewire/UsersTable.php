@@ -37,21 +37,7 @@ final class UsersTable extends PowerGridComponent
         $userID = $data[0];
         $User = User::find($userID);
         if ($User) {
-            $User->active_status = 'active';
-            
-            if ($User->save()) {
-                $activationLog = new ActivationLog;
-                $activationLog->status = 'acc';
-                $activationLog->message = 'Berkas diterima';
-                $activationLog->user_id = $User->id;
-                $activationLog->save();
-
-                $msg = ['success' => 'User diverifikasi'];
-            } else {
-                $msg = ['danger' => 'Terjadi Kesalahan'];
-            }
-            $this->dispatchBrowserEvent('display-message', $msg);
-            $this->fillData();
+            $this->dispatchBrowserEvent('table-show-verify-modal', ['userId' => $userID]);
         }
     }
     public function setVerifyState($data) {

@@ -109,7 +109,7 @@ class VerifySolarRecomendation extends Component
         }
     }
 
-    public function reject_request () {
+    public function reject_request() {
         $this->validate();
 
         if ($this->verifyRequest) {
@@ -136,8 +136,12 @@ class VerifySolarRecomendation extends Component
         }
     }
 
+    public function confirm_acc_request() {
+        $this->dispatchBrowserEvent('show-verify-modal');
+    }
+    
     public function acc_request() {
-        $this->validate([
+        $this->validate([   
             'recomendation_docs' => 'required|mimes:pdf',
             'document_number' => 'required',
             'registration_date' => 'required',
@@ -181,6 +185,7 @@ class VerifySolarRecomendation extends Component
 
             $msg = ['success' => 'Pengajuan Diterima'];
             $this->dispatchBrowserEvent('display-message', $msg);
+            $this->dispatchBrowserEvent('show-success-modal');
 
             $this->reset_state();
         }
