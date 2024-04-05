@@ -146,6 +146,7 @@ class AccountVerification extends Component
 
             $msg = ['success' => 'Pengajuan Diverifikasi'];
             $this->dispatchBrowserEvent('display-message', $msg);
+            $this->dispatchBrowserEvent('show-success-modal');
             $this->emitTo('users-table', 'refreshTable');
 
             $this->reject_state = false;

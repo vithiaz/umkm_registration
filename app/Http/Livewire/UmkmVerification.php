@@ -167,6 +167,7 @@ class UmkmVerification extends Component
 
             $msg = ['success' => 'Pengajuan Diterima'];
             $this->dispatchBrowserEvent('display-message', $msg);
+            $this->dispatchBrowserEvent('show-success-modal');
 
             $this->reset_state();
         }

@@ -191,7 +191,6 @@
             }).then((result) => {
             if (result.isConfirmed) {
                 @this.verify_request()
-                Swal.fire("Verifikasi berhasil", "", "success");
             }
         });
     })
@@ -199,6 +198,10 @@
     $( window ).on('table-show-verify-modal', function (userId) {
         @this.setVerifyData(userId.detail.userId)
         @this.confirm_verify_request()
+    })
+
+    $( window ).on('show-success-modal', function () {
+        Swal.fire("Verifikasi berhasil", "", "success");
     })
     
 

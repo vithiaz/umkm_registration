@@ -228,9 +228,12 @@
             }).then((result) => {
             if (result.isConfirmed) {
                 @this.acc_request()
-                Swal.fire("Verifikasi berhasil", "", "success");
             }
         });
+    })
+
+    $( window ).on('show-success-modal', function () {
+        Swal.fire("Verifikasi berhasil", "", "success");
     })
     
 </script>

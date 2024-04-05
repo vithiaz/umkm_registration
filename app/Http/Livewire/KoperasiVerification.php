@@ -163,6 +163,7 @@ class KoperasiVerification extends Component
 
             $msg = ['success' => 'Pengajuan Diterima'];
             $this->dispatchBrowserEvent('display-message', $msg);
+            $this->dispatchBrowserEvent('show-verify-modal');
 
             $this->reset_state();
         }

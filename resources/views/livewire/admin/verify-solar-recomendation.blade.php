@@ -255,7 +255,6 @@
             }).then((result) => {
             if (result.isConfirmed) {
                 @this.acc_request()
-                // Swal.fire("Verifikasi berhasil", "", "success");
             }
         });
     })
