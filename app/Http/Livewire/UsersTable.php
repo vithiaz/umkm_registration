@@ -88,7 +88,7 @@ final class UsersTable extends PowerGridComponent
         return User::where([
             ['is_admin', '!=', true],
             ['active_status', '=', $this->status],
-        ]);
+        ])->orderBy('updated_at', 'desc');
     }
 
     public function relationSearch(): array

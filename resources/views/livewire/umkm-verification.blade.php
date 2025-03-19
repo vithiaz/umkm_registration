@@ -64,7 +64,7 @@
                 </div>
                 @if ($this->verifyUmkm && $this->verifyUmkm->umkm_images->count() > 0)
                     <div class="row-wrapper top-align">
-                        <span class="input-title">Gambar</span>
+                        <span class="input-title">Foto Tempat Usaha</span>
                         <div class="input-items row-button">
                             <button onclick="expand_umkm_pictures()" id="umkm-picture-toggler" type="button" class="btn submit-button ico hovered">
                                 <i class="fa-solid fa-eye expand show"></i>
@@ -97,7 +97,7 @@
                 <span class="title">Verifikasi Pengajuan</span>
                 <div class="row-wrapper">
                     <span class="input-title">Surat Ijin</span>
-                    <input wire:model='permission_docs' type="file" class="input-items form-control file">
+                    <input wire:model='permission_docs' type="file" class="input-items form-control file" accept=".pdf">
                     @error('permission_docs')
                         <small class="error">{{ $message }}</small>
                     @enderror

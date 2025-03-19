@@ -49,8 +49,8 @@
         </div>
     </div>
     <div class="row-wrapper picture-form">
-        <span class="input-title">Tambahkan Gambar</span>
-        <input wire:model='images' type="file" id="umkm-picture-input" style="display: none" multiple>
+        <span class="input-title">Foto Tempat Usaha</span>
+        <input wire:model='images' type="file" id="umkm-picture-input" style="display: none" multiple accept="image/*">
         <div class="input-items image-wrapper">
             <div class="input-button-container">
                 <button type="button" id="umkm-picture-input-button" class="btn submit-button ico hovered">

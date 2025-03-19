@@ -28,6 +28,19 @@
                                 <p>Pengajuan aktivasi akun anda sedang di proses</p>
                             @endif
                         </div>
+                        <div class="content-body">
+                            <p>Status: 
+                            @if ($this->ActivationMessage)
+                                @if ($this->ActivationMessage->status == 'acc')
+                                    <span>Terverifikasi</span>
+                                @elseif ($this->ActivationMessage->status == 'rejected')
+                                    <span>Ditolek</span>
+                                @endif
+                            @else
+                                <span>Proses Pengajuan</span>
+                            @endif
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,7 +87,7 @@
                         </div>
                     @enderror
                     <div class="row-wrapper">
-                        <span class="input-title">NIP</span>
+                        <span class="input-title">NIK</span>
                         <div class="input-items">
                             @if ($this->editState)
                                 <input wire:model='nip_edit' type="text" class="main-form-input">

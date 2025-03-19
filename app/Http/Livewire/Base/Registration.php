@@ -28,7 +28,7 @@ class Registration extends Component
         'birth' => 'required|date',
         'gender' => 'required|string',
         'address' => 'required|string',
-        'phone' => 'required|numeric',
+        'phone' => 'required|numeric|max:13',
         'ktp' => 'required|image|max:2048',
         'kk' => 'required|image|max:2048',
         'photo' => 'required|image|max:2048',
@@ -43,6 +43,7 @@ class Registration extends Component
         'birth.required' => 'Tanggal Lahir tidak boleh kosong',
         'gender.required' => 'Jenis Kelamin tidak boleh kosong',
         'phone.required' => 'Nomor Telepon tidak boleh kosong',
+        'phone.max' => 'Nomor Telepon maksimal 13 karakter',
         'address.required' => 'Alamat tidak boleh kosong',
         'ktp.required' => 'Foto KTP harus di upload',
         'kk.required' => 'Foto KK harus di upload',
@@ -62,6 +63,36 @@ class Registration extends Component
         $this->kk = '';
         $this->photo = '';
         $this->phone = '';
+    }
+
+    public function updatedNip() {
+        $this->validateOnly('nip');
+    }
+    
+    public function updatedFullName() {
+        $this->validateOnly('full_name');
+    }
+
+    public function updatedBirth() {
+        $this->validateOnly('birth');
+    }
+    public function updatedGender() {
+        $this->validateOnly('gender');
+    }
+    public function updatedAddress() {
+        $this->validateOnly('address');
+    }
+    public function updatedKtp() {
+        $this->validateOnly('ktp');
+    }
+    public function updatedKk() {
+        $this->validateOnly('kk');
+    }
+    public function updatedPhoto() {
+        $this->validateOnly('photo');
+    }
+    public function updatedPhone() {
+        $this->validateOnly('phone');
     }
 
     public function render()
