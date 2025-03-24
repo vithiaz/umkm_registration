@@ -69,6 +69,7 @@ final class KoperasiTable extends PowerGridComponent
     }
 
     public string $sortField = 'koperasi.updated_at';
+    public string $sortDirection = 'desc';
 
     public function datasource(): Builder
     {

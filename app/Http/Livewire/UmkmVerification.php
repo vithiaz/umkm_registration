@@ -97,6 +97,7 @@ class UmkmVerification extends Component
 
         if ($this->verifyUmkm) {
             $this->verifyUmkm->status = 'rejected';
+            $this->verifyUmkm->updated_at = Carbon::now();
             $this->verifyUmkm->save();
 
             // Create Activation Log
@@ -104,6 +105,8 @@ class UmkmVerification extends Component
             $activationLog->status = 'rejected';
             $activationLog->message = $this->reject_message;
             $activationLog->umkm_id = $this->verifyUmkm->id;
+            $activationLog->created_at = Carbon::now();
+            $activationLog->updated_at = Carbon::now();
             $activationLog->save();
 
             // Create Notification
@@ -142,6 +145,7 @@ class UmkmVerification extends Component
         if ($this->verifyUmkm) {
             $this->verifyUmkm->status = 'verified';
             $this->verifyUmkm->permission_docs = $this->permission_docs->store('permission_docs');
+            $this->verifyUmkm->updated_at = Carbon::now();
             $this->verifyUmkm->save();
 
             // Create Activation Log
@@ -149,6 +153,8 @@ class UmkmVerification extends Component
             $activationLog->status = 'acc';
             $activationLog->message = 'Pengajuan aktivasi ' . $this->verifyUmkm->type . ' diterima';
             $activationLog->umkm_id = $this->verifyUmkm->id;
+            $activationLog->created_at = Carbon::now();
+            $activationLog->updated_at = Carbon::now();
             $activationLog->save();
 
             // Create Notification

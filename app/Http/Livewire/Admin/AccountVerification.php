@@ -81,6 +81,7 @@ class AccountVerification extends Component
         
         $UserEdit = User::find($reject_user_id);
         $UserEdit->active_status = 'rejected';
+        $UserEdit->updated_at = Carbon::now();
         $UserEdit->save();
         
         $activationLog = new ActivationLog;
@@ -123,6 +124,7 @@ class AccountVerification extends Component
     public function verify_request() {
         if ($this->verifyAccount) {
             $this->verifyAccount->active_status = 'active';
+            $this->verifyAccount->updated_at = Carbon::now();
             $this->verifyAccount->save();
 
             $activationLog = new ActivationLog;

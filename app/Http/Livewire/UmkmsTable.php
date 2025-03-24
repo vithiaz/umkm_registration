@@ -69,6 +69,8 @@ final class UmkmsTable extends PowerGridComponent
     }
 
     public string $sortField = 'umkm.updated_at';
+    public string $sortDirection = 'desc';
+
 
     public function datasource(): Builder
     {
@@ -131,7 +133,7 @@ final class UmkmsTable extends PowerGridComponent
                 
             Column::make('Created at', 'created_at_formatted', 'created_at')
                 ->searchable()
-                ->hidden()
+                ->hidden(),
         ];
     }
 

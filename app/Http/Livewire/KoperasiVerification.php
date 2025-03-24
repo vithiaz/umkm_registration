@@ -100,6 +100,7 @@ class KoperasiVerification extends Component
 
         if ($this->verifyKoperasi) {
             $this->verifyKoperasi->status = 'rejected';
+            $this->verifyKoperasi->updated_at = Carbon::now();
             $this->verifyKoperasi->save();
 
             // Create Activation Log
@@ -140,6 +141,7 @@ class KoperasiVerification extends Component
 
         if ($this->verifyKoperasi) {
             $this->verifyKoperasi->status = 'verified';
+            $this->verifyKoperasi->updated_at = Carbon::now();
             // $this->verifyKoperasi->permission_docs = $this->permission_docs->store('permission_docs');
             $this->verifyKoperasi->save();
 
